@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from './Grid.module.css';
+import styles from './Grid.module.scss';
 import { COLUMNS } from './constants';
 import { classNames, isCssUnit } from 'utils';
+
+const spaceClassGenerator = num => `space${num}`;
 
 export default function Grid({
   className,
@@ -11,6 +13,7 @@ export default function Grid({
   children,
   style,
   center,
+  space,
 }) {
   const gridWidth = isCssUnit(size) ? size : (size / COLUMNS) * 100 + '%';
 
@@ -20,7 +23,8 @@ export default function Grid({
         className,
         container && styles.gridContainer,
         item && styles.gridItem,
-        center && styles.gridCenter
+        center && styles.gridCenter,
+        space && styles[spaceClassGenerator(space)]
       )}
       {...{
         style: size && {
