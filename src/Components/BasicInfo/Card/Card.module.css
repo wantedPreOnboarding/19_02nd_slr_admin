@@ -1,7 +1,7 @@
-@value sriBorderM, sirGray from 'styles/theme.css';
+@value sirBorderRadiusM, sirGray from 'styles/theme.css';
 
 .card {
-  border-radius: sriBorderM;
+  border-radius: sirBorderRadiusM;
   border: solid 2px sirGray;
   padding: 30px;
 }

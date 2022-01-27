@@ -1,4 +1,4 @@
-@value m, sriBorderM from 'styles/theme.css';
+@value m, sirBorderRadiusM from 'styles/theme.css';
 
 .label {
   position: relative;
@@ -16,7 +16,7 @@
   width: 32px;
   height: 32px;
   border: 1px solid #bbbbd4;
-  border-radius: sriBorderM;
+  border-radius: sirBorderRadiusM;
   background-color: #fff;
 }
 
