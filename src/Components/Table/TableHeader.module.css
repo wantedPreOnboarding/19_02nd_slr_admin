@@ -3,7 +3,7 @@
   align-items: center;
   height: 3.75rem;
   padding: var(--theme-table-pd);
-  border-bottom: solid var(--theme-border) 2px;
+  border-bottom: solid var(--theme-table-bd) 2px;
   font-weight: 500;
   font-size: 1.3rem;
 }

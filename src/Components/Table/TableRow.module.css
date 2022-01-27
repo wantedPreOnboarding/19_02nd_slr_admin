@@ -1,5 +1,5 @@
 .tableLabel {
-  border-right: solid var(--theme-border) 2px;
+  border-right: solid var(--theme-table-bd) 2px;
 }
 
 .tableLabel,
