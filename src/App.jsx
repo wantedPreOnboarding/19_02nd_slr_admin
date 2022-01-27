@@ -1,5 +1,5 @@
 import React from 'react';
-import Aside from 'components/Aside/Aside';
+import Aside from 'Components/Aside/Aside';
 
 const App = () => {
   return (
