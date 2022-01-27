@@ -1,7 +1,11 @@
 import React from 'react';
-
+import ProductOption from 'Components/ProductOption/ProductOption';
 const App = () => {
-  return <div></div>;
+  return (
+    <div>
+      <ProductOption />
+    </div>
+  );
 };
 
 export default App;
