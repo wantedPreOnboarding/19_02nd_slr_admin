@@ -1,8 +1,10 @@
+@value sirTableBorderColor, sirTablePd from 'styles/theme.css';
+
 .tableLabel {
-  border-right: solid var(--theme-table-bd) 2px;
+  border-right: solid sirTableBorderColor 2px;
 }
 
 .tableLabel,
 .tableValue {
-  padding: var(--theme-table-pd);
+  padding: sirTablePd;
 }
