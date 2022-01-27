@@ -6,7 +6,7 @@ import { classNames } from 'utils';
 const App = () => {
   return (
     <main className={styles.main}>
-      <Grid className={styles.gridCenter} container>
+      <Grid container center>
         <Grid className={styles.menu} item>
           <nav>
             <ul>
@@ -14,7 +14,7 @@ const App = () => {
             </ul>
           </nav>
         </Grid>
-        <Grid className={classNames(styles.gridCenter, styles.gridContents)} container>
+        <Grid className={classNames(styles.gridContents)} container center>
           <Grid item>
             <BasicInfo />
           </Grid>
