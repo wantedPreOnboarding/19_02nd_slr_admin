@@ -1,0 +1,33 @@
+@value m, sriBorderM from 'styles/theme.css';
+
+.label {
+  position: relative;
+  font-size: m;
+  font-weight: 400;
+  padding-left: 2.2rem;
+}
+
+.label::before {
+  font-family: 'Font Awesome 5 Free';
+  content: '';
+  position: absolute;
+  left: -14px;
+  bottom: -3px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #bbbbd4;
+  border-radius: sriBorderM;
+  background-color: #fff;
+}
+
+.checked::before {
+  background-color: #3232af;
+  border: none;
+}
+
+:global(.check) {
+  position: absolute;
+  left: -8px;
+  bottom: 1px;
+  fill: white;
+}
