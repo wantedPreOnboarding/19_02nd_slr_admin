@@ -1,0 +1,8 @@
+.tableLabel {
+  border-right: solid var(--theme-border) 2px;
+}
+
+.tableLabel,
+.tableValue {
+  padding: var(--theme-table-pd);
+}
