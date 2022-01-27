@@ -8,3 +8,7 @@
 .gridItem {
   flex-direction: row;
 }
+
+.gridCenter {
+  justify-content: center;
+}
