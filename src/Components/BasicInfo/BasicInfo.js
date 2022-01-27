@@ -9,6 +9,11 @@ export default function BasicInfo() {
       <TableRow label="카테고리 *" className={styles.basicInfo}>
         temp value
       </TableRow>
+      <TableRow label="카테고리 *" className={styles.basicInfo}>
+        temp value
+      </TableRow>
+      <TableRow>temp value</TableRow>
+      <TableRow>temp value</TableRow>
     </Table>
   );
 }
