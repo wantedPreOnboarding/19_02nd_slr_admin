@@ -5,7 +5,7 @@ import { classNames } from 'utils';
 
 export default function Grid({ className, container = false, xs, item = true, children }) {
   const gridWidth = (xs / COLUMNS) * 100 + '%';
-  console.log(classNames(container ? styles.gridContainer : styles.gridItem, className));
+
   return (
     <div
       className={classNames(container ? styles.gridContainer : styles.gridItem, className)}
