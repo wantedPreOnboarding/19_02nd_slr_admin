@@ -1,8 +1,8 @@
-import SetSalesPeriod from 'Components/SetSalesPeriod';
+import SalesPeriod from 'Components/SalesPeriod';
 import React from 'react';
 
 const App = () => {
-  return <><SetSalesPeriod /></>;
+  return <><SalesPeriod /></>;
 };
 
 export default App;

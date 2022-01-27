@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styles from 'styles/SetSalesPeriod.module.css';
 
-const SetSalesPeriod = () => {
+const SalesPeriod = () => {
     const [salesPeriod, setSalesPeriod] = useState('unlimit');
     const [salesStartDate, setSalesStartDate] = useState('');
     const [salesEndDate, setSalesEndDate] = useState('');
@@ -76,6 +76,7 @@ const SetSalesPeriod = () => {
                             type="datetime-local" 
                             name="startDate" 
                             onChange={handleSelect}
+                            value="YYYY-MM-DDThh:mm"
                         />
                         <span> ~ </span>
                         <input 
@@ -92,4 +93,4 @@ const SetSalesPeriod = () => {
     );
 };
 
-export default SetSalesPeriod;
+export default SalesPeriod;
