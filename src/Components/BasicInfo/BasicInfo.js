@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckBox, Table, TableHeader, TableRow } from 'Components';
 import styles from './BasicInfo.module.css';
-import { categories } from 'constants/basicInfo';
+import { categories } from 'data/basicInfo';
 import Card from './Card/Card';
 import Grid from 'Components/Grid/Grid';
 
