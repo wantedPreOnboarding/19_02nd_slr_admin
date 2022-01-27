@@ -1,10 +1,15 @@
-@value sirDPurple:#352f6e;
-@value sirPurple:#9a97b7;
-@value sirLGray:#efefef;
-@value sirGray:#e3e3e3;
-@value sirDgray:#2d2d2d;
+/* colors */
+@value sirDPurple: #352f6e;
+@value sirPurple: #9a97b7;
+@value sirLGray: #efefef;
+@value sirGray: #e3e3e3;
+@value sirDgray: #2d2d2d;
 @value sirRed: rgba(255, 0, 0, 0.5);
 @value sirShadow: rgba(217, 217, 217, 1);
 @value sirTableBorderColor: #dedede;
 
+/* units */
 @value sirTablePd: 1.35rem;
+
+/* break point */
+@value desktop: 1105px;
