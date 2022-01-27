@@ -3,7 +3,7 @@ import styles from './Grid.module.css';
 import { COLUMNS } from './constants';
 import { classNames, isCssUnit } from 'utils';
 
-export default function Grid({ className, container = false, size, item = true, children }) {
+export default function Grid({ className, container = false, size, item = true, children, style }) {
   const gridWidth = isCssUnit(size) ? size : (size / COLUMNS) * 100 + '%';
 
   return (
@@ -14,6 +14,7 @@ export default function Grid({ className, container = false, size, item = true, 
           width: gridWidth,
           flexBasis: gridWidth,
           flexGrow: 0,
+          ...style,
         },
       }}
     >
