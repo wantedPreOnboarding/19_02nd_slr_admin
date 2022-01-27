@@ -1,0 +1,38 @@
+.ui {
+  list-style: none;
+}
+
+.li {
+  margin-bottom: 12px;
+}
+
+.select {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  opacity: 80%;
+}
+
+.select:checked {
+  background-color: #352f6a;
+  opacity: 1;
+}
+
+.label {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.inputTime {
+  width: 200px;
+  height: 45px;
+  margin: 0 5px;
+  text-align: center;
+  font-size: 15px;
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+  padding: 0 20px;
+}
