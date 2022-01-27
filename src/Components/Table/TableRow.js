@@ -7,11 +7,15 @@ export default function TableRow({ className, label, children }) {
   return (
     <>
       {label && (
-        <Grid item className={classNames(styles.tableLabel)} xs={2}>
+        <Grid item className={classNames('tableItem', styles.tableLabel)} xs={2}>
           {label}
         </Grid>
       )}
-      <Grid item className={classNames(styles.tableValue, className)} xs={label ? 10 : 12}>
+      <Grid
+        item
+        className={classNames('tableItem', styles.tableValue, className)}
+        xs={label ? 10 : 12}
+      >
         {children}
       </Grid>
     </>

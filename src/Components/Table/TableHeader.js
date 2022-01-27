@@ -4,7 +4,7 @@ import { classNames } from 'utils';
 
 export default function TableHeader({ className, children }) {
   return (
-    <Grid item xs={12} className={classNames(styles.tableHeader, className)}>
+    <Grid item xs={12} className={classNames('tableItem', styles.tableHeader, className)}>
       {children}
     </Grid>
   );

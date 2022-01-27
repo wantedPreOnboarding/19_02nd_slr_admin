@@ -1,3 +1,7 @@
 .table {
   border: solid var(--theme-table-bd) 2px;
 }
+
+.table :global(.tableItem):not(:last-child) {
+  border-bottom: solid var(--theme-table-bd) 2px;
+}
