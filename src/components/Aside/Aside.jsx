@@ -4,7 +4,7 @@ import styles from './Aside.module.css';
 const Aside = () => {
   return (
     <aside className={styles.aside}>
-      <span>Slr.LOIN</span>
+      <h1>Slr.LOIN</h1>
     </aside>
   );
 };
