@@ -1,7 +1,8 @@
+import SetPeriod from 'Components/SetPeriod/SetPeriod';
 import React from 'react';
 
 const App = () => {
-  return <div></div>;
+  return <></>;
 };
 
 export default App;
