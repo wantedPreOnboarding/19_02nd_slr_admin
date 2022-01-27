@@ -1,14 +1,10 @@
 import React from 'react';
-import Aside from 'Components/Aside/Aside';
-import ProductIntroImg from 'Components/ProductIntroImg/ProductIntroImg';
-import BuyerRecommendImg from 'Components/BuyerRecommendImg/BuyerRecommendImg';
+import ProductOption from 'Components/ProductOption/ProductOption';
 
 const App = () => {
   return (
     <div>
-      <Aside />
-      <ProductIntroImg />
-      <BuyerRecommendImg />
+      <ProductOption />
     </div>
   );
 };
