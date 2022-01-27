@@ -1,0 +1,3 @@
+.table {
+  border: solid var(--theme-table-bd) 2px;
+}
