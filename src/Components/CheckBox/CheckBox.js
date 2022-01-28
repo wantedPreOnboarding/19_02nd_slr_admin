@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import styles from './CheckBox.module.css';
 import commonStyles from 'styles/index.module.css';
-import { classNames, withCurlyBraces } from 'utils';
+import { classNames } from 'utils';
 import { ReactComponent as Checked } from './assets/checked.svg';
 
-export default function CheckBox({ category, checked, onChange }) {
-  const [isChecked, setIsChecked] = useState(checked);
-
+export default function CategoryBox({ category, checked, onChange, children }) {
   return (
     <li>
       <input
@@ -14,14 +12,13 @@ export default function CheckBox({ category, checked, onChange }) {
         type="checkbox"
         id={category}
         name={category}
-        checked={isChecked}
+        checked={checked}
         onChange={() => {
-          setIsChecked(!isChecked);
           onChange?.();
         }}
       />
-      <label className={classNames(styles.label, isChecked && styles.checked)} htmlFor={category}>
-        {withCurlyBraces(category)};
+      <label className={classNames(styles.label, checked && styles.checked)} htmlFor={category}>
+        {children}
         <Checked />
       </label>
     </li>

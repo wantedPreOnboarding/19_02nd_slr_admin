@@ -7,7 +7,7 @@ import {
   BuyerRecommendImg,
   ExposePeriod,
   ProductDelivery,
-  ToggleBtn,
+  MileageEtc,
 } from 'Components';
 import { classNames } from 'utils';
 import styles from './App.module.css';
@@ -35,12 +35,18 @@ const App = () => {
           </Grid>
           <Grid item>
             <ProductDelivery />
-            <Grid item container>
-              <ProductIntroImg />
-            </Grid>
-            <Grid item container>
-              <BuyerRecommendImg />
-            </Grid>
+          </Grid>
+          <Grid item>
+            <ProductIntroImg />
+          </Grid>
+          <Grid item>
+            <BuyerRecommendImg />
+          </Grid>
+          <Grid item>
+            <MileageEtc headTitle="상품 혜택 허용 설정" menuTitle="마일리지 적립" />
+          </Grid>
+          <Grid item>
+            <MileageEtc headTitle="기타 설정" menuTitle="감사카드 제공" />
           </Grid>
         </Grid>
       </Grid>

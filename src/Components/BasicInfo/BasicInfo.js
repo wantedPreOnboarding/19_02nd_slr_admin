@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { CheckBox, Table, TableHeader, TableRow } from 'Components';
-import styles from './BasicInfo.module.css';
-import { categories as originCategory } from 'data/basicInfo';
 import Card from './Card/Card';
 import Grid from 'Components/Grid/Grid';
+import Button from './Button/Button';
+import { categories as originCategory } from 'data/basicInfo';
+import { withCurlyBraces } from 'utils';
+import styles from './BasicInfo.module.css';
 
 export default function BasicInfo() {
   const [categories, setCheckedCategories] = useState([...originCategory]);
@@ -18,7 +20,7 @@ export default function BasicInfo() {
   return (
     <Table className="">
       <TableHeader>상품 기본 정보</TableHeader>
-      <TableRow label="카테고리 *" className={styles.basicInfo}>
+      <TableRow label="카테고리 *">
         <Grid container space={5}>
           <Grid size={7} item>
             <Card>
@@ -30,7 +32,9 @@ export default function BasicInfo() {
                       category={category.category}
                       checked={category.checked}
                       onChange={() => toggleCheckState(category)}
-                    />
+                    >
+                      {withCurlyBraces(category.category)}
+                    </CheckBox>
                   );
                 })}
               </ul>
@@ -38,22 +42,41 @@ export default function BasicInfo() {
           </Grid>
           <Grid size={5} item>
             <Card>
-              <ul className={styles.categories}>
+              <ul className={styles.checkedCategories}>
                 {categories
                   .filter(({ checked }) => checked)
-                  .map(({ id, category, checked }) => {
-                    return <CheckBox key={id} category={category} checked={checked} />;
+                  .map(category => {
+                    return (
+                      <li key={category.id}>
+                        <Button onClick={() => toggleCheckState(category)}>
+                          {withCurlyBraces(category.category)} X
+                        </Button>
+                      </li>
+                    );
                   })}
               </ul>
             </Card>
           </Grid>
         </Grid>
       </TableRow>
-      <TableRow label="필터 태그" className={styles.basicInfo}>
-        temp value
+      <TableRow label="필터 태그">
+        <input className="" placeholder="필터태그를 검색해 주세요."></input>
       </TableRow>
-      <TableRow>temp value</TableRow>
-      <TableRow>temp value</TableRow>
+      <TableRow label="상품명 *">
+        <input className=""></input>
+      </TableRow>
+      <TableRow label="상품 구성 소개 정보*">
+        <input className=""></input>
+      </TableRow>
+      <TableRow label="상품 썸네일">
+        <input className=""></input>
+      </TableRow>
+      <TableRow label="상품 대표 이미지">
+        <input className=""></input>
+      </TableRow>
+      <TableRow label="상품 총 재고 *">
+        <input className=""></input>
+      </TableRow>
     </Table>
   );
 }

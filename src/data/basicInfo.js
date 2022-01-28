@@ -11,7 +11,32 @@ const categories = [
   },
   {
     id: 2,
-    category: '베이비로인',
+    category: '피그로인',
+    checked: false,
+  },
+  {
+    id: 3,
+    category: '세트상품',
+    checked: false,
+  },
+  {
+    id: 4,
+    category: '설날선물세트',
+    checked: false,
+  },
+  {
+    id: 5,
+    category: '샤쿼테리',
+    checked: false,
+  },
+  {
+    id: 6,
+    category: '가니쉬',
+    checked: false,
+  },
+  {
+    id: 7,
+    category: '시즈닝',
     checked: false,
   },
 ];
