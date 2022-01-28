@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BasicInfo,
   Grid,
-  ProductOption,
+  ProOptMain,
   ProductIntroImg,
   BuyerRecommendImg,
   ExposePeriod,
@@ -31,7 +31,7 @@ const App = () => {
             <BasicInfo />
           </Grid>
           <Grid item>
-            <ProductOption />
+            <ProOptMain />
           </Grid>
           <Grid item>
             <ProductDelivery />

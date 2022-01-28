@@ -1,0 +1,61 @@
+@value sirDPurple, sirGray, sirRed from "styles/theme.css";
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+.addBtn {
+  border: 2px solid sirDPurple;
+  border-radius: 3px;
+  height: 60px;
+  width: 150px;
+  background: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.addBtn i {
+  font-size: 3px;
+}
+
+.innerTable {
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: sirGray;
+}
+
+.delete {
+  width: 65px;
+  border: 2px solid sirRed;
+  border-radius: 3px;
+  height: 35px;
+  background: none;
+  margin-bottom: 10px;
+  color: sirRed;
+  font-size: 15px;
+  font-weight: 700;
+  background: white;
+}
+
+.innerSection {
+  width: 100%;
+  border: 1px solid sirGray;
+  padding: 10px;
+  margin: auto;
+  background: white;
+  border-radius: 5px;
+}
+
+.longWidth {
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
