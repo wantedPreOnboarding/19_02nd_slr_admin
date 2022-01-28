@@ -10,7 +10,7 @@ const ProductOption = () => {
         <span>
           상품옵션<span>*</span>
         </span>
-        <button className={styles.addBtn}>
+        <button type="button" className={styles.addBtn}>
           <i className="fas fa-plus "></i> 옵션 체크 추가
         </button>
       </TableHeader>
@@ -19,10 +19,8 @@ const ProductOption = () => {
 
         <div className={styles.innerSection}>
           <ProductOptionForm addOption="image" />
-
           <ProductOptionForm />
           <ProductOptionForm addOption="add" />
-
           <button className={`${styles.addBtn} ${styles.longWidth}`}>
             <i className="fas fa-plus"></i> 옵션 추가
           </button>
