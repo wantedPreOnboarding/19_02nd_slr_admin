@@ -13,6 +13,12 @@ ul {
   list-style: none;
 }
 
+input,
+label,
+button {
+  cursor: pointer;
+}
+
 .a11yHidden {
   overflow: hidden;
   position: absolute;
