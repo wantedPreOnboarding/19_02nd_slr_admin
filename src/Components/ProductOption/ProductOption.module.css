@@ -1,36 +1,43 @@
-@value slrDPurple,slrPurple,slrLGray,slrGray,slrDgray,slrRed,slrShadow from 'styles/theme.css';
+@value sirDPurple, sirPurple, sirLGray, sirGray, sirDgray, sirRed, sirShadow from "styles/theme.css";
 
-.section {
-  width: 100%;
-  height: 40px;
+* {
+  box-sizing: border-box;
+}
+
+.table {
+  margin-top: 50px;
+}
+.headSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 10px;
-  border: 1px solid slrGray;
-  font-weight: 700;
+  padding-right: 0px;
 }
-.section p {
-  font-weight: 700;
+
+.headSection span:last-child {
+  color: sirDPurple;
 }
 
 .addBtn {
-  border: 1px solid slrDPurple;
+  border: 1.5px solid sirDPurple;
   border-radius: 3px;
-  height: 30px;
+  height: 55px;
+  width: 140px;
   background: none;
+  cursor: pointer;
+}
+
+.addBtn label {
+  cursor: pointer;
 }
 
 .addBtn i {
   font-size: 3px;
 }
 
-.innerSection {
-  width: 100%;
+.innerTable {
   margin: auto;
-  border: 1px solid slrGray;
-  border-top: none;
-  padding: 40px 30px;
+  padding: 30px 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -38,8 +45,29 @@
 
 .delete {
   width: 50px;
-  border: 1px solid slrRed;
+  border: 1px solid sirRed;
   border-radius: 3px;
   height: 30px;
   background: none;
+}
+
+.innerSection {
+  width: 100%;
+  border: 1px solid sirGray;
+  padding: 20px;
+  margin: auto;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: sirGray;
+  border-radius: 3px;
+  height: 250px;
+}
+
+.form input {
+  display: none;
 }
