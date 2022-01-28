@@ -1,7 +1,8 @@
 import React from 'react';
-import { BasicInfo, Grid, ProductOption, ExposePeriod} from 'Components';
+import { BasicInfo, Grid, ProductOption, ExposePeriod } from 'Components';
 import styles from './App.module.css';
 import { classNames } from 'utils';
+import ToggleBtn from 'Components/ToggleBtn/ToggleBtn';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           </Grid>
         </Grid>
       </Grid>
+      <ToggleBtn />
     </main>
   );
 };
