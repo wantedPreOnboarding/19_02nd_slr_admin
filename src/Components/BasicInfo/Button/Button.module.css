@@ -3,12 +3,18 @@
 .button {
   border-radius: sirBorderRadiusM;
   border: solid 1px sirDPurple;
-  cursor: pointer;
+  font-size: m;
 }
 
 .type1 {
   max-width: 220px;
   width: 100%;
   height: 50px;
-  font-size: m;
+}
+
+.type2 {
+  height: 40px;
+  background-color: #e9f7d4;
+  border: none;
+  padding: 10px;
 }
