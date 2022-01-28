@@ -1,0 +1,9 @@
+@value sirTableBorderColor from 'styles/theme.css';
+
+.table {
+  border: solid sirTableBorderColor 2px;
+}
+
+.table :global(.tableItem):not(:last-child) {
+  border-bottom: solid sirTableBorderColor 2px;
+}

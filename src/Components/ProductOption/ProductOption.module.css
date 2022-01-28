@@ -1,4 +1,4 @@
-@value slrDPurple,slrPurple,slrLGray,slrGray,slrDgray,slrRed,slrShadow from '../../styles/colors.css';
+@value slrDPurple,slrPurple,slrLGray,slrGray,slrDgray,slrRed,slrShadow from 'styles/theme.css';
 
 .section {
   width: 100%;
