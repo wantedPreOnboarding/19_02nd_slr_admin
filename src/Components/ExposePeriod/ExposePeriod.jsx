@@ -1,9 +1,9 @@
 import React from 'react';
-import { PERIOD_SELECT } from './PeriodData';
+import { Table, TableHeader, TableRow } from 'Components';
 import ExposePeriodForm from './ExposePeriodForm';
+import { PERIOD_SELECT } from './PeriodData';
 import styles from './ExposePeriod.module.css';
 
-import { Table, TableHeader, TableRow } from 'Components';
 
 const ExposePeriod = () => {
   return (
