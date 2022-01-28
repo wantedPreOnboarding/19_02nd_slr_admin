@@ -1,14 +1,31 @@
 import React from 'react';
-import styles from './Grid.module.css';
+import styles from './Grid.module.scss';
 import { COLUMNS } from './constants';
 import { classNames, isCssUnit } from 'utils';
 
-export default function Grid({ className, container = false, size, item = true, children, style }) {
+const spaceClassGenerator = num => `space${num}`;
+
+export default function Grid({
+  className,
+  container = false,
+  item = true,
+  size,
+  children,
+  style,
+  center,
+  space,
+}) {
   const gridWidth = isCssUnit(size) ? size : (size / COLUMNS) * 100 + '%';
 
   return (
     <div
-      className={classNames(container ? styles.gridContainer : styles.gridItem, className)}
+      className={classNames(
+        className,
+        container && styles.gridContainer,
+        item && styles.gridItem,
+        center && styles.gridCenter,
+        space && styles[spaceClassGenerator(space)]
+      )}
       {...{
         style: size && {
           width: gridWidth,

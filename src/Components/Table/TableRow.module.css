@@ -4,7 +4,6 @@
   border-right: solid sirTableBorderColor 2px;
 }
 
-.tableLabel,
-.tableValue {
+.tableLabel {
   padding: sirTablePd;
 }
