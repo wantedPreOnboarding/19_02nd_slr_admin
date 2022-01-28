@@ -4,6 +4,7 @@ import {
   Grid,
   ProductOption,
   ProductIntroImg,
+  ProductIntroNotice,
   BuyerRecommendImg,
   ExposePeriod,
   ProductDelivery,
