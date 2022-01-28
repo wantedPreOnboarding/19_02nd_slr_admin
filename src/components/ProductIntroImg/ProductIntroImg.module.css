@@ -1,24 +1,30 @@
-.article{
-  padding: 10px 0;
-  border: 1px solid #d3d3d3;
+@value sirPurple, sirGray, sirDgray from "styles/theme.css";
+
+.table{ 
+  margin-top: 50px;
+  border: 1px solid sirGray;
 }
 
-.title{
-  margin: 0;
-  padding: 10px 0;
-  border-bottom: 1px solid #d3d3d3;
+.tableHeader span{
+  font-weight: 700;
 }
 
-.file label{
+.tableRowFile{
+  padding: 15px 10px;
+}
+
+.tableRowFile label{
   display: block;
   width: 200px;
   padding: 10px 0;
-  border: 1px solid #483D8B;
-  color: #4d4d4d;
+  border: 2px solid sirPurple;
+  font-weight: 600;
+  color: sirDgray;
   text-align: center;
+  cursor: pointer;
 }
 
-.file input[type='file']{
+.tableRowFile input[type='file']{
   position: absolute;
   width: 1px;
   height: 1px;
