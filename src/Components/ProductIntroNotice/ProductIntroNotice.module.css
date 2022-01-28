@@ -1,0 +1,10 @@
+@value sirPurple, sirGray, sirDgray from "styles/theme.css";
+
+.table{ 
+  margin-top: 50px;
+  border: 1px solid sirGray;
+}
+
+.tableHeader span{
+  font-weight: 700;
+}
