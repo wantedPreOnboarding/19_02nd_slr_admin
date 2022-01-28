@@ -37,6 +37,7 @@ export default function BasicInfo() {
                       category={category.category}
                       checked={category.checked}
                       onChange={() => toggleCheckState(category)}
+                      name="basicInfo-category"
                     >
                       {withCurlyBraces(category.category)}
                     </CheckBox>
@@ -71,6 +72,7 @@ export default function BasicInfo() {
       <TableRow className={styles.removePadding} label="상품명 *">
         <div className={styles.productName}>
           <A11yInput
+            name="basicInfo-prodName"
             label="상품명"
             className={styles.a11yInput}
             placeholder="상품명을 입력해 주세요."
@@ -81,6 +83,7 @@ export default function BasicInfo() {
       </TableRow>
       <TableRow label="상품 구성 소개 정보*">
         <A11yInput
+          name="basicInfo-packageInfo"
           label="상품 구성 소개 정보"
           className=""
           placeholder="상품 구성 소개 정보를 입력해 주세요."

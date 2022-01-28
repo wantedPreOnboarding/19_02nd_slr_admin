@@ -19,7 +19,7 @@ export default function A11yInput({
   return (
     <>
       {islabel && (
-        <label className={classNames(commonStyles.a11yHidden)} htmlFor={id} name={name} type={type}>
+        <label className={classNames(commonStyles.a11yHidden)} htmlFor={id} type={type}>
           {label}
         </label>
       )}
@@ -31,6 +31,7 @@ export default function A11yInput({
         onBlur={onBlurHandler}
         onChange={onChangeHandler}
         value={value}
+        name={name}
       />
     </>
   );

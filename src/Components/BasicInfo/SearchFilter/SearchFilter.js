@@ -62,7 +62,7 @@ export default function SearchFilter() {
       <label htmlFor="searchFilter" className={style.searchBtn} value={clickedFilterTags}>
         검색
       </label>
-      <input className={commonStyles.a11yHidden}></input>
+      <input className={commonStyles.a11yHidden} name="basicInfo-filter"></input>
       {isOpenSearch && (
         <Card className={style.searchWindow} ref={searchWindowRef}>
           {sortTagsFromSearch().map(tag => (
