@@ -1,0 +1,47 @@
+@value sirBorderRadiusM, sirDPurple, sirGray ,m from 'styles/theme.css';
+
+.searchBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 43px;
+  width: 90px;
+  height: 45px;
+  border: 1px solid sirDPurple;
+  border-radius: sirBorderRadiusM;
+  background-color: #fff;
+  font-size: inherit;
+  transform: translate3D(-20px, -50%, 0);
+}
+
+.searchWindow {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  right: 10px;
+  height: 200px;
+  background-color: #fff;
+  z-index: 1;
+  border: 2px solid sirGray;
+  box-shadow: 4px 4px 9px -2px;
+  transition: all ease 1s;
+  > button {
+    margin-right: 10px;
+  }
+}
+
+:global(.active) {
+  border: 2px solid sirDPurple;
+}
+
+.clickedFilter {
+  padding: 10px;
+}
+
+.clickedFilter button {
+  margin-right: 10px;
+}
