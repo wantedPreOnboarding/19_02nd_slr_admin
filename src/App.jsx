@@ -18,15 +18,6 @@ const App = () => {
           <Grid item>
             <BasicInfo />
           </Grid>
-        </Grid>
-        <Grid className={styles.menu} item>
-          <nav>
-            <ul>
-              <li>Menu Area</li>
-            </ul>
-          </nav>
-        </Grid>
-        <Grid className={classNames(styles.gridCenter, styles.gridContents)} container>
           <Grid item>
             <ProductOption />
           </Grid>
