@@ -16,8 +16,24 @@ const ProductOption = () => {
       </TableHeader>
       <TableRow className={styles.innerTable}>
         <button className={styles.delete}>삭제</button>
+    
         <div className={styles.innerSection}>
-          <form className={styles.form}>
+               <ProductOptionForm addOption="image"/>
+         
+          <ProductOptionForm />
+          <ProductOptionForm addOption="add" />
+
+          <button className={`${styles.addBtn} ${styles.longWidth}`}>
+            <i className="fas fa-plus"></i> 옵션 추가
+          </button>
+        </div>
+      </TableRow>
+    </Table>
+  );
+};
+
+export default ProductOption;
+ <form className={styles.form}>
             <button className={styles.addBtn}>
               <label htmlFor="imageInput">
                 <i className="fas fa-plus"></i>이미지 첨부
@@ -31,16 +47,3 @@ const ProductOption = () => {
               accept="image/*"
             ></input>
           </form>
-          <ProductOptionForm />
-          <ProductOptionForm addOption="true" />
-
-          <button className={`${styles.addBtn} ${styles.longWidth}`}>
-            <i className="fas fa-plus"></i> 옵션 추가
-          </button>
-        </div>
-      </TableRow>
-    </Table>
-  );
-};
-
-export default ProductOption;

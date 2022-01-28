@@ -1,12 +1,16 @@
 import React from 'react';
-import { BasicInfo, Grid, ProductOption, ExposePeriod, ProductDelivery} from 'Components';
-import styles from './App.module.css';
+import {
+  BasicInfo,
+  Grid,
+  ProductOption,
+  ProductIntroImg,
+  BuyerRecommendImg,
+  ExposePeriod,
+  ProductDelivery,
+  ToggleBtn,
+} from 'Components';
 import { classNames } from 'utils';
-import { BasicInfo, Grid, ProductOption } from 'Components';
-import ProductOption from 'Components/ProductOption/ProductOption';
-import ProductIntroImg from 'Components/ProductIntroImg/ProductIntroImg';
-import BuyerRecommendImg from 'Components/BuyerRecommendImg/BuyerRecommendImg';
-
+import styles from './App.module.css';
 
 const App = () => {
   return (
@@ -31,14 +35,16 @@ const App = () => {
           </Grid>
           <Grid item>
             <ProductDelivery />
-          <Grid item container>
-            <ProductIntroImg />
-          </Grid>
-          <Grid item container>
-            <BuyerRecommendImg />
+            <Grid item container>
+              <ProductIntroImg />
+            </Grid>
+            <Grid item container>
+              <BuyerRecommendImg />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
+      <ToggleBtn />
     </main>
   );
 };
