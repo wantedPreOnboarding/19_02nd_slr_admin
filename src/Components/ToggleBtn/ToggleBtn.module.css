@@ -1,10 +1,11 @@
-@value sirDPurple, sirPurple, sirLGray, sirGray, sirDgray, sirRed, sirShadow from "styles/theme.css";
+@value sirBlue, sirLPurple,sirPurple, sirShadow from "styles/theme.css";
 
 .switchBtn {
   position: relative;
   display: inline-block;
-  width: 55px;
-  height: 20px;
+  width: 48px;
+  height: 18px;
+  margin: 3px 0px;
 }
 .switchBtn input {
   opacity: 0;
@@ -19,26 +20,26 @@
   right: 0;
   bottom: 0;
   border-radius: 20px;
-  background-color: #ccc;
+  background-color: #9f9f9f;
   transition: 0.4s;
 }
 .onOffSwitch:before {
   position: absolute;
   content: '';
-  height: 25px;
-  width: 25px;
-  left: 2px;
+  height: 23px;
+  width: 23px;
+  left: 0px;
   bottom: -2px;
   background-color: white;
+  box-shadow: 3px 3px 5px 0px rgba(66, 66, 66, 1);
   transition: 0.4s;
   border-radius: 20px;
 }
-.onOffSwitch:checked {
-  background-color: sirDPurple;
-}
+
 .switchBtn input:checked + .onOffSwitch {
-  background-color: sirPurple;
+  background-color: sirLPurple;
 }
 .switchBtn input:checked + .onOffSwitch:before {
-  transform: translateX(26px);
+  transform: translateX(24px);
+  background-color: sirBlue;
 }

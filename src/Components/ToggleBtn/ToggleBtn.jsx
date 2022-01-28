@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './ToggleBtn.module.css';
-export default function ToggleBtn() {
+const ToggleBtn = () => {
   return (
-    <label class={styles.switchBtn}>
-      <input type="checkbox" /> <span class={styles.onOffSwitch}></span>
+    <label for="toggleBtn" class={styles.switchBtn}>
+      <input id="toggleBtn" type="checkbox" /> <span class={styles.onOffSwitch}></span>
     </label>
   );
-}
+};
+export default ToggleBtn;
