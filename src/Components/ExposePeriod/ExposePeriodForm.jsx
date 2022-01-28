@@ -54,9 +54,9 @@ const ExposePeriodForm = ({name}) => {
                         ))
                     }
                     <li className={styles.li}>
-                        <FormDatePicker name="expose" changeHandler={handleStartDate} />
+                        <FormDatePicker name="expose" dateType="time" changeHandler={handleStartDate} />
                         <span> ~ </span>
-                        <FormDatePicker name="sales" changeHandler={handleEndDate} /> 
+                        <FormDatePicker name="sales" dateType="time" changeHandler={handleEndDate} /> 
                     </li>
                 </ul>
             </form>
