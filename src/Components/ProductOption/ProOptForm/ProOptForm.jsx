@@ -43,7 +43,6 @@ const ProOptForm = ({ addOption, delOption, id }) => {
         imageSrc && ${styles.marginChange}
       `}
             >
-              {' '}
               + 이미지 첨부
             </label>
             <input
