@@ -17,6 +17,10 @@ export default function BasicInfo() {
     setCheckedCategories(newState);
   };
 
+  const checkedCategories = () => {
+    return categories.filter(({ checked }) => checked);
+  };
+
   return (
     <Table className="">
       <TableHeader>상품 기본 정보</TableHeader>
@@ -43,18 +47,19 @@ export default function BasicInfo() {
           <Grid size={5} item>
             <Card>
               <ul className={styles.checkedCategories}>
-                {categories
-                  .filter(({ checked }) => checked)
-                  .map(category => {
-                    return (
-                      <li key={category.id}>
-                        <Button onClick={() => toggleCheckState(category)}>
-                          {withCurlyBraces(category.category)} X
-                        </Button>
-                      </li>
-                    );
-                  })}
+                {checkedCategories().map(category => {
+                  return (
+                    <li key={category.id}>
+                      <Button onClick={() => toggleCheckState(category)}>
+                        {withCurlyBraces(category.category)} X
+                      </Button>
+                    </li>
+                  );
+                })}
               </ul>
+              {checkedCategories().length === 0 && (
+                <span class={styles.message}>카테고리를 지정해 주세요.</span>
+              )}
             </Card>
           </Grid>
         </Grid>
