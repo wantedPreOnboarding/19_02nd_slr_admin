@@ -16,10 +16,10 @@ const ProductOption = () => {
       </TableHeader>
       <TableRow className={styles.innerTable}>
         <button className={styles.delete}>삭제</button>
-    
+
         <div className={styles.innerSection}>
-               <ProductOptionForm addOption="image"/>
-         
+          <ProductOptionForm addOption="image" />
+
           <ProductOptionForm />
           <ProductOptionForm addOption="add" />
 
@@ -33,17 +33,3 @@ const ProductOption = () => {
 };
 
 export default ProductOption;
- <form className={styles.form}>
-            <button className={styles.addBtn}>
-              <label htmlFor="imageInput">
-                <i className="fas fa-plus"></i>이미지 첨부
-              </label>
-            </button>
-            <input
-              type="file"
-              className={styles.imageInput}
-              name="imageInput"
-              id="imageInput"
-              accept="image/*"
-            ></input>
-          </form>
