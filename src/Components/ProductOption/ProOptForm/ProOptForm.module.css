@@ -1,4 +1,4 @@
-@value sirDPurple, sirGray from "styles/theme.css";
+@value sirDPurple, sirGray,sirRed from "styles/theme.css";
 
 button {
   cursor: pointer;
