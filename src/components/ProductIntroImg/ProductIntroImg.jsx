@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Table, TableHeader, TableRow } from 'Components';
 import styles from './ProductIntroImg.module.css';
 
 const ProductIntroImg = () => {
+  const [fileList, setFileList] = useState([]);
+
+  const handleFileUpload = (event) => {
+    const { files } = event.target;
+    setFileList((list) => [...list, files[0].name]);
+  }
+
+  useEffect(() => {
+    console.log(`🚀 → fileList`, fileList);
+  }, [fileList])
+
   return (
-    <article className={styles.article}>
-      <h2 className={styles.title}>상품 소개 이미지</h2>
-      <div className={styles.file}>
+    <Table className={styles.table}>
+      <TableHeader className={styles.tableHeader}>
+        <span>상품 소개 이미지</span>
+      </TableHeader>
+      <TableRow className={styles.tableRowFile}>
         <label htmlFor='file'>+ 이미지 추가</label>
-        <input type='file' id='file' accept='image/*' />
-      </div>
-    </article>
+        <input type='file' id='file' accept='image/*' onChange={handleFileUpload} />
+      </TableRow>
+    </Table>
   );
 };
 
