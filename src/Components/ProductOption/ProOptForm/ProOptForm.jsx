@@ -13,13 +13,49 @@ const ProOptForm = ({ addOption, delOption, id }) => {
     setOptionNum(optionNum - 1);
     setOptionPro(optionPro.filter(i => i !== proId));
   };
+  const [imageSrc, setImageSrc] = useState();
+
+  const readImage = input => {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        setImageSrc(e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  };
 
   return (
-    <div className={`${styles.form} ${addOption === 'image' && styles.imageForm}`}>
+    <div
+      className={`${styles.form} ${addOption === 'image' && styles.imageForm} ${
+        imageSrc && styles.sizeChange
+      }`}
+    >
       {addOption === 'image' ? (
         <section className={styles.imageInput}>
-          <label htmlFor="imageInput"> + 이미지 첨부</label>
-          <input type="file" name="imageInput" id="imageInput" accept="image/*" />
+          {imageSrc && (
+            <img alt="imageInput" id="imageInput" src={imageSrc} className={styles.imageSize} />
+          )}
+          <div>
+            <label
+              htmlFor="imageInput"
+              className={`
+        imageSrc && ${styles.marginChange}
+      `}
+            >
+              {' '}
+              + 이미지 첨부
+            </label>
+            <input
+              type="file"
+              name="imageInput"
+              id="imageInput"
+              accept="image/*"
+              onChange={e => {
+                readImage(e.target);
+              }}
+            />
+          </div>
         </section>
       ) : (
         <>

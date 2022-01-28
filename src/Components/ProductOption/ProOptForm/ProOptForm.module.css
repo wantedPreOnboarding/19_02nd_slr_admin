@@ -18,6 +18,7 @@ button {
 .imageInput {
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: sirGray;
@@ -153,4 +154,17 @@ button {
 
 .bigBtn {
   height: 45px;
+}
+
+.imageSize {
+  width: 320px;
+  height: 200px;
+}
+
+.sizeChange {
+  height: 260px;
+}
+
+.marginChange {
+  margin-top: 10px;
 }
