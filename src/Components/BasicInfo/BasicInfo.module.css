@@ -1,3 +1,3 @@
-.basicInfo {
-  padding: 30px;
+.categories li:not(:last-child) {
+  padding-bottom: 1.5rem;
 }

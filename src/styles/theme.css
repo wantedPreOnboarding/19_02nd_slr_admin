@@ -10,6 +10,10 @@
 
 /* units */
 @value sirTablePd: 1.35rem;
+@value sirBorderRadiusM: 5px;
 
 /* break point */
 @value desktop: 1105px;
+
+/* font */
+@value m: 20px;
