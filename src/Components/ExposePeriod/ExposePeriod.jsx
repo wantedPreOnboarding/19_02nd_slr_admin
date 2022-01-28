@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import {PERIOD_SELECT} from 'Components/ExposePeriod/PeriodData';
+import React from 'react';
+import {PERIOD_SELECT} from './PeriodData';
 import ExposePeriodForm from './ExposePeriodForm';
-import styles from 'Components/ExposePeriod/ExposePeriod.module.css';
+import styles from './ExposePeriod.module.css';
 
 const ExposePeriod = () => {
 

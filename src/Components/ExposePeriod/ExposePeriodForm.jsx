@@ -6,7 +6,6 @@ const ExposePeriodForm = ({name}) => {
     const PROPS_NAME = name;
     console.log('name',name);
 
-
     const [period, setPeriod] = useState('unlimit');
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');

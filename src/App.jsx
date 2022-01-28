@@ -1,6 +1,5 @@
-import ExposePeriod from 'Components/ExposePeriod/ExposePeriod';
 import React from 'react';
-import { BasicInfo, Grid, ProductOption } from 'Components';
+import { BasicInfo, Grid, ProductOption, ExposePeriod} from 'Components';
 import styles from './App.module.css';
 import { classNames } from 'utils';
 
@@ -16,6 +15,9 @@ const App = () => {
           </nav>
         </Grid>
         <Grid className={classNames(styles.gridContents)} container center>
+          <Grid item>
+            <ExposePeriod />
+          </Grid>
           <Grid item>
             <BasicInfo />
           </Grid>
