@@ -1,0 +1,28 @@
+.article{
+  padding: 10px 0;
+  border: 1px solid #d3d3d3;
+}
+
+.title{
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.file label{
+  display: block;
+  width: 200px;
+  padding: 10px 0;
+  border: 1px solid #483D8B;
+  color: #4d4d4d;
+  text-align: center;
+}
+
+.file input[type='file']{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
