@@ -14,7 +14,7 @@ const App = () => {
             </ul>
           </nav>
         </Grid>
-        <Grid className={classNames(styles.gridContents)} container center>
+        <Grid className={classNames(styles.gridContents)} container center space={20}>
           <Grid item>
             <BasicInfo />
           </Grid>
