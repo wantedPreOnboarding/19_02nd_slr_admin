@@ -1,19 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TableRow, ProOptForm } from 'Components';
 import styles from 'Components/ProductOption/ProOptSet/ProOptSet.module.css';
 
-const ProOptSet = () => {
+const ProOptSet = ({ id, delOptionSet }) => {
+  const [optionNum, setOptionNum] = useState(1);
+  const [optionList, setOptionList] = useState([1]);
+
+  const addOption = () => {
+    setOptionNum(optionNum + 1);
+    setOptionList([...optionList, optionNum + 1]);
+  };
+  const delOption = id => {
+    setOptionNum(optionNum - 1);
+    setOptionList(optionList.filter(i => i !== id));
+  };
+
   return (
     <TableRow className={styles.innerTable}>
-      <button type="button" className={styles.delete}>
+      <button
+        type="button"
+        className={styles.delete}
+        onClick={() => {
+          delOptionSet(id);
+        }}
+      >
         삭제
       </button>
 
       <div className={styles.innerSection}>
         <ProOptForm addOption="image" />
-        <ProOptForm />
-        <ProOptForm addOption="add" />
-        <button type="button" className={`${styles.addBtn} ${styles.longWidth}`}>
+
+        {optionList &&
+          optionList.map(a => {
+            return <ProOptForm key={a} id={a} delOption={delOption} />;
+          })}
+
+        <button
+          type="button"
+          className={`${styles.addBtn} ${styles.longWidth}`}
+          onClick={addOption}
+        >
           <i className="fas fa-plus"></i> 옵션 추가
         </button>
       </div>

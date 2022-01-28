@@ -1,7 +1,9 @@
-@value sirDPurple, sirPurple, sirLGray, sirGray, sirDGray, sirRed, sirShadow from "styles/theme.css";
+@value sirDPurple, sirGray from "styles/theme.css";
+
 button {
   cursor: pointer;
 }
+
 .form {
   border-radius: 3px;
   height: auto;
@@ -16,6 +18,7 @@ button {
 .imageInput {
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: sirGray;
@@ -109,6 +112,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 .addOptSection input {
   font-size: 15px;
@@ -150,4 +154,17 @@ button {
 
 .bigBtn {
   height: 45px;
+}
+
+.imageSize {
+  width: 320px;
+  height: 200px;
+}
+
+.sizeChange {
+  height: 260px;
+}
+
+.marginChange {
+  margin-top: 10px;
 }
