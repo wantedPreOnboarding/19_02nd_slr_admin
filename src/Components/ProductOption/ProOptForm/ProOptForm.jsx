@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from 'Components/ProductOption/ProOptForm/ProOptForm.module.css';
 const ProOptForm = ({ addOption, delOption, id }) => {
   const [optionNum, setOptionNum] = useState(0);
   const [optionPro, setOptionPro] = useState('');
+  const [normalPrice, setNormalPrice] = useState('');
+  const [sellingPrice, setSellingPrice] = useState('');
+  const [discountRatio, setDiscountRatio] = useState('');
+  const [imageSrc, setImageSrc] = useState();
 
   const addOptionPro = () => {
     setOptionNum(optionNum + 1);
@@ -13,7 +17,6 @@ const ProOptForm = ({ addOption, delOption, id }) => {
     setOptionNum(optionNum - 1);
     setOptionPro(optionPro.filter(i => i !== proId));
   };
-  const [imageSrc, setImageSrc] = useState();
 
   const readImage = input => {
     if (input.files && input.files[0]) {
@@ -23,6 +26,21 @@ const ProOptForm = ({ addOption, delOption, id }) => {
       };
       reader.readAsDataURL(input.files[0]);
     }
+  };
+  const changeDiscountRatio = (normal, selling) => {
+    setDiscountRatio(
+      (1 - selling / normal) * 100 > 0
+        ? ((1 - selling / normal) * 100).toFixed(2) + '%'
+        : '할인율없음'
+    );
+  };
+  const changeNormalPrice = e => {
+    setNormalPrice(e.target.value);
+    changeDiscountRatio(e.target.value, sellingPrice);
+  };
+  const changeSellingPrice = e => {
+    setSellingPrice(e.target.value);
+    changeDiscountRatio(normalPrice, e.target.value);
   };
 
   return (
@@ -47,7 +65,7 @@ const ProOptForm = ({ addOption, delOption, id }) => {
             </label>
             <input
               type="file"
-              name="imageInput"
+              name="proOpt-image"
               id="imageInput"
               accept="image/*"
               onChange={e => {
@@ -66,18 +84,36 @@ const ProOptForm = ({ addOption, delOption, id }) => {
           <section className={styles.formWrap}>
             <input
               type="text"
+              name="proOpt-optionName"
               className={styles.option}
               placeholder="옵션명을 입력해 주세요. (필수)"
             />
             <section className={styles.priceWrap}>
-              <input type="text" className={styles.price} placeholder="상품 정상가(필수)" />
+              <input
+                name="proOpt-proNormalPrice"
+                type="number"
+                className={styles.price}
+                placeholder="상품 정상가(필수)"
+                onChange={changeNormalPrice}
+              />
               <span>원</span>
-              <span>{`{{할인율}}%`}</span>
-              <input type="text" className={styles.price} placeholder="상품 판매가(필수)" />
+              {discountRatio && <span>{discountRatio}</span>}
+              <input
+                name="proOpt-proSellingPrice"
+                type="number"
+                className={styles.price}
+                placeholder="상품 판매가(필수)"
+                onChange={changeSellingPrice}
+              />
               <span>원</span>
-              <input type="text" className={styles.stock} placeholder="재고 (필수)" />
+              <input
+                name="proOpt-stock"
+                type="text"
+                className={styles.stock}
+                placeholder="재고 (필수)"
+              />
               <span>개</span>
-              <select name="taxs" className={styles.select}>
+              <select name="proOpt-taxs" className={styles.select}>
                 <option value="taxFree">비과세</option>
                 <option value="tax">과세</option>
               </select>
@@ -88,11 +124,13 @@ const ProOptForm = ({ addOption, delOption, id }) => {
                   <section className={styles.addOptSection} key={a} id={a}>
                     <div className={styles.buttonBox} />
                     <input
+                      name="proOpt-addOptionName"
                       type="text"
                       className={styles.addOptionName}
                       placeholder="추가 옵션명 (필수)"
                     />
                     <input
+                      name="proOpt-addOptionPrice"
                       type="text"
                       className={styles.addOptionPrice}
                       placeholder="추가 옵션 정상가 (필수)"
