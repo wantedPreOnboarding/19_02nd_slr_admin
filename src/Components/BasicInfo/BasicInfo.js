@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckBox, Table, TableHeader, TableRow } from 'Components';
 import styles from './BasicInfo.module.css';
-import { categories } from 'data/basicInfo';
+import { categories as originCategory } from 'data/basicInfo';
 import Card from './Card/Card';
 import Grid from 'Components/Grid/Grid';
 
 export default function BasicInfo() {
-  const data = categories;
+  const [categories, setCheckedCategories] = useState([...originCategory]);
+
+  const toggleCheckState = category => {
+    const newState = [...categories];
+    let id = categories.findIndex(({ id }) => id === category.id);
+    newState[id].checked = !category.checked;
+    setCheckedCategories(newState);
+  };
 
   return (
     <Table className="">
@@ -16,8 +23,15 @@ export default function BasicInfo() {
           <Grid size={7} item>
             <Card>
               <ul className={styles.categories}>
-                {data.map(({ id, category, checked }) => {
-                  return <CheckBox key={id} category={category} checked={checked} />;
+                {categories.map(category => {
+                  return (
+                    <CheckBox
+                      key={category.id}
+                      category={category.category}
+                      checked={category.checked}
+                      onChange={() => toggleCheckState(category)}
+                    />
+                  );
                 })}
               </ul>
             </Card>
@@ -25,9 +39,11 @@ export default function BasicInfo() {
           <Grid size={5} item>
             <Card>
               <ul className={styles.categories}>
-                {data.map(({ id, category, checked }) => {
-                  return <CheckBox key={id} category={category} checked={checked} />;
-                })}
+                {categories
+                  .filter(({ checked }) => checked)
+                  .map(({ id, category, checked }) => {
+                    return <CheckBox key={id} category={category} checked={checked} />;
+                  })}
               </ul>
             </Card>
           </Grid>
