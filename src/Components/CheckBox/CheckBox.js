@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './CheckBox.module.css';
+import commonStyles from 'styles/index.module.css';
 import { classNames } from 'utils';
 import { ReactComponent as Checked } from './assets/checked.svg';
 
@@ -8,6 +9,7 @@ export default function CheckBox({ category, checked }) {
   return (
     <li>
       <input
+        className={commonStyles.a11yHidden}
         type="checkbox"
         id={category}
         name={category}
