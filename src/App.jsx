@@ -44,7 +44,6 @@ const App = () => {
           </Grid>
         </Grid>
       </Grid>
-      <ToggleBtn />
     </main>
   );
 };
