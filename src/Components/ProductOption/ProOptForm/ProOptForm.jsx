@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from 'Components/ProductOptionForm/ProductOptionForm.module.css';
-const ProductOptionForm = ({ addOption }) => {
+import styles from 'Components/ProductOption/ProOptForm/ProOptForm.module.css';
+const ProOptForm = ({ addOption }) => {
   return (
     <form className={`${styles.form} ${addOption === 'image' && styles.imageForm}`}>
       {addOption === 'image' ? (
@@ -64,4 +64,4 @@ const ProductOptionForm = ({ addOption }) => {
   );
 };
 
-export default ProductOptionForm;
+export default ProOptForm;

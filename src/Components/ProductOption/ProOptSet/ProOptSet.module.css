@@ -1,4 +1,4 @@
-@value sirDPurple, sirPurple, sirLGray, sirGray, sirDgray, sirRed, sirShadow from "styles/theme.css";
+@value sirDPurple, sirGray, sirRed from "styles/theme.css";
 
 * {
   box-sizing: border-box;
@@ -6,17 +6,6 @@
 
 button {
   cursor: pointer;
-}
-
-.headSection {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 0px;
-}
-
-.headSection span:last-child {
-  color: sirDPurple;
 }
 
 .addBtn {
@@ -28,10 +17,6 @@ button {
   cursor: pointer;
   font-size: 15px;
   font-weight: 700;
-}
-
-.addBtn label {
-  cursor: pointer;
 }
 
 .addBtn i {
