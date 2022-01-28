@@ -8,7 +8,6 @@ import BuyerRecommendImg from './Components/BuyerRecommendImg/BuyerRecommendImg'
 const App = () => {
   return (
     <main className={styles.main}>
-      {/* conaiter */}
       <Grid container center>
         <Grid className={styles.menu} item>
           <nav>
