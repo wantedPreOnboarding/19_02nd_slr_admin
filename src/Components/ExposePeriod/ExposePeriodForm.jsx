@@ -7,8 +7,8 @@ const ExposePeriodForm = ({name}) => {
     const PROPS_NAME = name;
 
     const [period, setPeriod] = useState('unlimit');
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+    const [startDate, setStartDate] = useState();
+    const [endDate, setEndDate] = useState();
 
     const handleSelect = useCallback((event) => {
         setPeriod(event.target.value);
@@ -21,6 +21,11 @@ const ExposePeriodForm = ({name}) => {
     const handleEndDate = (date) => {
         setEndDate(date);
     }
+
+    useEffect(() => {
+        endDate < startDate && setPeriod('unexpose');
+        startDate < new Date() && setPeriod('unexpose')
+    }, [endDate, startDate]);
 
     return(
         <>
@@ -51,7 +56,7 @@ const ExposePeriodForm = ({name}) => {
                     <li className={styles.li}>
                         <FormDatePicker changeHandler={handleStartDate} />
                         <span> ~ </span>
-                        <FormDatePicker changeHandler={handleStartDate} /> 
+                        <FormDatePicker changeHandler={handleEndDate} /> 
                     </li>
                 </ul>
             </form>
