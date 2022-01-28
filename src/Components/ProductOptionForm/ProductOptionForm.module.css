@@ -1,8 +1,0 @@
-@value sirDPurple, sirPurple, sirLGray, sirGray, sirDgray, sirRed, sirShadow from "styles/theme.css";
-
-.form {
-  border-radius: 3px;
-  height: 250px;
-  border: 1.5px solid sirGray;
-  margin-top: 15px;
-}
