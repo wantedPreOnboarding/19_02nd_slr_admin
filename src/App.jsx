@@ -4,6 +4,7 @@ import {
   Grid,
   ProductOption,
   ProductIntroImg,
+  ProductIntroNotice,
   BuyerRecommendImg,
   ExposePeriod,
   ProductDelivery,
@@ -47,6 +48,9 @@ const App = () => {
           </Grid>
           <Grid item>
             <MileageEtc headTitle="기타 설정" menuTitle="감사카드 제공" />
+          </Grid>
+          <Grid item>
+            <ProductIntroNotice />
           </Grid>
         </Grid>
       </Grid>

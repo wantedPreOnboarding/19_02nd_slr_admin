@@ -1,0 +1,95 @@
+@value sirDPurple, sirGray,sirLGray,sirBorderRadiusM ,sirDgray, sirTableBorderColor from "styles/theme.css";
+
+.grid {
+  border: 1px solid sirTableBorderColor;
+}
+
+.gridTitle {
+  padding: 10px 0;
+  border-bottom: 1px solid sirTableBorderColor;
+  background: #fff;
+}
+
+.gridInnerColor {
+  padding: 20px;
+  background: sirLGray;
+}
+
+.gridInner {
+  padding: 14px 20px;
+  background: #fff;
+}
+
+.box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.deleteBtn {
+  padding: 5px 10px;
+  border: 1px solid sirTableBorderColor;
+  border-radius: sirBorderRadiusM;
+  color: #838383;
+  background: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type='text'] {
+  width: 100%;
+  margin-bottom: 7px;
+  padding: 10px 5px;
+  border: 1px solid sirTableBorderColor;
+  border-radius: sirBorderRadiusM;
+  cursor: pointer;
+}
+
+input[type='text']:first-of-type {
+  margin-top: 15px;
+}
+
+.grids {
+  margin-right: 10px;
+}
+
+.inputTitle {
+  display: flex;
+  align-items: center;
+  color: sirDgray;
+  font-weight: 600;
+}
+
+.deleteRedBtn {
+  width: 100%;
+  padding: 10px 5px;
+  border: 1px solid sirTableBorderColor;
+  border-radius: sirBorderRadiusM;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+}
+
+.addBtn {
+  width: 100%;
+  padding: 10px 0;
+  border: 2px solid sirDPurple;
+  font-size: 18px;
+  font-weight: 700;
+  color: sirDPurple;
+  cursor: pointer;
+}
+
+.plusBtn {
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid sirTableBorderColor;
+  border-radius: sirBorderRadiusM;
+  outline: 0;
+  background: transparent;
+  font-size: 17px;
+  font-weight: 700;
+  color: sirDPurple;
+  cursor: pointer;
+}
