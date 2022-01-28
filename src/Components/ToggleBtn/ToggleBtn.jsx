@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ToggleBtn.module.css';
 const ToggleBtn = ({ menuTitle, changeHandler }) => {
   return (
-    <label for={menuTitle} class={styles.switchBtn}>
+    <label htmlFor={menuTitle} class={styles.switchBtn}>
       <input id={menuTitle} type="checkbox" onChange={e => changeHandler(e.target.checked)} />
       <span class={styles.onOffSwitch}></span>
     </label>
