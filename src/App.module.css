@@ -1,0 +1,32 @@
+@value desktop from 'styles/theme.css';
+@value menuWidth: 213px;
+
+.main {
+  max-width: desktop;
+  margin: 0 auto;
+}
+
+.menu {
+  width: menuWidth;
+  flex-basis: menuWidth;
+}
+
+.gridContents {
+  width: calc(100% - menuWidth);
+  flex-basis: calc(100% - menuWidth);
+}
+
+.gridCenter {
+  justify-content: center;
+}
+
+@media screen and (max-width: desktop) {
+  .menu {
+    display: none;
+  }
+
+  .gridContents {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
