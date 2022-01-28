@@ -7,3 +7,4 @@ export { default as ProductOptionForm } from './ProductOptionForm/ProductOptionF
 export { default as ProductOption } from './ProductOption/ProductOption';
 export { default as CheckBox } from './CheckBox/CheckBox';
 export { default as ExposePeriod } from './ExposePeriod/ExposePeriod'
+export { default as ProductDelivery } from './ProductDelivery/ProductDelivery'

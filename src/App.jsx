@@ -1,5 +1,5 @@
 import React from 'react';
-import { BasicInfo, Grid, ProductOption, ExposePeriod} from 'Components';
+import { BasicInfo, Grid, ProductOption, ExposePeriod, ProductDelivery} from 'Components';
 import styles from './App.module.css';
 import { classNames } from 'utils';
 
@@ -23,6 +23,9 @@ const App = () => {
           </Grid>
           <Grid item>
             <ProductOption />
+          </Grid>
+          <Grid item>
+            <ProductDelivery />
           </Grid>
         </Grid>
       </Grid>

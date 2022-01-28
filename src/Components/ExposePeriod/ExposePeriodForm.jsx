@@ -4,7 +4,6 @@ import styles from 'Components/ExposePeriod/ExposePeriod.module.css';
 
 const ExposePeriodForm = ({name}) => {
     const PROPS_NAME = name;
-    console.log('name',name);
 
     const [period, setPeriod] = useState('unlimit');
     const [startDate, setStartDate] = useState('');
@@ -30,16 +29,16 @@ const ExposePeriodForm = ({name}) => {
         }
     },[endDate, startDate, period]);
 
-    useEffect(() => {
-        console.log(PROPS_NAME,'period', period);
-        console.log(PROPS_NAME,'startDate', startDate);
-        console.log(PROPS_NAME,'endDate', endDate);
-    }, [endDate, startDate, period])
+    // useEffect(() => {
+    //     console.log(PROPS_NAME,'period', period);
+    //     console.log(PROPS_NAME,'startDate', startDate);
+    //     console.log(PROPS_NAME,'endDate', endDate);
+    // }, [endDate, startDate, period]);
 
     return(
         <>
         <div>
-            <form>
+            <form className={styles.form}>
                 <ul className={styles.ui}>
                     {
                         PERIOD_SELECT.map((data) => (
