@@ -1,3 +1,5 @@
+@value sirGray from "styles/theme.css";
+
 .selectDate {
   display: inline-block;
   width: 230px;
@@ -11,12 +13,19 @@
   position: absolute;
   top: 30px;
   right: 15px;
-  color: #e3e3e3;
+  color: sirGray;
 }
 
 .datePickerWrapper {
   display: inline-block;
   position: relative;
   width: 200px;
+  height: 30px;
+}
+
+.miniWrapper {
+  display: inline-block;
+  position: relative;
+  width: 130px;
   height: 30px;
 }

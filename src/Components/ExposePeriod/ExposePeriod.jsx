@@ -4,7 +4,6 @@ import ExposePeriodForm from './ExposePeriodForm';
 import { PERIOD_SELECT } from './PeriodData';
 import styles from './ExposePeriod.module.css';
 
-
 const ExposePeriod = () => {
   return (
     <Table className="">

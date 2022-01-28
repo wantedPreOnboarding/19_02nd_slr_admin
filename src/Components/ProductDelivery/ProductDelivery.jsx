@@ -7,7 +7,6 @@ const ProductDelivery = () => {
     const [visit, setVisit] = useState(false);
     const [preOrder, setPreOrder] = useState(false);
 
-
     useEffect(() => {
         preOrder && 
             setVisit(false);
@@ -34,6 +33,10 @@ const ProductDelivery = () => {
         
     return(
         <>
+            <form 
+  onSubmit={e => { e.preventDefault(); console.log(e.target); 
+  const data = new FormData(e.target); 
+  for (var [key, value] of data.entries()) { console.log(key, value); } }} >
         <Table>
             <TableHeader>상품 배송 설정</TableHeader>
             <TableRow label="사용자 배송일 출발일 지정" className={styles.productDelivery}>
@@ -49,7 +52,7 @@ const ProductDelivery = () => {
                         <Grid item className={styles.gridItem}>
                             <span className={styles.span}>주문시간</span>
                             <FormDatePicker name="delivery-orderStartTime" dateType="time" changeHandler={handleTime} />
-                            <span className={styles.normalSpan}> ~ </span>
+                            <span className={styles.tilde}> ~ </span>
                             <FormDatePicker name="delivery-orderEndTime" dateType="time" changeHandler={handleTime} />
                         </Grid>
                     </Grid>
@@ -64,6 +67,8 @@ const ProductDelivery = () => {
                 </Grid>
             </TableRow>
         </Table>
+        <button>123</button>
+        </form>
         </>
     );
 };

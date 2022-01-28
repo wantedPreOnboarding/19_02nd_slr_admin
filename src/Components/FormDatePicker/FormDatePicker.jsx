@@ -8,12 +8,12 @@ const FormDatePicker = ({changeHandler, name, dateType}) => {
   
   return (
     <>
-    <div className={styles.datePickerWrapper}>
+    <div className={dateType === "time" ? styles.datePickerWrapper : styles.miniWrapper}>
         <DatePicker 
         className={styles.selectDate}
         selected={ isDate }
-        dateFormat={dateType === "time" ? "  yyyy.MM.dd HH:mm" : "yyyy.MM.dd"}
-        placeholderText={dateType === "time" ? "  YYYY.MM.DD YY:MM" : "YYYY.MM.DD"}
+        dateFormat={dateType === "time" ? "  yyyy.MM.dd HH:mm" : "  yyyy.MM.dd"}
+        placeholderText={dateType === "time" ? "  YYYY.MM.DD YY:MM" : "  YYYY.MM.DD"}
         showTimeInput
         name={`${name}-date`}
         onChange={(date) => {
