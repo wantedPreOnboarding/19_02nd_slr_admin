@@ -3,9 +3,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./FormDatePicker.module.css";
 
-const FormDatePicker = ({changeHandler}) => {
+const FormDatePicker = ({changeHandler, name, dateType}) => {
   const [isDate, setIsDate] = useState(null);
-  const [message, setMessage] = useState(false);
   
   return (
     <>
@@ -15,10 +14,10 @@ const FormDatePicker = ({changeHandler}) => {
       <DatePicker 
       className={styles.selectDate}
       selected={ isDate }
-      showTimeSelect
-      dateFormat="yyyy.MM.dd HH:mm"
-      placeholderText="YYYY.MM.DD YY:MM"
-      timeInputLabel="Time:"
+      dateFormat={dateType === "time" ? "yyyy.MM.dd HH:mm" : "yyyy.MM.dd"}
+      placeholderText={dateType === "time" ? "YYYY.MM.DD YY:MM" : "YYYY.MM.DD"}
+      showTimeInput
+      name={`${name}-date`}
       onChange={(date) => {
         setIsDate(date)
         changeHandler(date)

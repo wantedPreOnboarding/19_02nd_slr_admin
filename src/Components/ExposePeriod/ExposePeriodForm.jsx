@@ -38,7 +38,7 @@ const ExposePeriodForm = ({name}) => {
                                 <input 
                                     className={styles.select} 
                                     type="radio" 
-                                    name="radioButton" 
+                                    name={`${PROPS_NAME}-radioButton`} 
                                     value={data.name}
                                     checked={period === data.name} 
                                     onChange={handleSelect}
@@ -54,9 +54,9 @@ const ExposePeriodForm = ({name}) => {
                         ))
                     }
                     <li className={styles.li}>
-                        <FormDatePicker changeHandler={handleStartDate} />
+                        <FormDatePicker name="expose" dateType="time" changeHandler={handleStartDate} />
                         <span> ~ </span>
-                        <FormDatePicker changeHandler={handleEndDate} /> 
+                        <FormDatePicker name="sales" dateType="time" changeHandler={handleEndDate} /> 
                     </li>
                 </ul>
             </form>
