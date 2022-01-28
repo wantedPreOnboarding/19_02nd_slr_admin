@@ -11,7 +11,9 @@ const ProductOptionForm = ({ addOption }) => {
       ) : (
         <>
           <section className={styles.delWrap}>
-            <button className={styles.delete}>삭제</button>
+            <button type="button" className={styles.delete}>
+              삭제
+            </button>
           </section>
           <section className={styles.formWrap}>
             <input
@@ -49,7 +51,7 @@ const ProductOptionForm = ({ addOption }) => {
                 <button className={`${styles.delete} ${styles.bigBtn}`}>삭제</button>
               </section>
             )}
-            <button className={styles.addOptBtn}>
+            <button type="button" className={styles.addOptBtn}>
               <span className={styles.addOptBtnSpan}>
                 <i className="fas fa-plus"></i>
               </span>

@@ -15,13 +15,15 @@ const ProductOption = () => {
         </button>
       </TableHeader>
       <TableRow className={styles.innerTable}>
-        <button className={styles.delete}>삭제</button>
+        <button type="button" className={styles.delete}>
+          삭제
+        </button>
 
         <div className={styles.innerSection}>
           <ProductOptionForm addOption="image" />
           <ProductOptionForm />
           <ProductOptionForm addOption="add" />
-          <button className={`${styles.addBtn} ${styles.longWidth}`}>
+          <button type="button" className={`${styles.addBtn} ${styles.longWidth}`}>
             <i className="fas fa-plus"></i> 옵션 추가
           </button>
         </div>
