@@ -1,39 +1,26 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {PERIOD_SELECT} from 'Components/ExposePeriod/PeriodData';
 import styles from 'Components/ExposePeriod/ExposePeriod.module.css';
+import FormDatePicker from 'Components/FormDatePicker/FormDatePicker';
 
 const ExposePeriodForm = ({name}) => {
     const PROPS_NAME = name;
 
     const [period, setPeriod] = useState('unlimit');
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
 
     const handleSelect = useCallback((event) => {
-        const {target} = event
-        switch (target.name) {
-            case 'radioButton':
-                setPeriod(target.value);
-                break;
-            case 'startDate':
-                // console.log('startDate', target.value);
-                setStartDate(target.value);
-                break;
-            case 'endDate':
-                // console.log('endDate', target.value);
-                setEndDate(target.value);
-                break;
-            default:
-                console.error('Select 오류가 발생했습니다.')
-                break;
-        }
-    },[endDate, startDate, period]);
+        setPeriod(event.target.value);
+    },[period]);
 
-    // useEffect(() => {
-    //     console.log(PROPS_NAME,'period', period);
-    //     console.log(PROPS_NAME,'startDate', startDate);
-    //     console.log(PROPS_NAME,'endDate', endDate);
-    // }, [endDate, startDate, period]);
+    const handleStartDate = (date) => {
+        setStartDate(date);
+    }
+
+    const handleEndDate = (date) => {
+        setEndDate(date);
+    }
 
     return(
         <>
@@ -62,19 +49,9 @@ const ExposePeriodForm = ({name}) => {
                         ))
                     }
                     <li className={styles.li}>
-                        <input 
-                            className={styles.inputTime} 
-                            type="datetime-local" 
-                            name="startDate" 
-                            onChange={handleSelect}
-                        />
+                        <FormDatePicker changeHandler={handleStartDate} />
                         <span> ~ </span>
-                        <input 
-                            className={styles.inputTime} 
-                            type="datetime-local" 
-                            name="endDate" 
-                            onChange={handleSelect}
-                        />
+                        <FormDatePicker changeHandler={handleStartDate} /> 
                     </li>
                 </ul>
             </form>
