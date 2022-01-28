@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { CheckBox, Table, TableHeader, TableRow } from 'Components';
-import styles from './BasicInfo.module.css';
-import { categories as originCategory } from 'data/basicInfo';
 import Card from './Card/Card';
 import Grid from 'Components/Grid/Grid';
 import Button from './Button/Button';
+import { categories as originCategory } from 'data/basicInfo';
 import { withCurlyBraces } from 'utils';
+import styles from './BasicInfo.module.css';
 
 export default function BasicInfo() {
   const [categories, setCheckedCategories] = useState([...originCategory]);
@@ -32,7 +32,9 @@ export default function BasicInfo() {
                       category={category.category}
                       checked={category.checked}
                       onChange={() => toggleCheckState(category)}
-                    />
+                    >
+                      {withCurlyBraces(category.category)}
+                    </CheckBox>
                   );
                 })}
               </ul>
@@ -40,12 +42,17 @@ export default function BasicInfo() {
           </Grid>
           <Grid size={5} item>
             <Card>
-              <ul className={styles.categories}>
+              <ul className={styles.checkedCategories}>
                 {categories
                   .filter(({ checked }) => checked)
-                  .map(({ id, category, checked }) => {
-                    // return <CheckBox key={id} category={category} checked={checked} />;
-                    return <Button>{withCurlyBraces(category)}</Button>;
+                  .map(category => {
+                    return (
+                      <li key={category.id}>
+                        <Button onClick={() => toggleCheckState(category)}>
+                          {withCurlyBraces(category.category)} X
+                        </Button>
+                      </li>
+                    );
                   })}
               </ul>
             </Card>

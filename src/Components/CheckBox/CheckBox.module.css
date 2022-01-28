@@ -4,14 +4,14 @@
   position: relative;
   font-size: m;
   font-weight: 400;
-  padding-left: 2.2rem;
+  padding-left: 3rem;
 }
 
 .label::before {
   font-family: 'Font Awesome 5 Free';
   content: '';
   position: absolute;
-  left: -14px;
+  left: 0px;
   bottom: -3px;
   width: 32px;
   height: 32px;
@@ -27,7 +27,7 @@
 
 :global(.check) {
   position: absolute;
-  left: -8px;
+  left: 6px;
   bottom: 1px;
   fill: white;
 }

@@ -1,0 +1,14 @@
+@value sirBorderRadiusM, sirDPurple, m from 'styles/theme.css';
+
+.button {
+  border-radius: sirBorderRadiusM;
+  border: solid 1px sirDPurple;
+  cursor: pointer;
+}
+
+.type1 {
+  max-width: 220px;
+  width: 100%;
+  height: 50px;
+  font-size: m;
+}

@@ -2,6 +2,14 @@
   white-space: nowrap;
 }
 
-.categories li:not(:last-child) {
-  padding-bottom: 1.5rem;
+.categories li:not(:first-child) {
+  padding-top: 1.5rem;
+}
+
+.categories li:first-child {
+  padding-top: 0.2rem;
+}
+
+.checkedCategories :not(:last-child) {
+  padding-bottom: 1rem;
 }
