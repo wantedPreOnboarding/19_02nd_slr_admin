@@ -3,12 +3,18 @@ import { Table, TableHeader, TableRow, ToggleBtn } from 'Components';
 import styles from 'Components/MileageEtc/MileageEtc.module.css';
 
 const MileageEtc = ({ headTitle, menuTitle }) => {
-  const mileageEtcHandler = useCallback(
+  const [value, setValue] = useState(false);
+
+  const changeHandler = useCallback(
     state => {
       localStorage.setItem(menuTitle === '마일리지 적립' ? 'mileage' : 'etc', state);
     },
     [menuTitle]
   );
+
+  useEffect(() => {
+    setValue(localStorage.getItem(menuTitle === '마일리지 적립' ? 'mileage' : 'etc'));
+  }, []);
 
   return (
     <Table className={styles.table}>
