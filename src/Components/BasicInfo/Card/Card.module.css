@@ -3,5 +3,9 @@
 .card {
   border-radius: sirBorderRadiusM;
   border: solid 2px sirGray;
-  padding: 30px;
+  padding: 25px 30px;
+  max-height: 375px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
 }
