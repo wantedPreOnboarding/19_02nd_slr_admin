@@ -4,9 +4,6 @@
   box-sizing: border-box;
 }
 
-.table {
-  margin-top: 50px;
-}
 .headSection {
   display: flex;
   justify-content: space-between;
