@@ -4,6 +4,7 @@ import styles from 'Components/MileageEtc/MileageEtc.module.css';
 
 const MileageEtc = ({ headTitle, menuTitle }) => {
   const [value, setValue] = useState(false);
+
   const changeHandler = useCallback(
     state => {
       localStorage.setItem(menuTitle === '마일리지 적립' ? 'mileage' : 'etc', state);
@@ -11,10 +12,9 @@ const MileageEtc = ({ headTitle, menuTitle }) => {
     },
     [value]
   );
+
   useEffect(() => {
-    menuTitle === '마일리지 적립' && localStorage.getItem
-      ? setValue(localStorage.getItem('mileage'))
-      : setValue(localStorage.getItem('etc'));
+    setValue(localStorage.getItem(menuTitle === '마일리지 적립' ? 'mileage' : 'etc'));
   }, []);
 
   return (

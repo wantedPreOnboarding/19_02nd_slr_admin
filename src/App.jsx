@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BasicInfo,
   Grid,
-  ProductOption,
+  ProOptMain,
   ProductIntroImg,
   ProductIntroNotice,
   BuyerRecommendImg,
@@ -32,7 +32,7 @@ const App = () => {
             <BasicInfo />
           </Grid>
           <Grid item>
-            <ProductOption />
+            <ProOptMain />
           </Grid>
           <Grid item>
             <ProductDelivery />
