@@ -4,6 +4,7 @@ import {
   Grid,
   ProductOption,
   ProductIntroImg,
+  ProductIntroNotice,
   BuyerRecommendImg,
   ExposePeriod,
   ProductDelivery,
@@ -35,12 +36,15 @@ const App = () => {
           </Grid>
           <Grid item>
             <ProductDelivery />
-            <Grid item container>
-              <ProductIntroImg />
-            </Grid>
-            <Grid item container>
-              <BuyerRecommendImg />
-            </Grid>
+          </Grid>
+          <Grid item container>
+            <ProductIntroImg />
+          </Grid>
+          <Grid item container>
+            <BuyerRecommendImg />
+          </Grid>
+          <Grid item container>
+            <ProductIntroNotice />
           </Grid>
         </Grid>
       </Grid>
