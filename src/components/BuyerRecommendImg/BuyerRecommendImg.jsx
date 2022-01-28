@@ -8,7 +8,7 @@ const BuyerRecommendImg = () => {
       <TableHeader className={styles.tableHeader}>
         <span>구매자 추천 이미지</span>
       </TableHeader>
-      <TableRow className={styles.tableRowFile}>
+      <TableRow className={styles.tableFileRow}>
         <label htmlFor='file'> + 이미지 추가</label>
         <input type='file' id='file' accept='image/*' />
       </TableRow>

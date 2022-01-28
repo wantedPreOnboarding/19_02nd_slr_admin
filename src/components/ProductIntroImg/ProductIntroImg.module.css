@@ -9,11 +9,11 @@
   font-weight: 700;
 }
 
-.tableRowFile{
+.tableFileRow{
   padding: 15px 10px;
 }
 
-.tableRowFile label{
+.tableFileRow label{
   display: block;
   width: 200px;
   padding: 10px 0;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.tableRowFile input[type='file']{
+.tableFileRow input[type='file']{
   position: absolute;
   width: 1px;
   height: 1px;
