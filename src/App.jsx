@@ -1,10 +1,11 @@
-import SetPeriod from 'Components/SetPeriod/SetPeriod';
+import ExposePeriod from 'Components/ExposePeriod/ExposePeriod';
 import React from 'react';
 import ProductOption from 'Components/ProductOption/ProductOption';
 const App = () => {
   return (
     <div>
-      <ProductOption />
+      <ExposePeriod />
+      {/* <ProductOption /> */}
     </div>
   );
 };

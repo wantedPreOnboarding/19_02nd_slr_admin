@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import {PERIOD_SELECT} from 'Components/SetPeriod/PeriodData';
-import styles from 'styles/SetSalesPeriod.module.css';
+import {PERIOD_SELECT} from 'Components/ExposePeriod/PeriodData';
+import styles from 'Components/ExposePeriod/ExposePeriod.module.css';
 
-const SetPeriod = (props) => {
-    const PROPS_NAME = props.name;
+const ExposePeriodForm = ({name}) => {
+    const PROPS_NAME = name;
+    console.log('name',name);
+
 
     const [period, setPeriod] = useState('unlimit');
     const [startDate, setStartDate] = useState('');
@@ -28,11 +30,12 @@ const SetPeriod = (props) => {
                 break;
         }
     },[endDate, startDate, period]);
-    // useEffect(() => {
-    //     console.log('salesPeriod', salesPeriod);
-    //     console.log('salesStartDate', salesStartDate);
-    //     console.log('salesEndDate', salesEndDate);
-    // }, [salesEndDate, salesStartDate, salesPeriod])
+
+    useEffect(() => {
+        console.log(PROPS_NAME,'period', period);
+        console.log(PROPS_NAME,'startDate', startDate);
+        console.log(PROPS_NAME,'endDate', endDate);
+    }, [endDate, startDate, period])
 
     return(
         <>
@@ -55,7 +58,7 @@ const SetPeriod = (props) => {
                                     htmlFor="unlimit
                                 ">
                                     {data.title}
-                                    {data.id > 1 && (PROPS_NAME === 'export' ? '노출' : '판매')}
+                                    {data.id > 1 && (PROPS_NAME === 'expose' ? '노출' : '판매')}
                                 </label>
                             </li>
                         ))
@@ -82,4 +85,4 @@ const SetPeriod = (props) => {
     );
 };
 
-export default SetPeriod;
+export default ExposePeriodForm;
