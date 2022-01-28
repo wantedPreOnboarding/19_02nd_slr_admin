@@ -1,0 +1,170 @@
+@value sirDPurple, sirGray from "styles/theme.css";
+
+button {
+  cursor: pointer;
+}
+
+.form {
+  border-radius: 3px;
+  height: auto;
+  border: 2px solid sirGray;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.imageForm {
+  height: 200px;
+}
+.imageInput {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: sirGray;
+}
+
+.imageInput label {
+  display: block;
+  width: 200px;
+  padding: 10px 0;
+  border: 2px solid sirDPurple;
+  color: sirDgray;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.imageInput input[type='file'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+.delWrap {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.delete {
+  width: 65px;
+  border: 2px solid sirRed;
+  border-radius: 3px;
+  height: 35px;
+  color: sirRed;
+  font-size: 15px;
+  font-weight: 700;
+  background: white;
+}
+
+.formWrap {
+  padding: 5px 10px;
+}
+.form input {
+  height: 45px;
+  border: 2px solid sirGray;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+.form select {
+  height: 45px;
+  border: 2px solid sirGray;
+  border-radius: 3px;
+}
+.option {
+  width: 100%;
+  font-size: 15px;
+}
+.priceWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+.priceWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+.priceWrap input {
+  text-align: center;
+}
+.priceWrap span {
+  margin: 0px 1%;
+  font-size: 13px;
+}
+.price {
+  width: 22%;
+}
+.stock {
+  width: 14%;
+}
+.select {
+  width: 14%;
+}
+.addOptSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.addOptSection input {
+  font-size: 15px;
+}
+
+.addOptSection span {
+  margin-left: -10px;
+}
+.buttonBox {
+  box-shadow: -2px 2px 1px 0px rgb(185, 181, 185);
+
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  margin: 0px 5px 15px 20px;
+}
+
+.addOptBtn {
+  background: none;
+  border: none;
+  margin: 10px 0px 20px 0px;
+  font-size: 16px;
+}
+
+.addOptBtn span {
+  border: 1px solid sirGray;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.addOptionName {
+  width: 40%;
+}
+.addOptionPrice {
+  width: 30%;
+}
+
+.bigBtn {
+  height: 45px;
+}
+
+.imageSize {
+  width: 320px;
+  height: 200px;
+}
+
+.sizeChange {
+  height: 260px;
+}
+
+.marginChange {
+  margin-top: 10px;
+}
