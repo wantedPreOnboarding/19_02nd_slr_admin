@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './ToggleBtn.module.css';
-const ToggleBtn = () => {
+const ToggleBtn = ({ menuTitle }) => {
   return (
-    <label for="toggleBtn" class={styles.switchBtn}>
-      <input id="toggleBtn" type="checkbox" /> <span class={styles.onOffSwitch}></span>
+    <label for={menuTitle} class={styles.switchBtn}>
+      <input id={menuTitle} type="checkbox" /> <span class={styles.onOffSwitch}></span>
     </label>
   );
 };

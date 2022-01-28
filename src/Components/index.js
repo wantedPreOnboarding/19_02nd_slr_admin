@@ -11,3 +11,4 @@ export { default as ProductIntroImg } from './ProductIntroImg/ProductIntroImg';
 export { default as ProductDelivery } from './ProductDelivery/ProductDelivery';
 export { default as ExposePeriod } from './ExposePeriod/ExposePeriod';
 export { default as ToggleBtn } from './ToggleBtn/ToggleBtn';
+export { default as MileageEtc } from './MileageEtc/MileageEtc';
