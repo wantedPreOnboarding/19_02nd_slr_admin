@@ -1,16 +1,3 @@
-export const EXPOSE_PERIOD = [
-    {
-        name: 'expose',
-        title: '노출',
-    }
-];
-
-export const SALES_PERIOD = [
-    {
-
-    }
-]
-
 export const PERIOD_SELECT = [
     {
         id: 1,
