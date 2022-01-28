@@ -1,12 +1,12 @@
 import React from 'react';
+import { classNames } from 'utils';
+import styles from './TableItem.module.scss';
 
-const TableItem = ({ className, size, children, row, col }) => {
+const TableItem = ({ className, item, size, children, row, col }) => {
   return (
     <div
-      className={className}
+      className={classNames(className, item && styles.gridItem)}
       style={size && {
-        display: 'grid',
-        width: '100%',
         gridRow: row,
         gridColumn: col,
         gridTemplateColumns: `repeat(${size}, 1fr)`,

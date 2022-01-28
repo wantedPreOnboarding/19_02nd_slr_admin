@@ -1,27 +1,25 @@
-@value sirPurple,
-sirGray,
-sirDgray from "styles/theme.css";
+@value sirDPurple, sirDgray from 'styles/theme.css';
 
 .tableHeader span {
   font-weight: 700;
 }
 
-.tableRowFile {
+.tableFileRow {
   padding: 15px 10px;
 }
 
-.tableRowFile label {
+.tableFileRow label {
   display: block;
   width: 200px;
   padding: 10px 0;
-  border: 2px solid sirPurple;
+  border: 2px solid sirDPurple;
   font-weight: 600;
   color: sirDgray;
   text-align: center;
   cursor: pointer;
 }
 
-.tableRowFile input[type='file'] {
+.tableFileRow input[type='file'] {
   position: absolute;
   width: 1px;
   height: 1px;
