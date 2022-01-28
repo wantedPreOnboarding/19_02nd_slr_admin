@@ -1,8 +1,16 @@
 import React from 'react';
-import { BasicInfo, Grid, ProductOption, ExposePeriod } from 'Components';
-import styles from './App.module.css';
+import {
+  BasicInfo,
+  Grid,
+  ProductOption,
+  ProductIntroImg,
+  BuyerRecommendImg,
+  ExposePeriod,
+  ProductDelivery,
+  ToggleBtn,
+} from 'Components';
 import { classNames } from 'utils';
-import ToggleBtn from 'Components/ToggleBtn/ToggleBtn';
+import styles from './App.module.css';
 
 const App = () => {
   return (
@@ -15,7 +23,7 @@ const App = () => {
             </ul>
           </nav>
         </Grid>
-        <Grid className={classNames(styles.gridContents)} container center>
+        <Grid className={classNames(styles.gridContents)} container center space={20}>
           <Grid item>
             <ExposePeriod />
           </Grid>
@@ -24,6 +32,15 @@ const App = () => {
           </Grid>
           <Grid item>
             <ProductOption />
+          </Grid>
+          <Grid item>
+            <ProductDelivery />
+            <Grid item container>
+              <ProductIntroImg />
+            </Grid>
+            <Grid item container>
+              <BuyerRecommendImg />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

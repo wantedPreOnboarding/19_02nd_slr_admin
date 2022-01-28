@@ -1,3 +1,7 @@
+.basicInfo {
+  white-space: nowrap;
+}
+
 .categories li:not(:last-child) {
   padding-bottom: 1.5rem;
 }
