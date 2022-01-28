@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from 'Components/ProductOption/ProOptForm/ProOptForm.module.css';
-const ProOptForm = ({ addOption }) => {
+const ProOptForm = ({ addOption, delOption, id }) => {
+  const [optionNum, setOptionNum] = useState(0);
+  const [optionPro, setOptionPro] = useState('');
+
+  const addOptionPro = () => {
+    setOptionNum(optionNum + 1);
+    setOptionPro([...optionPro, optionNum + 1]);
+  };
+
+  const delOptionPro = proId => {
+    setOptionNum(optionNum - 1);
+    setOptionPro(optionPro.filter(i => i !== proId));
+  };
+
   return (
-    <form className={`${styles.form} ${addOption === 'image' && styles.imageForm}`}>
+    <div className={`${styles.form} ${addOption === 'image' && styles.imageForm}`}>
       {addOption === 'image' ? (
         <section className={styles.imageInput}>
           <label htmlFor="imageInput"> + 이미지 첨부</label>
@@ -11,7 +24,7 @@ const ProOptForm = ({ addOption }) => {
       ) : (
         <>
           <section className={styles.delWrap}>
-            <button type="button" className={styles.delete}>
+            <button type="button" className={styles.delete} onClick={() => delOption(id)}>
               삭제
             </button>
           </section>
@@ -34,24 +47,34 @@ const ProOptForm = ({ addOption }) => {
                 <option value="tax">과세</option>
               </select>
             </section>
-            {addOption === 'add' && (
-              <section className={styles.addOptSection}>
-                <div className={styles.buttonBox} />
-                <input
-                  type="text"
-                  className={styles.addOptionName}
-                  placeholder="추가 옵션명 (필수)"
-                />
-                <input
-                  type="text"
-                  className={styles.addOptionPrice}
-                  placeholder="추가 옵션 정상가 (필수)"
-                />
-                <span>원</span>
-                <button className={`${styles.delete} ${styles.bigBtn}`}>삭제</button>
-              </section>
-            )}
-            <button type="button" className={styles.addOptBtn}>
+            {optionPro &&
+              optionPro.map(a => {
+                return (
+                  <section className={styles.addOptSection} key={a} id={a}>
+                    <div className={styles.buttonBox} />
+                    <input
+                      type="text"
+                      className={styles.addOptionName}
+                      placeholder="추가 옵션명 (필수)"
+                    />
+                    <input
+                      type="text"
+                      className={styles.addOptionPrice}
+                      placeholder="추가 옵션 정상가 (필수)"
+                    />
+                    <span>원</span>
+                    <button
+                      type="button"
+                      className={`${styles.delete} ${styles.bigBtn}`}
+                      onClick={() => delOptionPro(a)}
+                    >
+                      삭제
+                    </button>
+                  </section>
+                );
+              })}
+
+            <button type="button" className={styles.addOptBtn} onClick={addOptionPro}>
               <span className={styles.addOptBtnSpan}>
                 <i className="fas fa-plus"></i>
               </span>
@@ -60,7 +83,7 @@ const ProOptForm = ({ addOption }) => {
           </section>
         </>
       )}
-    </form>
+    </div>
   );
 };
 
