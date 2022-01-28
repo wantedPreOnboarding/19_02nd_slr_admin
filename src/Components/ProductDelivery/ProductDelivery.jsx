@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, TableHeader, TableRow, ToggleBtn, Grid } from 'Components';
 import styles from './ProductDelivery.module.scss';
 
@@ -7,6 +7,20 @@ const ProductDelivery = () => {
     const [visit, setVisit] = useState(false);
     const [preOrder, setPreOrder] = useState(false);
 
+    useEffect(() => {
+        // console.log('preOrder', preOrder);
+        preOrder && 
+            setVisit(false);
+            setUserDelivery(false);
+        },[preOrder]);
+        
+        useEffect(() => {
+        // console.log('userDelivery', userDelivery);
+        // console.log('visit', visit);
+        userDelivery || visit &&
+            setPreOrder(false);
+        }, [userDelivery, visit])
+
     const handleUserDelivery = (state) => {
         setUserDelivery(state);
     }
@@ -14,6 +28,7 @@ const ProductDelivery = () => {
         setVisit(state);
     }
     const handlePreOrder = (state) => {
+        // console.log('state',state);
         setPreOrder(state);
     }
 
@@ -22,58 +37,26 @@ const ProductDelivery = () => {
         <Table>
             <TableHeader>상품 배송 설정</TableHeader>
             <TableRow label="사용자 배송일 출발일 지정" className={styles.ProductDelivery}>
-                <ToggleBtn menuTitle="userDelivery" changeHandler={handleUserDelivery}/>
-                {
-                userDelivery && 
-                <div>
-                <input 
-                    className={styles.inputTime} 
-                    type="datetime-local" 
-                    name="startDate"
-                    />
-                    <span> ~ </span>
-                    <input 
-                        className={styles.inputTime} 
-                        type="datetime-local" 
-                        name="endDate" 
-                        />
-                </div>
-                }
+                <ToggleBtn menuTitle="delivery-userDelivery" changeHandler={handleUserDelivery} toggleValue={`${userDelivery}`}/>
             </TableRow>
             <TableRow label="방문 수령" className={styles.ProductDelivery}>
-                <ToggleBtn menuTitle="visiting" changeHandler={handleVisit} /> 
-                {
-                visit && 
-                <div>
-                <input 
-                    className={styles.inputTime} 
-                    type="datetime-local" 
-                    name="startDate"
-                    />
-                    <span> ~ </span>
-                    <input 
-                        className={styles.inputTime} 
-                        type="datetime-local" 
-                        name="endDate" 
-                        />
-                </div>
-                }
+                <ToggleBtn menuTitle="visit-visiting" changeHandler={handleVisit} toggleValue={`${visit}`}/> 
             </TableRow>
-            <TableRow label="선 주문 예약 배송" className={styles.ProductDelivery}>
-                <ToggleBtn menuTitle="pre-order" changeHandler={handlePreOrder} /> 
+            <TableRow label="선 주문 예약 배송" className={styles.roductDelivery}>
+                <ToggleBtn menuTitle="pre-order" changeHandler={handlePreOrder} toggleValue={`${preOrder}`}/> 
                 <Grid container className={styles.gridTop}>
                     <Grid size={3} container item>
                         <Grid item>주문시간</Grid>
                     </Grid>
                     <Grid size={9} container item>
                         <Grid item>
-                            <input 
+                            <input
                                 className={styles.inputTime} 
                                 type="datetime-local" 
                                 name="startDate"
                             />
                             <span> ~ </span>
-                            <input 
+                            <input
                                 className={styles.inputTime} 
                                 type="datetime-local" 
                                 name="endDate" 
@@ -92,7 +75,6 @@ const ProductDelivery = () => {
                             type="datetime-local" 
                             name="startDate" 
                         />
-
                         </Grid>
                     </Grid>
                     <Grid size={3} container item>

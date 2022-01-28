@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./FormDatePicker.module.css";
 
-const FormDatePicker = ({changeHandler}) => {
+const FormDatePicker = ({changeHandler, name}) => {
   const [isDate, setIsDate] = useState(null);
   const [message, setMessage] = useState(false);
   
@@ -19,6 +19,7 @@ const FormDatePicker = ({changeHandler}) => {
       dateFormat="yyyy.MM.dd HH:mm"
       placeholderText="YYYY.MM.DD YY:MM"
       timeInputLabel="Time:"
+      name={`${name}-date`}
       onChange={(date) => {
         setIsDate(date)
         changeHandler(date)
