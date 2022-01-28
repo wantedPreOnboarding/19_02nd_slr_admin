@@ -5,7 +5,7 @@ const ProOptForm = ({ addOption, delOption, id }) => {
   const [optionPro, setOptionPro] = useState('');
   const [normalPrice, setNormalPrice] = useState('');
   const [sellingPrice, setSellingPrice] = useState('');
-  const [discountRatio, setDiscountRatio] = useState('');
+  const [discountRatio, setDiscountRatio] = useState('할인율%');
   const [imageSrc, setImageSrc] = useState();
 
   const addOptionPro = () => {
@@ -87,30 +87,37 @@ const ProOptForm = ({ addOption, delOption, id }) => {
               name="proOpt-optionName"
               className={styles.option}
               placeholder="옵션명을 입력해 주세요. (필수)"
+              required
             />
             <section className={styles.priceWrap}>
               <input
                 name="proOpt-proNormalPrice"
                 type="number"
+                min="0"
                 className={styles.price}
                 placeholder="상품 정상가(필수)"
                 onChange={changeNormalPrice}
+                required
               />
               <span>원</span>
-              {discountRatio && <span>{discountRatio}</span>}
+              <span>{discountRatio}</span>
               <input
                 name="proOpt-proSellingPrice"
                 type="number"
+                min="0"
                 className={styles.price}
                 placeholder="상품 판매가(필수)"
+                required
                 onChange={changeSellingPrice}
               />
               <span>원</span>
               <input
                 name="proOpt-stock"
-                type="text"
+                min="0"
+                type="number"
                 className={styles.stock}
                 placeholder="재고 (필수)"
+                required
               />
               <span>개</span>
               <select name="proOpt-taxs" className={styles.select}>
@@ -128,12 +135,15 @@ const ProOptForm = ({ addOption, delOption, id }) => {
                       type="text"
                       className={styles.addOptionName}
                       placeholder="추가 옵션명 (필수)"
+                      required
                     />
                     <input
                       name="proOpt-addOptionPrice"
-                      type="text"
+                      type="number"
+                      min="0"
                       className={styles.addOptionPrice}
                       placeholder="추가 옵션 정상가 (필수)"
+                      required
                     />
                     <span>원</span>
                     <button
