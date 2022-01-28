@@ -20,7 +20,7 @@ export default function BasicInfo() {
   return (
     <Table className="">
       <TableHeader>상품 기본 정보</TableHeader>
-      <TableRow label="카테고리 *" className={styles.basicInfo}>
+      <TableRow label="카테고리 *">
         <Grid container space={5}>
           <Grid size={7} item>
             <Card>
@@ -59,11 +59,24 @@ export default function BasicInfo() {
           </Grid>
         </Grid>
       </TableRow>
-      {/* <TableRow label="필터 태그" className={styles.basicInfo}>
-        temp value
+      <TableRow label="필터 태그">
+        <input className="" placeholder="필터태그를 검색해 주세요."></input>
       </TableRow>
-      <TableRow>temp value</TableRow>
-      <TableRow>temp value</TableRow> */}
+      <TableRow label="상품명 *">
+        <input className=""></input>
+      </TableRow>
+      <TableRow label="상품 구성 소개 정보*">
+        <input className=""></input>
+      </TableRow>
+      <TableRow label="상품 썸네일">
+        <input className=""></input>
+      </TableRow>
+      <TableRow label="상품 대표 이미지">
+        <input className=""></input>
+      </TableRow>
+      <TableRow label="상품 총 재고 *">
+        <input className=""></input>
+      </TableRow>
     </Table>
   );
 }

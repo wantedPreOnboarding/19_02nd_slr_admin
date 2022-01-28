@@ -1,19 +1,14 @@
 @value sirPurple, sirGray, sirDgray from "styles/theme.css";
 
-.table{
-  margin-top: 30px;
-  border: 1px solid sirGray;
-}
-
-.tableHeader span{
+.tableHeader span {
   font-weight: 700;
 }
 
-.tableRowFile{
+.tableRowFile {
   padding: 15px 10px;
 }
 
-.tableRowFile label{
+.tableRowFile label {
   display: block;
   width: 200px;
   padding: 10px 0;
@@ -24,7 +19,7 @@
   cursor: pointer;
 }
 
-.tableRowFile input[type='file']{
+.tableRowFile input[type='file'] {
   position: absolute;
   width: 1px;
   height: 1px;
