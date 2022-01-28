@@ -9,7 +9,7 @@ export default function Grid({
   className,
   container = false,
   item = true,
-  size = 12,
+  size,
   children,
   style,
   center,
