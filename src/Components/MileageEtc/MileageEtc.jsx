@@ -2,7 +2,9 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Table, TableHeader, TableRow, ToggleBtn } from 'Components';
 import styles from 'Components/MileageEtc/MileageEtc.module.css';
 
-	@@ -8,9 +8,8 @@ const MileageEtc = ({ headTitle, menuTitle }) => {
+const MileageEtc = ({ headTitle, menuTitle }) => {
+  const [value, setValue] = useState(false);
+
   const changeHandler = useCallback(
     state => {
       localStorage.setItem(menuTitle === '마일리지 적립' ? 'mileage' : 'etc', state);
@@ -12,7 +14,10 @@ import styles from 'Components/MileageEtc/MileageEtc.module.css';
   );
 
   useEffect(() => {
-	@@ -21,7 +20,7 @@ const MileageEtc = ({ headTitle, menuTitle }) => {
+    setValue(localStorage.getItem(menuTitle === '마일리지 적립' ? 'mileage' : 'etc'));
+  }, []);
+
+  return (
     <Table className={styles.table}>
       <TableHeader className={styles.headTitle}>{headTitle}</TableHeader>
       <TableRow label={menuTitle} className={styles.menuTitle}>
@@ -20,3 +25,6 @@ import styles from 'Components/MileageEtc/MileageEtc.module.css';
       </TableRow>
     </Table>
   );
+};
+
+export default MileageEtc;
