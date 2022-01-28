@@ -1,0 +1,44 @@
+@value sirDPurple, sirPurple, sirLGray, sirGray, sirDgray, sirRed, sirShadow from "styles/theme.css";
+
+.switchBtn {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 20px;
+}
+.switchBtn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.onOffSwitch {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.onOffSwitch:before {
+  position: absolute;
+  content: '';
+  height: 25px;
+  width: 25px;
+  left: 2px;
+  bottom: -2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+.onOffSwitch:checked {
+  background-color: sirDPurple;
+}
+.switchBtn input:checked + .onOffSwitch {
+  background-color: sirPurple;
+}
+.switchBtn input:checked + .onOffSwitch:before {
+  transform: translateX(26px);
+}
