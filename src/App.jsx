@@ -1,5 +1,5 @@
 import React from 'react';
-import { BasicInfo, Grid } from 'Components';
+import { BasicInfo, Grid, ProductOption } from 'Components';
 import styles from './App.module.css';
 import { classNames } from 'utils';
 
@@ -17,6 +17,18 @@ const App = () => {
         <Grid className={classNames(styles.gridCenter, styles.gridContents)} container>
           <Grid item>
             <BasicInfo />
+          </Grid>
+        </Grid>
+        <Grid className={styles.menu} item>
+          <nav>
+            <ul>
+              <li>Menu Area</li>
+            </ul>
+          </nav>
+        </Grid>
+        <Grid className={classNames(styles.gridCenter, styles.gridContents)} container>
+          <Grid item>
+            <ProductOption />
           </Grid>
         </Grid>
       </Grid>
