@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid } from 'Components';
-import styles from './TableRow.module.css';
+import styles from './TableRow.module.scss';
 import { classNames } from 'utils';
 
-export default function TableRow({ className, label, children }) {
+export default function TableRow({ className, label, children, pdLevel, direction }) {
   return (
     <>
       {label && (
@@ -13,7 +13,7 @@ export default function TableRow({ className, label, children }) {
       )}
       <Grid
         item
-        className={classNames('tableItem', styles.tableValue, className)}
+        className={classNames('tableItem', styles.tableValue, className, styles[`pd${pdLevel}`])}
         size={label ? 10 : 12}
       >
         {children}

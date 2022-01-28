@@ -3,9 +3,20 @@
 .table {
   border-right: solid sirTableBorderColor 2px;
   border-bottom: solid sirTableBorderColor 2px;
+
+  > * {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
 
 .table :global(.tableItem) {
   border-top: solid sirTableBorderColor 2px;
   border-left: solid sirTableBorderColor 2px;
+}
+
+@for $i from 1 to 21 {
+  :global(.pd#{$i} .tableItem) {
+    padding: ($i * 2px);
+  }
 }
