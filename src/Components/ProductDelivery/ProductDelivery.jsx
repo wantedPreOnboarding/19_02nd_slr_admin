@@ -6,22 +6,15 @@ const ProductDelivery = () => {
     const [userDelivery, setUserDelivery] = useState(false);
     const [visit, setVisit] = useState(false);
     const [preOrder, setPreOrder] = useState(false);
-    const [orderStartTime, setOrderStartTime] = useState();
-    const [orderEndTime, setOrderEndTime] = useState();
-    const [earlyDelivery, setEarlyDelivery] = useState(new Date());
-    const [normalDelivery, setNormalDelivery] = useState(new Date());
 
 
     useEffect(() => {
-        // console.log('preOrder', preOrder);
         preOrder && 
             setVisit(false);
             setUserDelivery(false);
         },[preOrder]);
         
         useEffect(() => {
-        // console.log('userDelivery', userDelivery);
-        // console.log('visit', visit);
         userDelivery || visit &&
             setPreOrder(false);
         }, [userDelivery, visit])
@@ -33,49 +26,39 @@ const ProductDelivery = () => {
         setVisit(state);
     };
     const handlePreOrder = (state) => {
-        // console.log('state',state);
         setPreOrder(state);
     };
-    const handleOrderStartTime = (date) => {
-        setOrderStartTime(date);
-    };
-    const handleOrderEndTime = (date) => {
-        setOrderEndTime(date);
-    };
-    const handleEarlyDelivery = (date) => {
-        setEarlyDelivery(date);
-    };
-    const handleNormalDelivery = (date) => {
-        setNormalDelivery(date);
+    const handleTime = (date) => {
+        console.log(date);
     };
         
     return(
         <>
         <Table>
             <TableHeader>상품 배송 설정</TableHeader>
-            <TableRow label="사용자 배송일 출발일 지정" className={styles.ProductDelivery}>
+            <TableRow label="사용자 배송일 출발일 지정" className={styles.productDelivery}>
                 <ToggleBtn menuTitle="delivery-userDelivery" changeHandler={handleUserDelivery} toggleValue={`${userDelivery}`}/>
             </TableRow>
-            <TableRow label="방문 수령" className={styles.ProductDelivery}>
-                <ToggleBtn menuTitle="visit-visiting" changeHandler={handleVisit} toggleValue={`${visit}`}/> 
+            <TableRow label="방문 수령" className={styles.productDelivery}>
+                <ToggleBtn menuTitle="delivery-visiting" changeHandler={handleVisit} toggleValue={`${visit}`}/> 
             </TableRow>
-            <TableRow label="선 주문 예약 배송" className={styles.roductDelivery}>
-                <ToggleBtn menuTitle="pre-order" changeHandler={handlePreOrder} toggleValue={`${preOrder}`}/> 
+            <TableRow label="선 주문 예약 배송" className={styles.productDelivery}>
+                <ToggleBtn menuTitle="delivery-preOrder" changeHandler={handlePreOrder} toggleValue={`${preOrder}`}/> 
                 <Grid container className={styles.gridTop}>
                     <Grid size={12} container item>
-                        <Grid item>
-                            <span>주문시간</span>
-                            <FormDatePicker name="orderStartTime" dateType="day" changeHandler={handleOrderStartTime} />
-                            <span> ~ </span>
-                            <FormDatePicker name="orderEndTime" dateType="day" changeHandler={handleOrderEndTime} />
+                        <Grid item className={styles.gridItem}>
+                            <span className={styles.span}>주문시간</span>
+                            <FormDatePicker name="delivery-orderStartTime" dateType="time" changeHandler={handleTime} />
+                            <span className={styles.normalSpan}> ~ </span>
+                            <FormDatePicker name="delivery-orderEndTime" dateType="time" changeHandler={handleTime} />
                         </Grid>
                     </Grid>
                     <Grid size={12} container item>
-                        <Grid item>
-                            <span>새벽 배송</span>
-                            <FormDatePicker name="earlyDelivery" dateType="day" changeHandler={handleEarlyDelivery} />
-                            <span>일반 배송</span>
-                            <FormDatePicker name="normalelivery" dateType="day" changeHandler={handleNormalDelivery} />
+                        <Grid item className={styles.gridItem}>
+                            <span className={styles.span}>새벽 배송</span>
+                            <FormDatePicker name="delivery-earlyDelivery" dateType="day" changeHandler={handleTime} />
+                            <span className={styles.normalSpan}>일반 배송</span>
+                            <FormDatePicker name="delivery-normalelivery" dateType="day" changeHandler={handleTime} />
                         </Grid>
                     </Grid>
                 </Grid>

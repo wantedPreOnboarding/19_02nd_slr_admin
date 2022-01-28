@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {PERIOD_SELECT} from 'Components/ExposePeriod/PeriodData';
-import styles from 'Components/ExposePeriod/ExposePeriod.module.css';
 import FormDatePicker from 'Components/FormDatePicker/FormDatePicker';
+import styles from 'Components/ExposePeriod/ExposePeriod.module.css';
 
 const ExposePeriodForm = ({name}) => {
     const PROPS_NAME = name;
@@ -29,8 +29,7 @@ const ExposePeriodForm = ({name}) => {
 
     return(
         <>
-        <div>
-            <form className={styles.form}>
+        <div className='styles.form'>
                 <ul className={styles.ui}>
                     {
                         PERIOD_SELECT.map((data) => (
@@ -59,7 +58,6 @@ const ExposePeriodForm = ({name}) => {
                         <FormDatePicker name="sales" dateType="time" changeHandler={handleEndDate} /> 
                     </li>
                 </ul>
-            </form>
         </div>
         </>
     );
