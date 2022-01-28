@@ -1,21 +1,15 @@
-@value slrDPurple,slrPurple,slrLGray,slrGray,slrDgray,slrRed,slrShadow from 'styles/theme.css';
+@value sirDPurple, sirPurple, sirLGray, sirGray, sirDgray, sirRed, sirShadow from "styles/theme.css";
 
-.section {
-  width: 100%;
-  height: 40px;
+.table {
+  margin-top: 50px;
+}
+.headSection {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0px 10px;
-  border: 1px solid slrGray;
-  font-weight: 700;
-}
-.section p {
-  font-weight: 700;
 }
 
 .addBtn {
-  border: 1px solid slrDPurple;
+  border: 1px solid sirDPurple;
   border-radius: 3px;
   height: 30px;
   background: none;
@@ -28,9 +22,9 @@
 .innerSection {
   width: 100%;
   margin: auto;
-  border: 1px solid slrGray;
-  border-top: none;
-  padding: 40px 30px;
+  border: 1px solid sirGray;
+
+  padding: 20px 15px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -38,7 +32,7 @@
 
 .delete {
   width: 50px;
-  border: 1px solid slrRed;
+  border: 1px solid sirRed;
   border-radius: 3px;
   height: 30px;
   background: none;
