@@ -1,12 +1,30 @@
 import ExposePeriod from 'Components/ExposePeriod/ExposePeriod';
 import React from 'react';
-import ProductOption from 'Components/ProductOption/ProductOption';
+import { BasicInfo, Grid, ProductOption } from 'Components';
+import styles from './App.module.css';
+import { classNames } from 'utils';
+
 const App = () => {
   return (
-    <div>
-      <ExposePeriod />
-      {/* <ProductOption /> */}
-    </div>
+    <main className={styles.main}>
+      <Grid container center>
+        <Grid className={styles.menu} item>
+          <nav>
+            <ul>
+              <li>Menu Area</li>
+            </ul>
+          </nav>
+        </Grid>
+        <Grid className={classNames(styles.gridContents)} container center>
+          <Grid item>
+            <BasicInfo />
+          </Grid>
+          <Grid item>
+            <ProductOption />
+          </Grid>
+        </Grid>
+      </Grid>
+    </main>
   );
 };
 
