@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TableRow, ProOptForm } from 'Components';
 import styles from 'Components/ProductOption/ProOptSet/ProOptSet.module.css';
 
-const ProOptSet = ({ id, delOptionSet }) => {
+const ProOptSet = ({ setId, delOptionSet }) => {
   const [optionNum, setOptionNum] = useState(1);
   const [optionList, setOptionList] = useState([1]);
 
@@ -11,8 +11,12 @@ const ProOptSet = ({ id, delOptionSet }) => {
     setOptionList([...optionList, optionNum + 1]);
   };
   const delOption = id => {
-    setOptionNum(optionNum - 1);
-    setOptionList(optionList.filter(i => i !== id));
+    if (optionNum === 1) {
+      delOptionSet(setId);
+    } else {
+      setOptionNum(optionNum - 1);
+      setOptionList(optionList.filter(i => i !== id));
+    }
   };
 
   return (
@@ -21,7 +25,7 @@ const ProOptSet = ({ id, delOptionSet }) => {
         type="button"
         className={styles.delete}
         onClick={() => {
-          delOptionSet(id);
+          delOptionSet(setId);
         }}
       >
         삭제

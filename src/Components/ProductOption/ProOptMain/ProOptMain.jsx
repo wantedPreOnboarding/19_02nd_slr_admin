@@ -27,7 +27,7 @@ const ProOptMain = () => {
       </TableHeader>
       {optionSet &&
         optionSet.map(a => {
-          return <ProOptSet key={a} id={a} delOptionSet={delOptionSet} />;
+          return <ProOptSet key={a} setId={a} delOptionSet={delOptionSet} />;
         })}
     </Table>
   );
