@@ -44,10 +44,10 @@ const App = () => {
             <BuyerRecommendImg />
           </Grid>
           <Grid item>
-            <MileageEtc headTitle="상품 혜택 허용 설정" menuTitle="마일리지 적립" />
+            <MileageEtc menuTitle="mileage" />
           </Grid>
           <Grid item>
-            <MileageEtc headTitle="기타 설정" menuTitle="감사카드 제공" />
+            <MileageEtc menuTitle="etc" />
           </Grid>
           <Grid item>
             <ProductIntroNotice />

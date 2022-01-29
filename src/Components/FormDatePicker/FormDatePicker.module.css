@@ -1,0 +1,44 @@
+@value sirGray from "styles/theme.css";
+
+.selectDate {
+  display: inline-block;
+  width: 230px;
+  height: 55px;
+  font-size: 15px;
+  border: none;
+  top: 5px;
+}
+
+.selectDateMini {
+  display: inline-block;
+  width: 140px;
+  height: 55px;
+  font-size: 15px;
+  border: none;
+  top: 5px;
+}
+
+.i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: sirGray;
+}
+
+.datePickerWrapper {
+  display: inline-block;
+  position: relative;
+  width: 240px;
+  height: 60px;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+}
+
+.miniWrapper {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  height: 60px;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+}
