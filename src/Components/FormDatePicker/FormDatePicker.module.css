@@ -1,0 +1,29 @@
+.selectDate {
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
+  border: none;
+}
+
+.i {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: #e3e3e3;
+}
+
+.label {
+  display: inline-block;
+  position: relative;
+}
+
+.datePickerWrapper {
+  position: relative;
+  width: 210px;
+  height: 40px;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0px 0px;
+}
