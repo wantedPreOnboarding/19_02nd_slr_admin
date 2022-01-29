@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './CheckBox.module.css';
 import commonStyles from 'styles/index.module.css';
 import { classNames } from 'utils';
