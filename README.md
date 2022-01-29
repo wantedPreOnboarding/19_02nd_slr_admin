@@ -1,34 +1,26 @@
 # 상품 등록 관리자 페이지
 
----
 
 ## 💁 **프로젝트 소개**
 
----
 
 상품 정보 등록 및 관리 기능을 하는 관리자 페이지
 
 ## 📆 **프로젝트 기간**
 
----
 
 22.01.27 ~ 22.01.29
 
 ## **🔗 배포 링크**
 
----
 
 [https://siradmin19th.netlify.app](https://siradmin19th.netlify.app)
 
 ## **📄 노션 주소**
 
----
-
 [https://smiling-player-37b.notion.site/1-2-293e71011cdc4b64aebbf2b499c11318](https://www.notion.so/1-2-293e71011cdc4b64aebbf2b499c11318)
 
 ## **👩‍💻구현 목록**
-
----
 
 1. 노출 및 판매기간 설정 **(다빈)**
    1. 노출 기한 설정
@@ -62,16 +54,13 @@
 
 ## **💿 설치 및 실행 방법**
 
----
-
 ```json
 $ yarn install
 $ yarn start
 ```
 
 ## **🛠️ 기술 스택**
-
-<img src="[https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white)">
-<img src=”[https://img.shields.io/badge/CSS-Modules-1572B6?style=for-the-badge&logo=css3&logoColor=white](https://img.shields.io/badge/CSS-Modules-1572B6?style=for-the-badge&logo=css3&logoColor=white)”>
-<img src="[https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black)">
-<img src="[https://img.shields.io/badge/git-flow-brightgreen?style=for-the-badge&logo](https://img.shields.io/badge/git-flow-brightgreen?style=for-the-badge&logo)">
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
+<img src="https://img.shields.io/badge/git-flow-brightgreen?style=for-the-badge&logo">
