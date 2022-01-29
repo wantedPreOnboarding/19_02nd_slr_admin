@@ -7,7 +7,7 @@ import styles from './ExposePeriod.module.css';
 
 const ExposePeriod = () => {
   return (
-    <Table className="">
+    <Table className={styles.table}>
       <TableHeader>노출 및 판매기간 설정</TableHeader>
       <TableRow label="상품 노출 기한" className={styles.ExposePeriod}>
         <ExposePeriodForm name="expose" />
