@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import styles from 'Components/ProductOption/ProOptForm/ProOptForm.module.css';
 const ProOptForm = ({ addOption, delOption, id }) => {
   const [optionNum, setOptionNum] = useState(0);
@@ -45,9 +45,8 @@ const ProOptForm = ({ addOption, delOption, id }) => {
 
   return (
     <div
-      className={`${styles.form} ${addOption === 'image' && styles.imageForm} ${
-        imageSrc && styles.sizeChange
-      }`}
+      className={`${styles.form} ${addOption === 'image' && styles.imageForm} ${imageSrc && styles.sizeChange
+        }`}
     >
       {addOption === 'image' ? (
         <section className={styles.imageInput}>
