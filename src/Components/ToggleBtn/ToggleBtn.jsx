@@ -24,6 +24,7 @@ const ToggleBtn = ({ menuTitle, toggleValue, changeHandler }) => {
           name={`${menuTitle}-${menuTitle}`}
           id={menuTitle}
           type="checkbox"
+          required
           onChange={e => {
             toggleChangeHandler(e);
           }}
