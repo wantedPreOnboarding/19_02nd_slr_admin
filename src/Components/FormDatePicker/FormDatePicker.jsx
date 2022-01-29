@@ -22,7 +22,7 @@ const FormDatePicker = ({changeHandler, name, dateType}) => {
         }} 
         />
         <span className={styles.i}>
-          <i class="fas fa-chevron-down" />
+          <i className="fas fa-chevron-down" />
         </span>
     </div>
 
