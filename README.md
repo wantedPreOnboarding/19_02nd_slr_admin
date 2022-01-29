@@ -14,7 +14,7 @@
 ## **🔗 배포 링크**
 
 
-[https://siradmin19th.netlify.app](https://siradmin19th.netlify.app)
+[https://19thsiradminpage.netlify.app/](https://19thsiradminpage.netlify.app/)
 
 ## **📄 노션 주소**
 
