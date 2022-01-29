@@ -2,9 +2,8 @@
 
 .input {
   width: 100%;
-  margin-bottom: 7px;
   padding: 10px 5px;
-  border: 1px solid sirTableBorderColor;
+  border: 2px solid sirTableBorderColor;
   border-radius: sirBorderRadiusM;
   cursor: pointer;
 }
@@ -22,7 +21,7 @@
 .deleteRedBtn {
   width: 100%;
   padding: 10px 5px;
-  border: 1px solid sirTableBorderColor;
+  border: 2px solid sirTableBorderColor;
   border-radius: sirBorderRadiusM;
   background: transparent;
   color: red;

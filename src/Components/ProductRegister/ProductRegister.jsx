@@ -60,7 +60,9 @@ const ProductRegister = () => {
         <div className={styles.headInner}></div>
         <div className={styles.headInner}>
           <span className={styles.saveProduct}>상품 등록</span>
-          <button className={styles.saveBtn}>저장하기</button>
+          <button className={styles.saveBtn} type="submit">
+            저장하기
+          </button>
         </div>
       </div>
     </div>

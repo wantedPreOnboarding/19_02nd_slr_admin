@@ -24,11 +24,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .deleteBtn {
   padding: 5px 10px;
-  border: 1px solid sirTableBorderColor;
+  border: 2px solid sirTableBorderColor;
   border-radius: sirBorderRadiusM;
   color: #838383;
   background: none;
@@ -41,7 +42,7 @@
   width: 100%;
   margin-bottom: 7px;
   padding: 10px 5px;
-  border: 1px solid sirTableBorderColor;
+  border: 2px solid sirTableBorderColor;
   border-radius: sirBorderRadiusM;
   cursor: pointer;
 }
@@ -70,7 +71,7 @@
 .plusBtn {
   width: 100%;
   padding: 10px 0;
-  border: 1px solid sirTableBorderColor;
+  border: 2px solid sirTableBorderColor;
   border-radius: sirBorderRadiusM;
   outline: 0;
   background: transparent;
@@ -78,4 +79,11 @@
   font-weight: 700;
   color: sirDPurple;
   cursor: pointer;
+  margin-top: 10px;
+}
+
+.addBtnWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
