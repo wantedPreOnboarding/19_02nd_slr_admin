@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import {PERIOD_SELECT} from 'Components/ExposePeriod/PeriodData';
 import FormDatePicker from 'Components/FormDatePicker/FormDatePicker';
 import styles from 'Components/ExposePeriod/ExposePeriod.module.scss';
@@ -10,9 +10,9 @@ const ExposePeriodForm = ({name}) => {
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
 
-    const handleSelect = useCallback((event) => {
+    const handleSelect = (event) => {
         setPeriod(event.target.value);
-    },[period]);
+    };
 
     const handleStartDate = (date) => {
         setStartDate(date);

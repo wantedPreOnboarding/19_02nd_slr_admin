@@ -13,7 +13,7 @@ const ToggleBtn = ({ menuTitle, toggleValue, changeHandler }) => {
           name={`${menuTitle}-${menuTitle}`}
           id={menuTitle}
           type="checkbox"
-          checked
+          value={toggleValue}
           required
           onChange={e => {
             toggleChangeHandler(e);
@@ -24,6 +24,7 @@ const ToggleBtn = ({ menuTitle, toggleValue, changeHandler }) => {
           name={`${menuTitle}-${menuTitle}`}
           id={menuTitle}
           type="checkbox"
+          value={toggleValue}
           onChange={e => {
             toggleChangeHandler(e);
           }}
