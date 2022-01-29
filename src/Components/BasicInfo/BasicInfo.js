@@ -60,7 +60,7 @@ export default function BasicInfo() {
                 })}
               </ul>
               {checkedCategories().length === 0 && (
-                <span class={styles.message}>카테고리를 지정해 주세요.</span>
+                <span className={styles.message}>카테고리를 지정해 주세요.</span>
               )}
             </Card>
           </Grid>
