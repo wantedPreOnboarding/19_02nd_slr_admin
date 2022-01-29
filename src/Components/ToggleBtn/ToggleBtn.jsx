@@ -5,7 +5,7 @@ const ToggleBtn = ({ menuTitle, changeHandler, toggleValue }) => {
     <label htmlFor={menuTitle} className={styles.switchBtn}>
       {toggleValue === 'true' ? (
         <input
-          name={`${menuTitle}--${menuTitle}`}
+          name={`${menuTitle}-${menuTitle}`}
           id={menuTitle}
           type="checkbox"
           checked
@@ -14,7 +14,7 @@ const ToggleBtn = ({ menuTitle, changeHandler, toggleValue }) => {
         />
       ) : (
         <input
-          name={`${menuTitle}--${menuTitle}`}
+          name={`${menuTitle}-${menuTitle}`}
           id={menuTitle}
           type="checkbox"
           onChange={e => changeHandler?.(e.target.checked)}

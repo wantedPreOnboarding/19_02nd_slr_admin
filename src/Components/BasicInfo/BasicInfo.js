@@ -37,7 +37,7 @@ export default function BasicInfo() {
                       category={category.category}
                       checked={category.checked}
                       onChange={() => toggleCheckState(category)}
-                      name="basicInfo-category"
+                      name={`basicInfo-${category.category}`}
                     >
                       {withCurlyBraces(category.category)}
                     </CheckBox>

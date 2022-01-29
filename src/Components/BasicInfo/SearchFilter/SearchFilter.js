@@ -59,10 +59,14 @@ export default function SearchFilter() {
           setSearchValue(e.target.value);
         }}
       />
-      <label htmlFor="searchFilter" className={style.searchBtn} value={clickedFilterTags}>
+      <label htmlFor="searchFilter" className={style.searchBtn}>
         검색
       </label>
-      <input className={commonStyles.a11yHidden} name="basicInfo-filter"></input>
+      <input
+        className={commonStyles.a11yHidden}
+        name="basicInfo-filter"
+        value={JSON.stringify(clickedFilterTags)}
+      ></input>
       {isOpenSearch && (
         <Card className={style.searchWindow} ref={searchWindowRef}>
           {sortTagsFromSearch().map(tag => (
