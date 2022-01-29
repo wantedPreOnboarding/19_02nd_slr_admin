@@ -12,18 +12,13 @@ import {
 } from 'Components';
 import { classNames } from 'utils';
 import styles from './App.module.css';
+import ProductRegister from 'Components/ProductRegister/ProductRegister';
 
 const App = () => {
   return (
     <main className={styles.main}>
+      <ProductRegister> </ProductRegister>
       <Grid container center>
-        <Grid className={styles.menu} item>
-          <nav>
-            <ul>
-              <li>Menu Area</li>
-            </ul>
-          </nav>
-        </Grid>
         <Grid className={classNames(styles.gridContents)} container center space={20}>
           <Grid item>
             <ExposePeriod />
