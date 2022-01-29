@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table, TableHeader, TableRow, ToggleBtn, Grid, FormDatePicker } from 'Components';
-import styles from './ProductDelivery.module.scss';
+import styles from './ProductDelivery.module.css';
 
 const ProductDelivery = () => {
     const [userDelivery, setUserDelivery] = useState(false);
@@ -33,11 +33,7 @@ const ProductDelivery = () => {
         
     return(
         <>
-            <form 
-  onSubmit={e => { e.preventDefault(); console.log(e.target); 
-  const data = new FormData(e.target); 
-  for (var [key, value] of data.entries()) { console.log(key, value); } }} >
-        <Table>
+        <Table className={styles.table}>
             <TableHeader>상품 배송 설정</TableHeader>
             <TableRow label="사용자 배송일 출발일 지정" className={styles.productDelivery}>
                 <ToggleBtn menuTitle="delivery-userDelivery" changeHandler={handleUserDelivery} toggleValue={`${userDelivery}`}/>
@@ -67,8 +63,6 @@ const ProductDelivery = () => {
                 </Grid>
             </TableRow>
         </Table>
-        <button>123</button>
-        </form>
         </>
     );
 };

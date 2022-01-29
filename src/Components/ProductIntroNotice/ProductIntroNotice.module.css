@@ -37,17 +37,13 @@
   cursor: pointer;
 }
 
-input[type='text'] {
+.input {
   width: 100%;
   margin-bottom: 7px;
   padding: 10px 5px;
   border: 1px solid sirTableBorderColor;
   border-radius: sirBorderRadiusM;
   cursor: pointer;
-}
-
-input[type='text']:first-of-type {
-  margin-top: 15px;
 }
 
 .grids {
@@ -59,16 +55,6 @@ input[type='text']:first-of-type {
   align-items: center;
   color: sirDgray;
   font-weight: 600;
-}
-
-.deleteRedBtn {
-  width: 100%;
-  padding: 10px 5px;
-  border: 1px solid sirTableBorderColor;
-  border-radius: sirBorderRadiusM;
-  background: transparent;
-  color: red;
-  cursor: pointer;
 }
 
 .addBtn {

@@ -5,13 +5,15 @@ const ToggleBtn = ({ menuTitle, changeHandler, toggleValue }) => {
     <label htmlFor={menuTitle} class={styles.switchBtn}>
       {toggleValue === 'true' ? (
         <input
+          name={`${menuTitle}--${menuTitle}`}
           id={menuTitle}
           type="checkbox"
           checked
+          required
           onChange={e => changeHandler(e.target.checked)}
         />
       ) : (
-        <input id={menuTitle} type="checkbox" onChange={e => changeHandler(e.target.checked)} />
+        <input name={`${menuTitle}--${menuTitle}`} id={menuTitle} type="checkbox" onChange={e => changeHandler(e.target.checked)} />
       )}
       <span class={styles.onOffSwitch}></span>
     </label>

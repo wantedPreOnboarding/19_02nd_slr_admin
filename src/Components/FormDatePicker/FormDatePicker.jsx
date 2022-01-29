@@ -10,7 +10,7 @@ const FormDatePicker = ({changeHandler, name, dateType}) => {
     <>
     <div className={dateType === "time" ? styles.datePickerWrapper : styles.miniWrapper}>
         <DatePicker 
-        className={styles.selectDate}
+        className={dateType === "time" ? styles.selectDate : styles.selectDateMini}
         selected={ isDate }
         dateFormat={dateType === "time" ? "  yyyy.MM.dd HH:mm" : "  yyyy.MM.dd"}
         placeholderText={dateType === "time" ? "  YYYY.MM.DD YY:MM" : "  YYYY.MM.DD"}

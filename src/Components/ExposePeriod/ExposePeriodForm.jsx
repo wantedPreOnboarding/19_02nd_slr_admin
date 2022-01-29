@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {PERIOD_SELECT} from 'Components/ExposePeriod/PeriodData';
 import FormDatePicker from 'Components/FormDatePicker/FormDatePicker';
-import styles from 'Components/ExposePeriod/ExposePeriod.module.css';
+import styles from 'Components/ExposePeriod/ExposePeriod.module.scss';
 
 const ExposePeriodForm = ({name}) => {
     const PROPS_NAME = name;
@@ -34,14 +34,18 @@ const ExposePeriodForm = ({name}) => {
                     {
                         PERIOD_SELECT.map((data) => (
                             <li className={styles.li} key={data.id}>
-                                <input 
-                                    className={styles.select} 
-                                    type="radio" 
-                                    name={`${PROPS_NAME}-radioButton`} 
-                                    value={data.name}
-                                    checked={period === data.name} 
-                                    onChange={handleSelect}
-                                />
+                                <label htmlFor="styles">
+                                    <input 
+                                        className={styles.select} 
+                                        type="radio" 
+                                        name={`${PROPS_NAME}-radioButton`} 
+                                        value={data.name}
+                                        checked={period === data.name} 
+                                        onChange={handleSelect}
+                                        required
+                                        />
+                                    <span className={styles.ball}></span>
+                                </label>
                                 <label 
                                     className={styles.label} 
                                     htmlFor="unlimit

@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-button {
-  cursor: pointer;
-}
-
 .addBtn {
   border: 2px solid sirDPurple;
   border-radius: 3px;

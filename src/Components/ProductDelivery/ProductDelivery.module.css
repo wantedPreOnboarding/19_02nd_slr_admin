@@ -1,9 +1,15 @@
+@value sirGray, m from "styles/theme.css";
+
+.table {
+  font-size: m;
+}
+
 .inputTime {
   width: 100px;
   height: 45px;
   text-align: center;
   font-size: 15px;
-  border: 1px solid #f0efef;
+  border: 1px solid sirGray;
   border-radius: 5px;
 }
 
@@ -16,7 +22,8 @@
 }
 
 .normalSpan {
-  margin: 30px;
+  margin-left: 60px;
+  margin-right: 20px;
 }
 
 .tilde {
