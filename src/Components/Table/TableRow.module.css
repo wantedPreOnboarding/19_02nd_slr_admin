@@ -1,5 +1,0 @@
-@value sirTableBorderColor, sirTablePd from 'styles/theme.css';
-
-.tableLabel {
-  padding: sirTablePd;
-}

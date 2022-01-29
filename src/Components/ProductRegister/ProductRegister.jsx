@@ -15,8 +15,8 @@ const ProductRegister = () => {
   ];
   const innerMenuList = ['상품리스트', '상품재고 관리', '상품 등록'];
   const [openMenu, setOpenMenu] = useState(true);
-  const handleMenu = () => {
-    setOpenMenu(!openMenu);
+  const handleMenu = menu => {
+    menu === '상품' && setOpenMenu(!openMenu);
   };
   return (
     <div className={styles.template}>
@@ -26,11 +26,12 @@ const ProductRegister = () => {
         </div>
         {menuList.map(menu => {
           return (
-            <>
+            <div key={menu}>
               <div
                 className={styles.menuBarInner}
-                key={menu}
-                onClick={menu === '상품' && handleMenu}
+                onClick={() => {
+                  handleMenu(menu);
+                }}
               >
                 <span>{menu}</span>
                 <i className="fas fa-chevron-down"></i>
@@ -51,7 +52,7 @@ const ProductRegister = () => {
                   })}
                 </div>
               )}
-            </>
+            </div>
           );
         })}
       </div>

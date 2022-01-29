@@ -5,8 +5,9 @@
 @value sirBlue: #2a18bd;
 @value sirLGray: #efefef;
 @value sirGray: #e3e3e3;
-@value sirDGray: #2d2d2d;
-@value sirRed: rgba(255, 0, 0, 0.7);
+@value sirMGray: #777777;
+@value sirDgray: #2d2d2d;
+@value sirRed: rgba(255, 0, 0, 0.5);
 @value sirShadow: rgba(217, 217, 217, 1);
 @value sirTableBorderColor: #dedede;
 

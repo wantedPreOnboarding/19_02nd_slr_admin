@@ -1,11 +1,12 @@
 @value sirBorderRadiusM, sirGray from 'styles/theme.css';
 
 .card {
+  position: relative;
   border-radius: sirBorderRadiusM;
   border: solid 2px sirGray;
   padding: 25px 30px;
   max-height: 375px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
 }

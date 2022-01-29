@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Grid.module.scss';
 import { COLUMNS } from './constants';
 import { classNames, isCssUnit } from 'utils';
+import styles from './Grid.module.scss';
 
 const spaceClassGenerator = num => `space${num}`;
 

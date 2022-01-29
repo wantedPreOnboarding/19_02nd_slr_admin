@@ -54,6 +54,18 @@ const filterTags = [
     id: 2,
     tag: '베베',
   },
+  {
+    id: 3,
+    tag: '배놔라',
+  },
+  {
+    id: 4,
+    tag: '감놔라',
+  },
 ];
 
-export { categories, filterTags };
+const productCode = 'sir-12345';
+
+const stock = '22';
+
+export { categories, filterTags, productCode, stock };

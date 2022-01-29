@@ -1,3 +1,4 @@
+import React from 'react';
 import { Grid } from 'Components';
 import styles from './TableHeader.module.css';
 import { classNames } from 'utils';
