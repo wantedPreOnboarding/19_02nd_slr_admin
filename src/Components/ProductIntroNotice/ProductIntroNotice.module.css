@@ -1,10 +1,11 @@
-@value sirDPurple, sirGray,sirLGray,sirBorderRadiusM ,sirDgray, sirTableBorderColor from "styles/theme.css";
+@value sirDPurple, sirGray,sirLGray,sirBorderRadiusM ,sirDgray, sirTableBorderColor, m from "styles/theme.css";
 
 .grid {
   border: 1px solid sirTableBorderColor;
 }
 
 .gridTitle {
+  font-size: m;
   padding: 10px 0;
   border-bottom: 1px solid sirTableBorderColor;
   background: #fff;
