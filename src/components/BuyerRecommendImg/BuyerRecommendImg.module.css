@@ -5,15 +5,17 @@
 }
 
 .tableFileRow {
+  display: flex;
   padding: 15px 10px;
 }
 
 .tableFileRow label {
   display: block;
   width: 200px;
+  height: 50px;
   padding: 10px 0;
-  border: 2px solid sirDgray;
-  color: sirGray;
+  border: 2px solid sirDPurple;
+  color: sirDPurple;
   font-weight: 600;
   text-align: center;
   cursor: pointer;
@@ -26,4 +28,19 @@
   padding: 0;
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
+}
+
+.tabelFileCol {
+  display: flex;
+  padding-left: 20px;
+}
+
+.deleteBtn {
+  border: 1px solid sirTableBorderColor;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 20px;
+  outline: 0;
+  background: none;
 }

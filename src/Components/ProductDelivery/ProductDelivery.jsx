@@ -16,12 +16,14 @@ const ProductDelivery = () => {
         useEffect(() => {
         userDelivery &&
             setPreOrder(false);
-        }, [userDelivery]);
+        }, [userDelivery])
+
 
         useEffect(() => {
         visit &&
             setPreOrder(false);
-        }, [visit]);
+        }, [visit])
+
         
     const handleUserDelivery = (state) => {
         setUserDelivery(state);

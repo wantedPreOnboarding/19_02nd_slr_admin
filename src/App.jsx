@@ -10,7 +10,7 @@ import {
   ProductDelivery,
   MileageEtc,
 } from 'Components';
-import { classNames } from 'utils';
+
 import styles from './App.module.css';
 import ProductRegister from 'Components/ProductRegister/ProductRegister';
 
@@ -30,11 +30,10 @@ const App = () => {
       } else if (!temp[prefix][contents]) {
         temp[prefix][contents] = {};
       }
-
       temp[prefix][contents] = value;
     }
 
-    alert(JSON.stringify(temp));
+    alert('결과가 저장되었습니다. 콘솔을 확인해주세요!');
   };
 
   return (
@@ -56,13 +55,16 @@ const App = () => {
             <ProOptMain />
           </Grid>
           <Grid item>
-            <ProductDelivery />
-          </Grid>
-          <Grid item>
             <ProductIntroImg />
           </Grid>
           <Grid item>
             <BuyerRecommendImg />
+          </Grid>
+          <Grid item>
+            <ProductIntroNotice />
+          </Grid>
+          <Grid item>
+            <ProductDelivery />
           </Grid>
           <Grid item>
             <MileageEtc menuTitle="mileage" />
@@ -70,11 +72,7 @@ const App = () => {
           <Grid item>
             <MileageEtc menuTitle="etc" />
           </Grid>
-          <Grid item>
-            <ProductIntroNotice />
-          </Grid>
         </Grid>
-        <button>123</button>
       </form>
     </main>
   );
