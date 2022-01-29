@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React from 'react';
 import { Table, TableHeader, TableRow, ToggleBtn } from 'Components';
 import styles from 'Components/MileageEtc/MileageEtc.module.css';
 
