@@ -21,7 +21,7 @@ const ProductRegister = () => {
   return (
     <div className={styles.template}>
       <div className={styles.menubar}>
-        <div className={styles.menuBarInner}>
+        <div className={`${styles.menuBarInner} ${styles.top}`}>
           <h1>SIr.LOIN</h1>
         </div>
         {menuList.map(menu => {

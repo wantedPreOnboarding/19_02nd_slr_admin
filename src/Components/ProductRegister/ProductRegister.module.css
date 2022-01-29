@@ -23,6 +23,7 @@
 }
 .menuBarInner {
   height: 45px;
+  box-sizing: border-box;
   padding: 5px 30px;
   border-bottom: 2px solid sirGray;
   display: flex;
@@ -34,7 +35,7 @@
 .menuBarInner:hover {
   background: sirLPurPle;
 }
-.menuBarInner:first-child {
+.top {
   height: 55px;
 }
 
