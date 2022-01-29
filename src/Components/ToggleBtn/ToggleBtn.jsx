@@ -10,14 +10,14 @@ const ToggleBtn = ({ menuTitle, changeHandler, toggleValue }) => {
           type="checkbox"
           checked
           required
-          onChange={e => changeHandler(e.target.checked)}
+          onChange={e => changeHandler?.(e.target.checked)}
         />
       ) : (
         <input
           name={`${menuTitle}--${menuTitle}`}
           id={menuTitle}
           type="checkbox"
-          onChange={e => changeHandler(e.target.checked)}
+          onChange={e => changeHandler?.(e.target.checked)}
         />
       )}
       <span className={styles.onOffSwitch}></span>{' '}
