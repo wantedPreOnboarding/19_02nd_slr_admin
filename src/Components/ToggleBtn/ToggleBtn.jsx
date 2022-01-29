@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ToggleBtn.module.css';
-const ToggleBtn = ({ menuTitle }) => {
+const ToggleBtn = ({ menuTitle, toggleValue, changeHandler }) => {
   return (
     <label htmlFor={menuTitle} class={styles.switchBtn}>
       {toggleValue === 'true' ? (
@@ -13,7 +13,12 @@ const ToggleBtn = ({ menuTitle }) => {
           onChange={e => changeHandler(e.target.checked)}
         />
       ) : (
-        <input name={`${menuTitle}--${menuTitle}`} id={menuTitle} type="checkbox" onChange={e => changeHandler(e.target.checked)} />
+        <input
+          name={`${menuTitle}--${menuTitle}`}
+          id={menuTitle}
+          type="checkbox"
+          onChange={e => changeHandler(e.target.checked)}
+        />
       )}
       <span class={styles.onOffSwitch}></span>
     </label>

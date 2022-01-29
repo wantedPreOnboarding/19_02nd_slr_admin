@@ -1,20 +1,19 @@
 @value sirDPurple,sirLPurple, sirLGray,sirGray,sirRed from "styles/theme.css";
 .template {
   width: 100%;
-  height: 100%;
-  position: fixed;
   top: 0;
   left: 0;
   display: flex;
+  position: fixed;
+  z-index: 1000;
 }
 
 .menubar {
-  position: fixed;
   width: 200px;
-  height: 100%;
+  height: 100vh;
   background: white;
   border-right: 2px solid sirGray;
-  z-index: 1000;
+
   opacity: 1;
   position: relative;
 }
@@ -59,7 +58,6 @@
   background: white;
   display: flex;
   flex-direction: column;
-  z-index: 1000;
   opacity: 1;
 }
 
