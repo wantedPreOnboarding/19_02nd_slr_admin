@@ -1,0 +1,29 @@
+@value sirDPurple, sirGray,sirLGray,sirBorderRadiusM ,sirDgray, sirTableBorderColor from "styles/theme.css";
+
+.input {
+  width: 100%;
+  padding: 10px 5px;
+  border: 2px solid sirTableBorderColor;
+  border-radius: sirBorderRadiusM;
+  cursor: pointer;
+}
+
+.grids {
+  margin-right: 10px;
+}
+
+.box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.deleteRedBtn {
+  width: 100%;
+  padding: 10px 5px;
+  border: 2px solid sirTableBorderColor;
+  border-radius: sirBorderRadiusM;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+}

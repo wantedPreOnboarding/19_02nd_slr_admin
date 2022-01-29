@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import-normalize;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans CJK KR WEB', sans-serif;
+  word-break: keep-all;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+label,
+button {
+  cursor: pointer;
+}
+
+.a11yHidden {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  clip-path: circle(0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+}

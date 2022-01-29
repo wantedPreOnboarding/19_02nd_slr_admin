@@ -1,0 +1,12 @@
+@value sirLGray, sirTableBorderColor, sirTablePd, m from 'styles/theme.css';
+
+:global(.tableItem).tableLabel {
+  padding: sirTablePd;
+  background-color: sirLGray;
+}
+
+@for $i from 1 to 21 {
+  .pd#{$i} {
+    padding: ($i * 2px);
+  }
+}

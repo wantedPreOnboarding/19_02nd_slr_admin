@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# 상품 등록 관리자 페이지
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 💁 **프로젝트 소개**
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+상품 정보 등록 및 관리 기능을 하는 관리자 페이지
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📆 **프로젝트 기간**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `yarn test`
+22.01.27 ~ 22.01.29
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **🔗 배포 링크**
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[https://siradmin19th.netlify.app](https://siradmin19th.netlify.app)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **📄 노션 주소**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+[https://smiling-player-37b.notion.site/1-2-293e71011cdc4b64aebbf2b499c11318](https://www.notion.so/1-2-293e71011cdc4b64aebbf2b499c11318)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **👩‍💻구현 목록**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. 노출 및 판매기간 설정 **(다빈)**
+   1. 노출 기한 설정
+   2. 판매 기한 설정
+2. 상품 기본 정보 **(영종)**
+   1. 카테고리 지정 (필수값)
+   2. 필터 태그 지정
+   3. 상품명 및 상품코드 (필수값)
+   4. 상품 구성 소개 정보 (필수값)
+   5. 상품 썸네일
+   6. 상품 대표이미지
+   7. 상품 총 재고 영역 (필수값)
+3. 상품옵션 **(수임)**
+   1. 상품옵션등록 (필수값)
+   2. 추가옵션상품등록
+   3. 옵션내용등록영역
+4. 상품 등록 이미지**(송현)**
+   1. 상품 소개 이미지
+   2. 구매자 추천 이미지
+5. 상품 정보 고시 알림 설정 **(송현)**
+6. 상품 배송 설정 **(다빈)**
+   - 사용자 배송 출발일 지정 (필수값)
+   - 방문수령지정 (필수값)
+   - 선 주문 예약 배송 지정 (필수값)
+7. 마일리지 적립 **(수임)**
+8. 기타설정 **(수임)**
+   - 감사카드제공여부설정
+9. 저장하기 (콘솔에 데이터가 뜸) **(영종)**
+   - 필수값 전부 들어갔는지 확인
+   - 필수값 미 입력시 alert 제공
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **💿 설치 및 실행 방법**
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```json
+$ yarn install
+$ yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **🛠️ 기술 스택**
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="[https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white)">
+<img src=”[https://img.shields.io/badge/CSS-Modules-1572B6?style=for-the-badge&logo=css3&logoColor=white](https://img.shields.io/badge/CSS-Modules-1572B6?style=for-the-badge&logo=css3&logoColor=white)”>
+<img src="[https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black)">
+<img src="[https://img.shields.io/badge/git-flow-brightgreen?style=for-the-badge&logo](https://img.shields.io/badge/git-flow-brightgreen?style=for-the-badge&logo)">
