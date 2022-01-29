@@ -5,6 +5,7 @@
   left: 0;
   display: flex;
   position: fixed;
+  z-index: 1000;
 }
 
 .menubar {
@@ -12,7 +13,7 @@
   height: 100vh;
   background: white;
   border-right: 2px solid sirGray;
-  z-index: 1000;
+
   opacity: 1;
   position: relative;
 }
@@ -57,7 +58,6 @@
   background: white;
   display: flex;
   flex-direction: column;
-  z-index: 1000;
   opacity: 1;
 }
 
