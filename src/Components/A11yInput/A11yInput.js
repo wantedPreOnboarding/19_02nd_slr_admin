@@ -15,6 +15,7 @@ export default function A11yInput({
   onBlurHandler,
   onChangeHandler,
   value,
+  required,
 }) {
   return (
     <>
@@ -32,6 +33,7 @@ export default function A11yInput({
         onChange={onChangeHandler}
         value={value}
         name={name}
+        required={required}
       />
     </>
   );

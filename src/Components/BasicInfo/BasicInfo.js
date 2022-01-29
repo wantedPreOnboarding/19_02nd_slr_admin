@@ -76,6 +76,7 @@ export default function BasicInfo() {
             label="상품명"
             className={styles.a11yInput}
             placeholder="상품명을 입력해 주세요."
+            required
           />
           <label>상품 코드</label>
           <span>{withCurlyBraces(productCode)}</span>
@@ -87,6 +88,7 @@ export default function BasicInfo() {
           label="상품 구성 소개 정보"
           className=""
           placeholder="상품 구성 소개 정보를 입력해 주세요."
+          required
         />
       </TableRow>
       <TableRow label="상품 썸네일"></TableRow>
