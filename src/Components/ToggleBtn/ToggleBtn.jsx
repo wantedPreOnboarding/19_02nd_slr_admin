@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ToggleBtn.module.css';
 const ToggleBtn = ({ menuTitle, changeHandler, toggleValue }) => {
   return (
-    <label htmlFor={menuTitle} class={styles.switchBtn}>
+    <label htmlFor={menuTitle} className={styles.switchBtn}>
       {toggleValue === 'true' ? (
         <input
           name={`${menuTitle}--${menuTitle}`}
@@ -20,7 +20,7 @@ const ToggleBtn = ({ menuTitle, changeHandler, toggleValue }) => {
           onChange={e => changeHandler(e.target.checked)}
         />
       )}
-      <span class={styles.onOffSwitch}></span>{' '}
+      <span className={styles.onOffSwitch}></span>{' '}
     </label>
   );
 };
