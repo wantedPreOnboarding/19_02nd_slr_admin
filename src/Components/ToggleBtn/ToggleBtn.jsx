@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './ToggleBtn.module.css';
+
 const ToggleBtn = ({ menuTitle, toggleValue, changeHandler }) => {
   const toggleChangeHandler = e => {
     menuTitle !== 'mileage' && menuTitle !== 'etc' && changeHandler(e.target.checked);
   };
+
   return (
     <label htmlFor={menuTitle} className={styles.switchBtn}>
       {toggleValue === 'true' ? (
