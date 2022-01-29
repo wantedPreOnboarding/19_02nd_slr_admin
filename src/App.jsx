@@ -16,10 +16,24 @@ import styles from './App.module.css';
 const App = () => {
   const submitHandler = e => {
     e.preventDefault();
+    const temp = {};
     const data = new FormData(e.target);
+
     for (var [key, value] of data.entries()) {
-      console.log(key, value);
+      if (value.length === 0 && !value) continue;
+
+      const [prefix, contents] = key.split('-');
+
+      if (!temp[prefix]) {
+        temp[prefix] = {};
+      } else if (!temp[prefix][contents]) {
+        temp[prefix][contents] = {};
+      }
+
+      temp[prefix][contents] = value;
     }
+
+    alert(JSON.stringify(temp));
   };
 
   return (
@@ -58,15 +72,16 @@ const App = () => {
               <BuyerRecommendImg />
             </Grid>
             <Grid item>
-              <MileageEtc headTitle="상품 혜택 허용 설정" menuTitle="마일리지 적립" />
+              <MileageEtc menuTitle="mileage" />
             </Grid>
             <Grid item>
-              <MileageEtc headTitle="기타 설정" menuTitle="감사카드 제공" />
+              <MileageEtc menuTitle="etc" />
             </Grid>
             <Grid item>
               <ProductIntroNotice />
             </Grid>
           </Grid>
+          <button>123</button>
         </form>
       </Grid>
     </main>
