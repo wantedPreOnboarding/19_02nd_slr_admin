@@ -5,7 +5,9 @@
 .li {
   margin-bottom: 12px;
 }
-
+.table {
+  margin-top: 75px;
+}
 .select {
   appearance: none;
   width: 18px;
