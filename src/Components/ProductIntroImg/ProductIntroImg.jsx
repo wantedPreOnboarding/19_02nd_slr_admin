@@ -17,15 +17,14 @@ const ProductIntroImg = () => {
     setFileList(list)
   }
 
-
   return (
     <Table className={styles.table}>
       <TableHeader className={styles.tableHeader}>
         <span>상품 소개 이미지</span>
       </TableHeader>
       <TableRow className={styles.tableFileRow}>
-        <label htmlFor='file'>+ 이미지 추가</label>
-        <input type='file' id='file' accept='image/*' onChange={handleFileUpload} />
+        <label htmlFor='productFile'>+ 이미지 추가</label>
+        <input type='file' id='productFile' accept='image/*' onChange={handleFileUpload} />
         <div>
           {fileList.map(item => (
             <div className={styles.tabelFileCol} key={item.id}>

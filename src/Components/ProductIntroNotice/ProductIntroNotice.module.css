@@ -22,13 +22,16 @@
 }
 
 .box {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.rightBox {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 10px;
 }
 
 .deleteBtn {
+  margin-bottom: 5px;
   padding: 5px 10px;
   border: 2px solid sirTableBorderColor;
   border-radius: sirBorderRadiusM;
@@ -71,6 +74,7 @@
 
 .plusBtn {
   width: 100%;
+  margin-top: 10px;
   padding: 10px 0;
   border: 2px solid sirTableBorderColor;
   border-radius: sirBorderRadiusM;
@@ -80,11 +84,4 @@
   font-weight: 700;
   color: sirDPurple;
   cursor: pointer;
-  margin-top: 10px;
-}
-
-.addBtnWrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }

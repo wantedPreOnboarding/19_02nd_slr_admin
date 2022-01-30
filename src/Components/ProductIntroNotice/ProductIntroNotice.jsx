@@ -75,12 +75,10 @@ const ProductIntroNotice = () => {
             <Grid size={10} item>
               <h3>정보고시 {noticeCount >= 1 && noticeCount}</h3>
             </Grid>
-            <Grid size={2} item>
-              <Grid item className={styles.box}>
-                <button className={styles.deleteBtn} onClick={handleReset}>
-                  삭제
-                </button>
-              </Grid>
+            <Grid size={2} className={styles.rightBox} item>
+              <button className={styles.deleteBtn} onClick={handleReset}>
+                삭제
+              </button>
             </Grid>
             <Grid size={4} className={styles.inputTitle} item>
               <span> 제품명 / 중량</span>
@@ -136,6 +134,7 @@ const ProductIntroNotice = () => {
                 onChange={handleInput}
                 name="notice-keep"
                 value={inputs.keep}
+
               />
             </Grid>
             <Grid size={4} item className={styles.inputTitle}>
@@ -152,7 +151,7 @@ const ProductIntroNotice = () => {
                 value={inputs.type}
               />
             </Grid>
-            <Grid size={12} className={styles.addBtnWrap}>
+            <Grid size={12}>
               {notices.map((item, index) => (
                 <NoticeItem key={index} id={item.id} onDelete={handleItemDelete} />
               ))}
