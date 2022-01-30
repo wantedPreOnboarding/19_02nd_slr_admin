@@ -23,8 +23,8 @@ const BuyerRecommendImg = () => {
         <span>구매자 추천 이미지</span>
       </TableHeader>
       <TableRow className={styles.tableFileRow}>
-        <label htmlFor='file'> + 이미지 추가</label>
-        <input type='file' accept='image/*' onChange={handleFileUpload} />
+        <label htmlFor='buyerFile'> + 이미지 추가</label>
+        <input type='file' id='buyerFile' accept='image/*' onChange={handleFileUpload} />
         <div>
           {buyerList.map(item => (
             <div className={styles.tabelFileCol} key={item.id}>

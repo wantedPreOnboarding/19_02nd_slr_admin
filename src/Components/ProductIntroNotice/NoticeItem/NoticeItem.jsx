@@ -22,8 +22,8 @@ const NoticeItem = ({ onDelete, id }) => {
     onDelete && onDelete(id);
   };
   return (
-    <>
-      <Grid size={4} item className={styles.grids}>
+    <div className={styles.box}>
+      <Grid size={5} className={styles.grids} item>
         <input
           type="text"
           className={styles.input}
@@ -34,7 +34,7 @@ const NoticeItem = ({ onDelete, id }) => {
           value={inputs.title}
         />
       </Grid>
-      <Grid size={6} item className={styles.grids}>
+      <Grid size={8} className={styles.grids} item>
         <input
           type="text"
           className={styles.input}
@@ -45,12 +45,12 @@ const NoticeItem = ({ onDelete, id }) => {
           value={inputs.text}
         />
       </Grid>
-      <Grid size={2} className={styles.box} item>
+      <Grid size={2} item>
         <button className={styles.deleteRedBtn} onClick={handleDelete}>
           삭제
         </button>
       </Grid>
-    </>
+    </div>
   );
 };
 
