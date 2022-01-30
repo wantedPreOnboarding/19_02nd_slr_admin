@@ -10,14 +10,10 @@
 
 ## 1. 💁 프로젝트 소개
 
----
-
 - 주제 : 상품 정보 등록 및 관리 기능을 하는 관리자 페이지
 - 기간 : 22.01.27 ~ 22.01.29
 
 ## 2. 👋🏻 팀원 소개
-
----
 
 <table>
 
@@ -47,19 +43,13 @@
 
 ## 3. 🔗 배포 링크
 
----
-
 [프로젝트 링크 바로가기](https://19thsiradminpage.netlify.app/)
 
 ## 4. 📄 협업 문서
 
----
-
 [프로젝트 노션 바로가기](https://www.notion.so/1-2-293e71011cdc4b64aebbf2b499c11318)
 
 ## 5. 👩‍💻구현 기능
-
----
 
 - 노출 및 판매기간 설정 **(다빈)**
   - 노출 기한 설정
@@ -93,8 +83,6 @@
 
 ## 6. 💿 설치 및 실행 방법
 
----
-
 Project Setup
 
 ```bash
@@ -108,8 +96,6 @@ $ yarn start
 ```
 
 ## 7. 🛠️ 기술 스택
-
----
 
 <div>
   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
