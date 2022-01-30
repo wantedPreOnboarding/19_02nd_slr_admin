@@ -4,14 +4,16 @@ import styles from './Button.module.css';
 
 const typeClassGenerator = num => `type${num}`;
 
-export default function Button({ className, type, children, onClick }) {
+const Button = ({ className, type, children, onClick }) => {
   return (
     <button
       type="button"
-      className={classNames(className, styles.button, styles[typeClassGenerator(type)])}
+      className={classNames(className, styles.button, styles[typeClassGenerator(type)])
+      }
       onClick={onClick}
     >
       {children}
     </button>
   );
 }
+export default Button;

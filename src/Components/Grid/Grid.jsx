@@ -4,8 +4,7 @@ import { classNames, isCssUnit } from 'utils';
 import styles from './Grid.module.scss';
 
 const spaceClassGenerator = num => `space${num}`;
-
-export default function Grid({
+const Grid = ({
   className,
   container = false,
   item = true,
@@ -14,7 +13,7 @@ export default function Grid({
   style,
   center,
   space,
-}) {
+}) => {
   const gridWidth = isCssUnit(size) ? size : (size / COLUMNS) * 100 + '%';
 
   return (
@@ -39,3 +38,4 @@ export default function Grid({
     </div>
   );
 }
+export default Grid;

@@ -1,9 +1,9 @@
 import React from 'react';
+import { classNames } from 'utils';
 import { Grid } from 'Components';
 import styles from './TableRow.module.scss';
-import { classNames } from 'utils';
 
-export default function TableRow({ className, label, children, pdLevel, direction }) {
+const TableRow = ({ className, label, children, pdLevel, direction }) => {
   return (
     <>
       {label && (
@@ -21,3 +21,5 @@ export default function TableRow({ className, label, children, pdLevel, directio
     </>
   );
 }
+
+export default TableRow;

@@ -16,4 +16,3 @@ export { default as ToggleBtn } from './ToggleBtn/ToggleBtn';
 export { default as MileageEtc } from './MileageEtc/MileageEtc';
 export { default as FormDatePicker } from './FormDatePicker/FormDatePicker';
 export { default as ProductIntroNotice } from './ProductIntroNotice/ProductIntroNotice';
-export { default as TableItem } from './Table/TableItem';

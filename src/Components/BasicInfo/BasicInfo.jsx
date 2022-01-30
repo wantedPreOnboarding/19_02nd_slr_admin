@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
+import { withCurlyBraces } from 'utils';
+import { categories as originCategory, productCode, stock } from 'data/basicInfo';
 import { A11yInput, CheckBox, Table, TableHeader, TableRow } from 'Components';
 import Card from './Card/Card';
 import Grid from 'Components/Grid/Grid';
 import Button from './Button/Button';
 import SearchFilter from './SearchFilter/SearchFilter';
-import { categories as originCategory, productCode, stock } from 'data/basicInfo';
-import { withCurlyBraces } from 'utils';
 import styles from './BasicInfo.module.css';
 
-export default function BasicInfo() {
+const BasicInfo = () => {
   const [categories, setCheckedCategories] = useState([...originCategory]);
 
   const toggleCheckState = category => {
@@ -99,3 +99,4 @@ export default function BasicInfo() {
     </Table>
   );
 }
+export default BasicInfo;
