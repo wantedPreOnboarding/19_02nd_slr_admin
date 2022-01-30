@@ -6,7 +6,7 @@ import { filterTags } from 'data/basicInfo';
 import style from './SearchFilter.module.scss';
 import commonStyles from 'styles/index.module.css';
 
-export default function SearchFilter() {
+const SearchFilter = () => {
   const [searchValue, setSearchValue] = useState('');
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [clickedFilterTags, setClickedFilterTags] = useState([]);
@@ -65,8 +65,8 @@ export default function SearchFilter() {
       <input
         className={commonStyles.a11yHidden}
         name="basicInfo-filter"
-        value={JSON.stringify(clickedFilterTags)}
-      ></input>
+        defaultValue={JSON.stringify(clickedFilterTags)}
+      />
       {isOpenSearch && (
         <Card className={style.searchWindow} ref={searchWindowRef}>
           {sortTagsFromSearch().map(tag => (
@@ -109,3 +109,4 @@ export default function SearchFilter() {
     </>
   );
 }
+export default SearchFilter;

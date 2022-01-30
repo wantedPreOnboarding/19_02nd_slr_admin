@@ -2,7 +2,7 @@
 
 :global(.tableItem).tableLabel {
   padding: sirTablePd;
-  background-color: sirLGray;
+  background: sirLGray;
 }
 
 @for $i from 1 to 21 {

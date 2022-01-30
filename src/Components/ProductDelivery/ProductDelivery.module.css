@@ -7,10 +7,10 @@
 .inputTime {
   width: 100px;
   height: 45px;
-  text-align: center;
-  font-size: 15px;
   border: 1px solid sirGray;
   border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
 }
 
 .productDelivery {
