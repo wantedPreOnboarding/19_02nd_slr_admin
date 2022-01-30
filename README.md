@@ -23,8 +23,8 @@
 
   <tr align="center">
     <td><a href='https://github.com/yeongjong310'>김영종</a></td>
-    <td><a href="https://github.com/b41-41">정다빈</a></td>
-    <td><a href="https://github.com/leechoiswim1">최수임</a></td>
+    <td><a href="https://github.com/leechoiswim1">정다빈</a></td>
+    <td><a href="https://github.com/b41-41">최수임</a></td>
     <td><a href="https://github.com/vi2920va">이송현</a></td>
   </tr>
 
