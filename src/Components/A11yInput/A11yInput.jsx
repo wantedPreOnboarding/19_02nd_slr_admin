@@ -16,6 +16,7 @@ const A11yInput = ({
   onChangeHandler,
   value,
   required,
+  autoComplete,
 }) => {
   return (
     <>
@@ -34,6 +35,7 @@ const A11yInput = ({
         value={value}
         name={name}
         required={required}
+        autoComplete={autoComplete}
       />
     </>
   );
