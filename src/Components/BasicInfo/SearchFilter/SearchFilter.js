@@ -20,17 +20,17 @@ const SearchFilter = () => {
     setClickedFilterTags(clickedFilterTags.filter(({ id: clickedId }) => clickedId !== tag.id));
   };
 
-  function findOverlap(a, b) {
-    if (b.length === 0) {
+  function findOverlap(str1, str2) {
+    if (str2.length === 0) {
       return '';
     }
-    if (a.endsWith(b)) {
-      return b;
+    if (str1.endsWith(str2)) {
+      return str2;
     }
-    if (a.indexOf(b) >= 0) {
-      return b;
+    if (str1.indexOf(str2) >= 0) {
+      return str2;
     }
-    return findOverlap(a, b.substring(0, b.length - 1));
+    return findOverlap(str1, str2.substring(0, str2.length - 1));
   }
 
   function sortTagsFromSearch() {
@@ -67,7 +67,7 @@ const SearchFilter = () => {
       <input
         className={commonStyles.a11yHidden}
         name="basicInfo-filter"
-        defaultValue={JSON.stringify(clickedFilterTags)}
+        value={JSON.stringify(clickedFilterTags)}
       />
       {isOpenSearch && (
         <Card className={style.searchWindow} ref={searchWindowRef}>
