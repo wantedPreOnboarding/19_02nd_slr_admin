@@ -8,10 +8,11 @@ import {
   BuyerRecommendImg,
   ExposePeriod,
   ProductDelivery,
+  ProductResistor,
   MileageEtc,
+  Nav,
 } from 'Components';
 
-import ProductRegister from 'Components/ProductRegister/ProductRegister';
 import styles from './App.module.css';
 
 const App = () => {
@@ -37,44 +38,51 @@ const App = () => {
   };
 
   return (
-    <main className={styles.main}>
-      <form
-        onSubmit={e => {
-          submitHandler(e);
-        }}
-      >
-        <ProductRegister> </ProductRegister>
-        <Grid container center space={20}>
-          <Grid item>
-            <ExposePeriod />
-          </Grid>
-          <Grid item>
-            <BasicInfo />
-          </Grid>
-          <Grid item>
-            <ProOptMain />
-          </Grid>
-          <Grid item>
-            <ProductIntroImg />
-          </Grid>
-          <Grid item>
-            <BuyerRecommendImg />
-          </Grid>
-          <Grid item>
-            <ProductIntroNotice />
-          </Grid>
-          <Grid item>
-            <ProductDelivery />
-          </Grid>
-          <Grid item>
-            <MileageEtc menuTitle="mileage" />
-          </Grid>
-          <Grid item>
-            <MileageEtc menuTitle="etc" />
-          </Grid>
-        </Grid>
-      </form>
-    </main>
+    <Grid container>
+      <Grid className={styles.menu} item>
+        <Nav />
+      </Grid>
+      <Grid className={styles.gridContents} item size={10}>
+        <main className={styles.main}>
+          <ProductResistor />
+          <form
+            onSubmit={e => {
+              submitHandler(e);
+            }}
+          >
+            <Grid container center space={20}>
+              <Grid item>
+                <ExposePeriod />
+              </Grid>
+              <Grid item>
+                <BasicInfo />
+              </Grid>
+              <Grid item>
+                <ProOptMain />
+              </Grid>
+              <Grid item>
+                <ProductIntroImg />
+              </Grid>
+              <Grid item>
+                <BuyerRecommendImg />
+              </Grid>
+              <Grid item>
+                <ProductIntroNotice />
+              </Grid>
+              <Grid item>
+                <ProductDelivery />
+              </Grid>
+              <Grid item>
+                <MileageEtc menuTitle="mileage" />
+              </Grid>
+              <Grid item>
+                <MileageEtc menuTitle="etc" />
+              </Grid>
+            </Grid>
+          </form>
+        </main>
+      </Grid>
+    </Grid>
   );
 };
 

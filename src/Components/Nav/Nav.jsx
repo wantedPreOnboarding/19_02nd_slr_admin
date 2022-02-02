@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from 'Components/ProductRegister/ProductRegister.module.css';
+import styles from 'Components/Nav/Nav.module.css';
 const ProductRegister = () => {
   const menuList = [
     '기본 설정',
@@ -19,8 +19,8 @@ const ProductRegister = () => {
     menu === '상품' && setOpenMenu(!openMenu);
   };
   return (
-    <div className={styles.template}>
-      <div className={styles.menubar}>
+    <section className={styles.template}>
+      <nav className={styles.menubar}>
         <div className={`${styles.menuBarInner} ${styles.top}`}>
           <h1>SIr.LOIN</h1>
         </div>
@@ -55,17 +55,8 @@ const ProductRegister = () => {
             </div>
           );
         })}
-      </div>
-      <div className={styles.menuhead}>
-        <div className={styles.headInner}></div>
-        <div className={styles.headInner}>
-          <span className={styles.saveProduct}>상품 등록</span>
-          <button className={styles.saveBtn} type="submit">
-            저장하기
-          </button>
-        </div>
-      </div>
-    </div>
+      </nav>
+    </section>
   );
 };
 

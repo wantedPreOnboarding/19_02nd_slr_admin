@@ -1,5 +1,4 @@
-@value desktop from 'styles/theme.css';
-@value menuWidth: 213px;
+@value menuWidth, desktop from 'styles/theme.css';
 
 .main {
   max-width: desktop;
