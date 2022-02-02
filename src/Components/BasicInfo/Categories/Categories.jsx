@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { CheckBox, Grid } from 'Components';
 import Card from '../Card/Card';
 import Button from '../Button/Button';
@@ -18,23 +18,39 @@ const Categories = () => {
 
   const checkedCategories = () => categories.filter(({ checked }) => checked);
 
+  const MemoCheckBox = ({ category, children }) => {
+    const memoToggleCheckState = useCallback(() => toggleCheckState(category), [category]);
+
+    return (
+      <CheckBox
+        key={category.id}
+        id={category.category}
+        checked={category.checked}
+        onChange={memoToggleCheckState}
+        name={`basicInfo-${category.category}`}
+      >
+        {withCurlyBraces(category.category)}
+      </CheckBox>
+    );
+  };
+
+  const MemoButton = ({ category }) => {
+    const memoToggleCheckState = useCallback(() => toggleCheckState(category), [category]);
+
+    return (
+      <Button type={1} onClick={memoToggleCheckState}>
+        {withCurlyBraces(category.category)} X
+      </Button>
+    );
+  };
+
   return (
     <Grid container space={5}>
       <Grid size={7} item>
         <Card>
           <ul className={styles.categories}>
             {categories.map(category => {
-              return (
-                <CheckBox
-                  key={category.id}
-                  category={category.category}
-                  checked={category.checked}
-                  onChange={() => toggleCheckState(category)}
-                  name={`basicInfo-${category.category}`}
-                >
-                  {withCurlyBraces(category.category)}
-                </CheckBox>
-              );
+              return <MemoCheckBox category={category} />;
             })}
           </ul>
         </Card>
@@ -45,9 +61,7 @@ const Categories = () => {
             {checkedCategories().map(category => {
               return (
                 <li key={category.id}>
-                  <Button type={1} onClick={() => toggleCheckState(category)}>
-                    {withCurlyBraces(category.category)} X
-                  </Button>
+                  <MemoButton category={category} />
                 </li>
               );
             })}
