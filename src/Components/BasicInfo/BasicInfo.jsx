@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { withCurlyBraces } from 'utils';
+import { withCurlyBraces, paddingClassNameGenerator } from 'utils';
 import { categories as originCategory, productCode, stock } from 'data/basicInfo';
 import { A11yInput, CheckBox, Table, TableHeader, TableRow } from 'Components';
 import Card from './Card/Card';
@@ -7,6 +7,7 @@ import Grid from 'Components/Grid/Grid';
 import Button from './Button/Button';
 import SearchFilter from './SearchFilter/SearchFilter';
 import styles from './BasicInfo.module.css';
+import commonStyles from 'styles/index.module.scss';
 
 const BasicInfo = () => {
   const [categories, setCheckedCategories] = useState([...originCategory]);
@@ -24,10 +25,12 @@ const BasicInfo = () => {
 
   return (
     <Table pdLevel={5}>
-      <TableHeader className={styles.pd}>상품 기본 정보</TableHeader>
-      <TableRow label="카테고리 *">
-        <Grid container>
-          <Grid className={styles.pdr5} size={7} item>
+      <TableHeader className={commonStyles[paddingClassNameGenerator(11)]}>
+        상품 기본 정보
+      </TableHeader>
+      <TableRow label="카테고리 *" pdLevel={0}>
+        <Grid container space={5}>
+          <Grid size={7} item>
             <Card>
               <ul className={styles.categories}>
                 {categories.map(category => {
@@ -69,7 +72,7 @@ const BasicInfo = () => {
       <TableRow label="필터 태그" className={styles.relative}>
         <SearchFilter />
       </TableRow>
-      <TableRow className={styles.removePadding} label="상품명 *">
+      <TableRow pdLevel={0} label="상품명 *">
         <div className={styles.productName}>
           <A11yInput
             name="basicInfo-prodName"
@@ -86,7 +89,6 @@ const BasicInfo = () => {
         <A11yInput
           name="basicInfo-packageInfo"
           label="상품 구성 소개 정보"
-          className=""
           placeholder="상품 구성 소개 정보를 입력해 주세요."
           required
         />
@@ -98,5 +100,5 @@ const BasicInfo = () => {
       </TableRow>
     </Table>
   );
-}
+};
 export default BasicInfo;

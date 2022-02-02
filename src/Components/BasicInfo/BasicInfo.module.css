@@ -60,18 +60,6 @@
   position: relative;
 }
 
-.pdr5 {
-  padding-right: 1.6rem;
-}
-
-.pd {
-  padding: 1.35rem !important;
-}
-
-.removePadding {
-  padding: 0 !important;
-}
-
 .center {
   display: flex;
   align-items: center;
