@@ -1,7 +1,7 @@
 import React from 'react';
 import { withCurlyBraces, paddingClassNameGenerator } from 'utils';
 import { productCode, stock } from 'data/basicInfo';
-import { A11yInput, Table, TableHeader, TableRow } from 'Components';
+import { A11yInput, ImageUpload, Table, TableHeader, TableRow } from 'Components';
 import SearchFilter from './SearchFilter/SearchFilter';
 import styles from './BasicInfo.module.css';
 import commonStyles from 'styles/index.module.scss';
@@ -40,8 +40,12 @@ const BasicInfo = () => {
           required
         />
       </TableRow>
-      <TableRow label="상품 썸네일"></TableRow>
-      <TableRow label="상품 대표 이미지"></TableRow>
+      <TableRow label="상품 썸네일" center>
+        <ImageUpload id="thumbnail" />
+      </TableRow>
+      <TableRow label="상품 대표 이미지" center>
+        <ImageUpload id="mainImg" />
+      </TableRow>
       <TableRow className={styles.center} label="상품 총 재고 *">
         {withCurlyBraces(stock)}개
       </TableRow>
