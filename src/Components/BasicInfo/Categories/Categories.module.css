@@ -10,6 +10,11 @@
   padding-top: 0.2rem;
 }
 
+.checkedCategories {
+  margin: 0 auto;
+  max-width: 220px;
+}
+
 .checkedCategories :not(:last-child) {
   padding-bottom: 1rem;
 }
