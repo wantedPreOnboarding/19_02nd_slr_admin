@@ -20,6 +20,7 @@ const FormDatePicker = ({ changeHandler, name, dateType }) => {
             setIsDate(date);
             changeHandler(date);
           }}
+          autoComplete="off"
         />
         <span className={styles.i}>
           <i className="fas fa-chevron-down" />

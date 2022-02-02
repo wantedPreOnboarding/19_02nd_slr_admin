@@ -1,0 +1,46 @@
+@value desktop, menuWidth, sirGray from "styles/theme.css";
+
+.menuhead {
+  top: 0;
+  left: menuWidth;
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  height: 100px;
+  box-sizing: border-box;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+}
+
+@media screen and (max-width: desktop) {
+  .menuhead {
+    left: 0;
+  }
+}
+
+.headInner {
+  height: 55%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  border-bottom: 2px solid sirGray;
+}
+.headInner:last-child {
+  height: 45%;
+}
+
+.saveProduct {
+  font-weight: 700;
+}
+.saveBtn {
+  width: 85px;
+  height: 38px;
+  display: inline-block;
+  background: #352f6e;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}

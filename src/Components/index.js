@@ -1,4 +1,5 @@
 export { default as Grid } from './Grid/Grid';
+export { default as Nav } from './Nav/Nav';
 export { default as A11yInput } from './A11yInput/A11yInput';
 export { default as Table } from './Table/Table';
 export { default as TableHeader } from './Table/TableHeader';
@@ -16,4 +17,5 @@ export { default as ToggleBtn } from './ToggleBtn/ToggleBtn';
 export { default as MileageEtc } from './MileageEtc/MileageEtc';
 export { default as FormDatePicker } from './FormDatePicker/FormDatePicker';
 export { default as ProductIntroNotice } from './ProductIntroNotice/ProductIntroNotice';
-export { default as TableItem } from './Table/TableItem';
+export { default as ProductResistor } from './ProductResistor/ProductResistor';
+export { default as ImageUpload } from './ImageUpload/ImageUpload';

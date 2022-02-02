@@ -16,7 +16,10 @@
 @value sirBorderRadiusM: 5px;
 
 /* break point */
-@value desktop: 1105px;
+@value desktop: 1200px;
 
 /* font */
 @value m: 20px;
+
+/* etc */
+@value menuWidth: 213px;

@@ -31,3 +31,9 @@ button {
   padding: 0;
   white-space: nowrap;
 }
+
+@for $i from 20 to -1 {
+  .pd#{$i} {
+    padding: ($i * 2px);
+  }
+}

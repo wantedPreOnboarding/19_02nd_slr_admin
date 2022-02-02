@@ -1,9 +1,9 @@
 import React from 'react';
 import { classNames } from 'utils';
 import styles from './A11yInput.module.css';
-import commonStyles from 'styles/index.module.css';
+import commonStyles from 'styles/index.module.scss';
 
-export default function A11yInput({
+const A11yInput = ({
   className,
   id,
   name,
@@ -16,7 +16,8 @@ export default function A11yInput({
   onChangeHandler,
   value,
   required,
-}) {
+  autoComplete,
+}) => {
   return (
     <>
       {islabel && (
@@ -34,7 +35,9 @@ export default function A11yInput({
         value={value}
         name={name}
         required={required}
+        autoComplete={autoComplete}
       />
     </>
   );
-}
+};
+export default A11yInput;

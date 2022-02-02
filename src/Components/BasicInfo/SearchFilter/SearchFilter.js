@@ -4,9 +4,9 @@ import Card from '../Card/Card';
 import Button from '../Button/Button';
 import { filterTags } from 'data/basicInfo';
 import style from './SearchFilter.module.scss';
-import commonStyles from 'styles/index.module.css';
+import commonStyles from 'styles/index.module.scss';
 
-export default function SearchFilter() {
+const SearchFilter = () => {
   const [searchValue, setSearchValue] = useState('');
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [clickedFilterTags, setClickedFilterTags] = useState([]);
@@ -15,21 +15,22 @@ export default function SearchFilter() {
   const addFilter = tag => {
     setClickedFilterTags([...clickedFilterTags, tag]);
   };
+
   const removeFilter = tag => {
     setClickedFilterTags(clickedFilterTags.filter(({ id: clickedId }) => clickedId !== tag.id));
   };
 
-  function findOverlap(a, b) {
-    if (b.length === 0) {
+  function findOverlap(str1, str2) {
+    if (str2.length === 0) {
       return '';
     }
-    if (a.endsWith(b)) {
-      return b;
+    if (str1.endsWith(str2)) {
+      return str2;
     }
-    if (a.indexOf(b) >= 0) {
-      return b;
+    if (str1.indexOf(str2) >= 0) {
+      return str2;
     }
-    return findOverlap(a, b.substring(0, b.length - 1));
+    return findOverlap(str1, str2.substring(0, str2.length - 1));
   }
 
   function sortTagsFromSearch() {
@@ -58,6 +59,7 @@ export default function SearchFilter() {
         onChangeHandler={e => {
           setSearchValue(e.target.value);
         }}
+        autoComplete="off"
       />
       <label htmlFor="searchFilter" className={style.searchBtn}>
         검색
@@ -66,7 +68,8 @@ export default function SearchFilter() {
         className={commonStyles.a11yHidden}
         name="basicInfo-filter"
         value={JSON.stringify(clickedFilterTags)}
-      ></input>
+        readOnly
+      />
       {isOpenSearch && (
         <Card className={style.searchWindow} ref={searchWindowRef}>
           {sortTagsFromSearch().map(tag => (
@@ -108,4 +111,5 @@ export default function SearchFilter() {
       )}
     </>
   );
-}
+};
+export default SearchFilter;

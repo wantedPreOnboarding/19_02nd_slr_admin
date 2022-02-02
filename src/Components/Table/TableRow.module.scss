@@ -1,8 +1,13 @@
 @value sirLGray, sirTableBorderColor, sirTablePd, m from 'styles/theme.css';
 
+.center {
+  display: flex;
+  align-items: center;
+}
+
 :global(.tableItem).tableLabel {
   padding: sirTablePd;
-  background-color: sirLGray;
+  background: sirLGray;
 }
 
 @for $i from 1 to 21 {

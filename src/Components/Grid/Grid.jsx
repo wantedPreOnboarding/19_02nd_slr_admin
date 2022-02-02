@@ -1,11 +1,12 @@
 import React from 'react';
 import { COLUMNS } from './constants';
-import { classNames, isCssUnit } from 'utils';
+import { classNames, isCssUnit, makeClassNameGenerator, paddingClassNameGenerator } from 'utils';
 import styles from './Grid.module.scss';
+import commonStyles from 'styles/index.module.scss';
 
-const spaceClassGenerator = num => `space${num}`;
+const spaceClassNameGenerator = makeClassNameGenerator('space');
 
-export default function Grid({
+const Grid = ({
   className,
   container = false,
   item = true,
@@ -14,7 +15,8 @@ export default function Grid({
   style,
   center,
   space,
-}) {
+  pdLevel,
+}) => {
   const gridWidth = isCssUnit(size) ? size : (size / COLUMNS) * 100 + '%';
 
   return (
@@ -24,7 +26,8 @@ export default function Grid({
         container && styles.gridContainer,
         item && styles.gridItem,
         center && styles.gridCenter,
-        space && styles[spaceClassGenerator(space)]
+        space && styles[spaceClassNameGenerator(space)],
+        pdLevel && commonStyles[paddingClassNameGenerator(pdLevel)]
       )}
       {...{
         style: size && {
@@ -38,4 +41,5 @@ export default function Grid({
       {children}
     </div>
   );
-}
+};
+export default Grid;

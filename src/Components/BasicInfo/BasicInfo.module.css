@@ -1,30 +1,5 @@
 @value sirMGray, sirLGray, sirGray from 'styles/theme.css';
 
-.categories {
-  padding-right: 10px;
-}
-
-.categories li:not(:first-child) {
-  padding-top: 1.5rem;
-}
-
-.categories li:first-child {
-  padding-top: 0.2rem;
-}
-
-.checkedCategories :not(:last-child) {
-  padding-bottom: 1rem;
-}
-
-.message {
-  color: sirMGray;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3D(-50%, -50%, 0);
-  white-space: nowrap;
-}
-
 .productName {
   display: flex;
   align-items: center;
@@ -58,18 +33,6 @@
 
 .relative {
   position: relative;
-}
-
-.pdr5 {
-  padding-right: 1.6rem;
-}
-
-.pd {
-  padding: 1.35rem !important;
-}
-
-.removePadding {
-  padding: 0 !important;
 }
 
 .center {
