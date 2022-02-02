@@ -68,6 +68,7 @@ const SearchFilter = () => {
         className={commonStyles.a11yHidden}
         name="basicInfo-filter"
         value={JSON.stringify(clickedFilterTags)}
+        readOnly
       />
       {isOpenSearch && (
         <Card className={style.searchWindow} ref={searchWindowRef}>
