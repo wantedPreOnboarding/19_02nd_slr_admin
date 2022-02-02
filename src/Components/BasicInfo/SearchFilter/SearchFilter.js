@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 import Button from '../Button/Button';
 import { filterTags } from 'data/basicInfo';
 import style from './SearchFilter.module.scss';
-import commonStyles from 'styles/index.module.css';
+import commonStyles from 'styles/index.module.scss';
 
 const SearchFilter = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -15,6 +15,7 @@ const SearchFilter = () => {
   const addFilter = tag => {
     setClickedFilterTags([...clickedFilterTags, tag]);
   };
+
   const removeFilter = tag => {
     setClickedFilterTags(clickedFilterTags.filter(({ id: clickedId }) => clickedId !== tag.id));
   };
@@ -108,5 +109,5 @@ const SearchFilter = () => {
       )}
     </>
   );
-}
+};
 export default SearchFilter;

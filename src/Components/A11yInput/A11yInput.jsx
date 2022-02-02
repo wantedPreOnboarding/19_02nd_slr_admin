@@ -1,7 +1,7 @@
 import React from 'react';
 import { classNames } from 'utils';
 import styles from './A11yInput.module.css';
-import commonStyles from 'styles/index.module.css';
+import commonStyles from 'styles/index.module.scss';
 
 const A11yInput = ({
   className,
@@ -37,5 +37,5 @@ const A11yInput = ({
       />
     </>
   );
-}
+};
 export default A11yInput;
