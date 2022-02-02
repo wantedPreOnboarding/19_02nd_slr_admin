@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { Grid } from 'Components';
 import NoticeForm from './NoticeForm/NoticeForm';
 import styles from './ProductIntroNotice.module.scss';
