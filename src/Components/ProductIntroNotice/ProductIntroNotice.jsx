@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { Grid } from 'Components';
 import NoticeForm from './NoticeForm/NoticeForm';
 import styles from './ProductIntroNotice.module.scss';
 import { TableHeader, TableRow, Table } from 'Components';
 
 const idGenerator = array => {
-  return array[array.length - 1].id + 1;
+  return array[array.length - 1]?.id + 1 || 1;
 };
 
 const ProductIntroNotice = () => {
