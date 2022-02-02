@@ -1,0 +1,48 @@
+@value sirGray, m from "styles/theme.css";
+
+.table {
+  font-size: m;
+}
+
+.inputTime {
+  width: 100px;
+  height: 45px;
+  border: 1px solid sirGray;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.productDelivery {
+  padding: 30px 20px;
+}
+
+.span {
+  margin-right: 20px;
+}
+
+.normalSpan {
+  margin-left: 60px;
+  margin-right: 20px;
+}
+
+.tilde {
+  margin: 18px;
+}
+
+.menuTitle {
+  padding: 30px 20px;
+  font-size: 10px;
+}
+
+.menuTitle {
+  padding: 30px 20px;
+}
+
+.gridTop {
+  padding: 15px 0;
+}
+
+.gridItem {
+  padding: 10px;
+}

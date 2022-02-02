@@ -1,0 +1,29 @@
+.categories {
+  padding-right: 10px;
+}
+
+.categories li:not(:first-child) {
+  padding-top: 1.5rem;
+}
+
+.categories li:first-child {
+  padding-top: 0.2rem;
+}
+
+.checkedCategories {
+  margin: 0 auto;
+  max-width: 220px;
+}
+
+.checkedCategories :not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+.message {
+  color: sirMGray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3D(-50%, -50%, 0);
+  white-space: nowrap;
+}

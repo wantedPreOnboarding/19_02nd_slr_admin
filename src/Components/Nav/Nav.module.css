@@ -1,0 +1,74 @@
+@value desktop, sirDPurple,sirLPurple, sirLGray,sirGray,sirRed from "styles/theme.css";
+.template {
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.menubar {
+  height: 100%;
+  background: white;
+  border-right: 2px solid sirGray;
+}
+
+@media screen and (max-width: desktop) {
+  .menubar {
+    display: none;
+  }
+}
+
+.menuBarInner {
+  height: 45px;
+  box-sizing: border-box;
+  padding: 5px 30px;
+  border-bottom: 2px solid sirGray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.menuBarInner:hover {
+  background: sirLPurPle;
+}
+
+.top {
+  height: 55px;
+}
+
+.menuBarInner h1 {
+  color: sirDPurple;
+}
+
+.menuBarInner span {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.menuBarInner span:hover {
+  color: #352f6e;
+}
+
+.secondMenu {
+  border-bottom: 2px solid sirGray;
+  background: sirLGray;
+  transition: 0.4s;
+}
+
+.secondMenuInner {
+  padding: 5px 30px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.active {
+  background: hsl(244, 50%, 81%);
+  color: #352f6e;
+}

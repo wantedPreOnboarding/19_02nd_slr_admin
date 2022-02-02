@@ -1,0 +1,25 @@
+/* colors */
+@value sirDPurple: #352f6e;
+@value sirPurple: #9a97b7;
+@value sirLPurple: #aea8e6;
+@value sirBlue: #2a18bd;
+@value sirLGray: #efefef;
+@value sirGray: #e3e3e3;
+@value sirMGray: #777777;
+@value sirDgray: #2d2d2d;
+@value sirRed: rgba(255, 0, 0, 0.5);
+@value sirShadow: rgba(217, 217, 217, 1);
+@value sirTableBorderColor: #dedede;
+
+/* units */
+@value sirTablePd: 1.35rem;
+@value sirBorderRadiusM: 5px;
+
+/* break point */
+@value desktop: 1200px;
+
+/* font */
+@value m: 20px;
+
+/* etc */
+@value menuWidth: 213px;

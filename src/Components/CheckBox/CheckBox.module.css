@@ -1,0 +1,33 @@
+@value m, sirBorderRadiusM from 'styles/theme.css';
+
+.label {
+  position: relative;
+  font-size: m;
+  font-weight: 400;
+  padding-left: 3rem;
+}
+
+.label::before {
+  font-family: 'Font Awesome 5 Free';
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: -3px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #bbbbd4;
+  border-radius: sirBorderRadiusM;
+  background-color: #fff;
+}
+
+.checked::before {
+  background-color: #3232af;
+  border: none;
+}
+
+:global(.check) {
+  position: absolute;
+  left: 6px;
+  bottom: 1px;
+  fill: white;
+}

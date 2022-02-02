@@ -1,0 +1,16 @@
+@value sirTableBorderColor from 'styles/theme.css';
+
+.table {
+  border-right: solid sirTableBorderColor 2px;
+  border-bottom: solid sirTableBorderColor 2px;
+
+  > * {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+.table :global(.tableItem) {
+  border-top: solid sirTableBorderColor 2px;
+  border-left: solid sirTableBorderColor 2px;
+}

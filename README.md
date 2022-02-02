@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# 상품 등록 관리자 페이지
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 💁 **프로젝트 소개**
 
-## Available Scripts
+상품 정보 등록 및 관리 기능을 하는 관리자 페이지
 
-In the project directory, you can run:
+## 📆 **프로젝트 기간**
 
-### `yarn start`
+22.01.27 ~ 22.01.29
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **🔗 배포 링크**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[https://19thsiradminpage.netlify.app/](https://19thsiradminpage.netlify.app/)
 
-### `yarn test`
+## **📄 노션 주소**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[https://smiling-player-37b.notion.site/1-2-293e71011cdc4b64aebbf2b499c11318](https://www.notion.so/1-2-293e71011cdc4b64aebbf2b499c11318)
 
-### `yarn build`
+Project Start For Development
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 노출 및 판매기간 설정 **(다빈)**
+  - 노출 기한 설정
+  - 판매 기한 설정
+- 상품 기본 정보 **(영종)**
+  - **카테고리 지정 (필수값)**
+  - 필터 태그 지정
+  - **상품명 및 상품 코드 (필수값)**
+  - **상품 구성 소개 정보 (필수값)**
+  - 상품 썸네일
+  - 상품 대표 이미지
+  - **상품 총 재고 영역 (필수값)**
+- 상품 옵션 **(수임)**
+  - **상품 옵션 등록 (필수값)**
+  - 추가 옵션 상품 등록
+  - 옵션 내용 등록 영역
+- 상품 등록 이미지(송현)
+  - 상품 소개 이미지
+  - 구매자 추천 이미지
+- 상품 정보 고시 알림 설정 (송현)
+- 상품 배송 설정 **(다빈)**
+  - **사용자 배송 출발일 지정 (필수값)**
+  - **방문 수령 지정 (필수값)**
+  - **선 주문 예약 배송 지정 (필수값)**
+- 마일리지 적립 (수임)
+  기타설정 (수임)
+- 감사카드제공여부설정
+- 저장하기 (콘솔에 데이터가 결과 확인) **(영종)**
+  - 필수값 전부 들어갔는지 확인
+  - 필수값 미 입력시 alert 제공
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div>
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```json
+$ yarn install
+$ yarn start
+```
 
-### `yarn eject`
+## **🛠️ 기술 스택**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
+<img src="https://img.shields.io/badge/git-flow-brightgreen?style=for-the-badge&logo">
+<img src="https://img.shields.io/badge/css-module-1572B6?style=for-the-badge&logo=css-module&logoColor=white">
