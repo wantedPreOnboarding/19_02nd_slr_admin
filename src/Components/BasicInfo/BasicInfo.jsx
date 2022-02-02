@@ -41,7 +41,7 @@ const BasicInfo = () => {
         />
       </TableRow>
       <TableRow label="상품 썸네일" center>
-        <ImageUpload id="thumbnail" />
+        <ImageUpload id="thumbnail" maxImage={1} />
       </TableRow>
       <TableRow label="상품 대표 이미지" center>
         <ImageUpload id="mainImg" />

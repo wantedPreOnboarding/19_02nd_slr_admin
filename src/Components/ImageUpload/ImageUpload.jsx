@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 import styles from './ImageUpload.module.scss';
 import { classNames } from 'utils';
 
-const ImageUpload = ({ id }) => {
+const ImageUpload = ({ id, maxImage }) => {
   const [imageList, setImageList] = useState([]);
 
   const handleFileUpload = event => {
+    if (imageList.length >= maxImage) {
+      alert(`이미지를 ${maxImage}개 이상 등록할 수 없습니다. 삭제 후 업로드 해주세요.`);
+      return;
+    }
+
     const { files } = event.target;
     setImageList([...imageList, { id: Math.random() * 100, name: files[0].name }]);
   };
