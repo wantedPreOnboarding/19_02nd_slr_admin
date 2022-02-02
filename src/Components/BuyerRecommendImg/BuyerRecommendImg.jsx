@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageUpload, Table, TableHeader } from 'Components';
+import { ImageUpload, Table, TableHeader, TableRow } from 'Components';
 
 const BuyerRecommendImg = () => {
   return (
@@ -7,7 +7,9 @@ const BuyerRecommendImg = () => {
       <TableHeader>
         <span>구매자 추천 이미지</span>
       </TableHeader>
-      <ImageUpload id="buyerFile" />
+      <TableRow pdLevel={5} center>
+        <ImageUpload id="buyerFile" />
+      </TableRow>
     </Table>
   );
 };

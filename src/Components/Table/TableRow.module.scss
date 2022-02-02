@@ -1,5 +1,10 @@
 @value sirLGray, sirTableBorderColor, sirTablePd, m from 'styles/theme.css';
 
+.center {
+  display: flex;
+  align-items: center;
+}
+
 :global(.tableItem).tableLabel {
   padding: sirTablePd;
   background: sirLGray;

@@ -4,7 +4,7 @@ import { Grid } from 'Components';
 import styles from './TableRow.module.scss';
 import commonStyles from 'styles/index.module.scss';
 
-const TableRow = ({ className, label, children, pdLevel }) => {
+const TableRow = ({ className, label, children, pdLevel, center }) => {
   return (
     <>
       {label && (
@@ -18,6 +18,7 @@ const TableRow = ({ className, label, children, pdLevel }) => {
           'tableItem',
           styles.tableValue,
           className,
+          center && styles.center,
           (pdLevel || pdLevel === 0) && commonStyles[paddingClassNameGenerator(pdLevel)]
         )}
         size={label ? 10 : 12}

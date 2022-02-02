@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { TableRow } from 'Components';
-import styles from './ImageUpload.module.css';
+import styles from './ImageUpload.module.scss';
+import { classNames } from 'utils';
 
 const ImageUpload = ({ id }) => {
   const [imageList, setImageList] = useState([]);
@@ -18,9 +18,17 @@ const ImageUpload = ({ id }) => {
   };
 
   return (
-    <TableRow className={styles.tableFileRow}>
-      <label htmlFor={id}> + 이미지 추가</label>
-      <input type="file" id={id} accept="image/*" onChange={handleFileUpload} />
+    <>
+      <label className={styles.tableImglabel} htmlFor={id}>
+        + 이미지 추가
+      </label>
+      <input
+        className={styles.tableImgInput}
+        type="file"
+        id={id}
+        accept="image/*"
+        onChange={handleFileUpload}
+      />
       <div>
         {imageList.map(item => (
           <div className={styles.tabelFileCol} key={item.id}>
@@ -30,12 +38,12 @@ const ImageUpload = ({ id }) => {
               className={styles.deleteBtn}
               onClick={() => hadleDeleImg(item.id)}
             >
-              <i className="fas fa-times" />
+              <i className={classNames('fas', 'fa-times', styles.icon)} />
             </button>
           </div>
         ))}
       </div>
-    </TableRow>
+    </>
   );
 };
 
