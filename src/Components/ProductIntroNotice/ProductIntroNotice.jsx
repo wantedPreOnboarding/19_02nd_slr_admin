@@ -9,7 +9,7 @@ const idGenerator = array => {
 };
 
 const ProductIntroNotice = () => {
-  const [noticeData, setNoticeCount] = useState([{ id: 1 }, { id: 2 }]);
+  const [noticeData, setNoticeCount] = useState([{ id: 1 }]);
 
   const noticeForms = Array.from(noticeData).map(({ id }, index) => {
     return (
