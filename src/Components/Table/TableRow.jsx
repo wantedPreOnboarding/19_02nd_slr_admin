@@ -1,9 +1,10 @@
 import React from 'react';
-import { classNames } from 'utils';
+import { classNames, paddingClassNameGenerator } from 'utils';
 import { Grid } from 'Components';
 import styles from './TableRow.module.scss';
+import commonStyles from 'styles/index.module.scss';
 
-const TableRow = ({ className, label, children, pdLevel, direction }) => {
+const TableRow = ({ className, label, children, pdLevel }) => {
   return (
     <>
       {label && (
@@ -13,13 +14,18 @@ const TableRow = ({ className, label, children, pdLevel, direction }) => {
       )}
       <Grid
         item
-        className={classNames('tableItem', styles.tableValue, className, styles[`pd${pdLevel}`])}
+        className={classNames(
+          'tableItem',
+          styles.tableValue,
+          className,
+          (pdLevel || pdLevel === 0) && commonStyles[paddingClassNameGenerator(pdLevel)]
+        )}
         size={label ? 10 : 12}
       >
         {children}
       </Grid>
     </>
   );
-}
+};
 
 export default TableRow;
