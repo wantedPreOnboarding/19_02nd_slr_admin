@@ -27,7 +27,7 @@ const Categories = () => {
         id={category.category}
         checked={category.checked}
         onChange={memoToggleCheckState}
-        name={`basicInfo-${category.category}`}
+        name={`basicInfo-categories-${category.category}`}
       >
         {withCurlyBraces(category.category)}
       </CheckBox>
@@ -50,7 +50,7 @@ const Categories = () => {
         <Card>
           <ul className={styles.categories}>
             {categories.map(category => {
-              return <MemoCheckBox category={category} />;
+              return <MemoCheckBox key={category.id} category={category} />;
             })}
           </ul>
         </Card>
