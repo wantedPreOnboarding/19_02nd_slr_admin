@@ -46,7 +46,7 @@ const NoticeItem = ({ onDelete, id }) => {
         />
       </Grid>
       <Grid size={2} item>
-        <button className={styles.deleteRedBtn} onClick={handleDelete}>
+        <button type="button" className={styles.deleteRedBtn} onClick={handleDelete}>
           삭제
         </button>
       </Grid>
