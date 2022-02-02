@@ -59,6 +59,7 @@ const SearchFilter = () => {
         onChangeHandler={e => {
           setSearchValue(e.target.value);
         }}
+        autoComplete="off"
       />
       <label htmlFor="searchFilter" className={style.searchBtn}>
         검색
