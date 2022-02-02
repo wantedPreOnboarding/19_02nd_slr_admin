@@ -1,8 +1,4 @@
-@value sirDPurple, sirDgray from 'styles/theme.css';
-
-.tableHeader span {
-  font-weight: 700;
-}
+@value sirDPurple, sirTableBorderColor from 'styles/theme.css';
 
 .tableFileRow {
   display: flex;
@@ -10,13 +6,15 @@
 }
 
 .tableFileRow label {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 200px;
   height: 50px;
-  padding: 10px 0;
+  padding-top: 3px;
   border: 2px solid sirDPurple;
-  color: sirDPurple;
   font-weight: 600;
+  color: sirDPurple;
   text-align: center;
   cursor: pointer;
 }
