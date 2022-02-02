@@ -2,7 +2,7 @@ import React from 'react';
 import { classNames } from 'utils';
 import { ReactComponent as Checked } from './assets/checked.svg';
 import styles from './CheckBox.module.css';
-import commonStyles from 'styles/index.module.css';
+import commonStyles from 'styles/index.module.scss';
 
 const CheckBox = ({ category, checked, onChange, children, name }) => {
   return (
@@ -23,5 +23,5 @@ const CheckBox = ({ category, checked, onChange, children, name }) => {
       </label>
     </li>
   );
-}
+};
 export default CheckBox;
