@@ -21,18 +21,35 @@ const App = () => {
     const temp = {};
     const data = new FormData(e.target);
 
+    const initObject = (obj, keys, index) => {
+      const currentKey = keys[index];
+
+      if (currentKey && !obj[currentKey]) {
+        obj[currentKey] = {};
+      }
+
+      return currentKey && initObject(obj[currentKey], keys, ++index);
+    };
+
     for (var [key, value] of data.entries()) {
       if (value.length === 0 && !value) continue;
+      const [prefix, contents, rest] = key.split('-');
 
-      const [prefix, contents] = key.split('-');
+      initObject(temp, [prefix, contents, rest], 0);
 
-      if (!temp[prefix]) {
-        temp[prefix] = {};
-      } else if (!temp[prefix][contents]) {
-        temp[prefix][contents] = {};
+      let jsonValue;
+
+      try {
+        jsonValue = JSON.parse(value);
+      } catch (e) {
+        jsonValue = value;
       }
-      temp[prefix][contents] = value;
+
+      if (rest) temp[prefix][contents][rest] = jsonValue;
+      else temp[prefix][contents] = jsonValue;
     }
+
+    console.log(temp);
 
     alert('결과가 저장되었습니다. 콘솔을 확인해주세요!');
   };
@@ -44,12 +61,12 @@ const App = () => {
       </Grid>
       <Grid className={styles.gridContents} item size={10}>
         <main className={styles.main}>
-          <ProductResistor />
           <form
             onSubmit={e => {
               submitHandler(e);
             }}
           >
+            <ProductResistor />
             <Grid container center space={20}>
               <Grid item>
                 <ExposePeriod />
