@@ -49,18 +49,6 @@ const NoticeForm = ({ index, handleMinusCount }) => {
     setNotices(list);
   };
 
-  const handleReset = () => {
-    setInputs({
-      weight: '',
-      origin: '',
-      grade: '',
-      keep: '',
-      type: '',
-      title: '',
-      text: '',
-    });
-  };
-
   return (
     <Grid container item className={classNames(styles.gridInner, 'NoticeForm')}>
       <Grid size={10} item>
@@ -155,4 +143,4 @@ const NoticeForm = ({ index, handleMinusCount }) => {
   );
 };
 
-export default NoticeForm;
+export default React.memo(NoticeForm);
