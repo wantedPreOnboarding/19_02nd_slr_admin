@@ -1,4 +1,4 @@
-import makeClassNameGenerator from './makeClassNameGenerator';
+import makeClassNameGenerator from './classNameGenerator';
 
 // makePrefixedClassGenerator는 prefix를 설정하며,
 // 반환한 함수에 value을 입력하여 호출하면 prefixvalue 형태로 문자를 만환합니다.
