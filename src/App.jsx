@@ -58,7 +58,7 @@ const App = () => {
     }
 
     if (!temp?.basicInfo?.categories || Object.keys(temp?.basicInfo?.categories).length === 0) {
-      e.target.querySelector('.categoriesErrorMessage').style.display = 'block';
+      e.target.querySelector('.categoriesErrorMessage').style.display = 'flex';
       e.target.querySelector('.categoriesErrorMessage + div input').focus();
 
       debounceErrorMessageNonedebounce();
