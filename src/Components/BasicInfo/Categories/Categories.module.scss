@@ -1,3 +1,7 @@
+.categoriesWrapper {
+  position: relative;
+}
+
 .categories {
   padding-right: 10px;
 }
@@ -26,4 +30,25 @@
   left: 50%;
   transform: translate3D(-50%, -50%, 0);
   white-space: nowrap;
+}
+
+.messageBox {
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: 20px;
+  font-size: 0.9rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    left: 10px;
+    bottom: -6px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+  }
 }
