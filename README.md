@@ -10,7 +10,7 @@
 
 ## **🔗 배포 링크**
 
-[https://19thsiradmin.netlify.app/](https://19thsiradmin.netlify.app)
+[https://19thsiradminpage.netlify.app/](https://19thsiradminpage.netlify.app/)
 
 ## **📄 노션 주소**
 
