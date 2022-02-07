@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
-import { CheckBox, Grid } from 'Components';
+import { CheckBox, Grid, MessageBox } from 'Components';
 import Card from '../Card/Card';
 import Button from '../Button/Button';
-import { withCurlyBraces } from 'utils';
+import { classNames, withCurlyBraces } from 'utils';
 import { categories as originCategories } from 'data/basicInfo';
-import styles from './Categories.module.css';
+import styles from './Categories.module.scss';
 
 const Categories = () => {
   const [categories, setCheckedCategories] = useState([...originCategories]);
@@ -16,9 +16,9 @@ const Categories = () => {
     setCheckedCategories(newState);
   };
 
-  const checkedCategories = () => categories.filter(({ checked }) => checked);
+  const checkedCategories = categories.filter(({ checked }) => checked);
 
-  const MemoCheckBox = ({ category, children }) => {
+  const MemoCheckBox = ({ category }) => {
     const memoToggleCheckState = useCallback(() => toggleCheckState(category), [category]);
 
     return (
@@ -45,7 +45,10 @@ const Categories = () => {
   };
 
   return (
-    <Grid container space={5}>
+    <Grid className={styles.categoriesWrapper} container space={5}>
+      <MessageBox className={classNames(styles.messageBox, 'categoriesErrorMessage')}>
+        <span>한개 이상의 카테고리를 선택해 주세요.</span>
+      </MessageBox>
       <Grid size={7} item>
         <Card>
           <ul className={styles.categories}>
@@ -58,7 +61,7 @@ const Categories = () => {
       <Grid size={5} item>
         <Card>
           <ul className={styles.checkedCategories}>
-            {checkedCategories().map(category => {
+            {checkedCategories.map(category => {
               return (
                 <li key={category.id}>
                   <MemoButton category={category} />
@@ -66,7 +69,7 @@ const Categories = () => {
               );
             })}
           </ul>
-          {checkedCategories().length === 0 && (
+          {checkedCategories.length === 0 && (
             <span className={styles.message}>카테고리를 지정해 주세요.</span>
           )}
         </Card>

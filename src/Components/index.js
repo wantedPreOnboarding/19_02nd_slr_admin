@@ -1,4 +1,5 @@
 export { default as Grid } from './Grid/Grid';
+export { default as MessageBox } from './MessageBox/MessageBox';
 export { default as Nav } from './Nav/Nav';
 export { default as A11yInput } from './A11yInput/A11yInput';
 export { default as Table } from './Table/Table';

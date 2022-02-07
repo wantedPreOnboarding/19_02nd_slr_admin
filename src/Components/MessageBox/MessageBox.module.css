@@ -1,0 +1,30 @@
+.messageBox {
+  background-color: #fff;
+  border: 1px solid rgb(95, 91, 91);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 7px;
+}
+
+.messageBox::before {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  left: 10px;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-bottom: 1px solid rgb(95, 91, 91);
+  border-right: 1px solid rgb(95, 91, 91);
+}
+
+.messageBox > img {
+  width: 18px;
+  height: 18px;
+}
+
+.messageBox > span {
+  padding-left: 10px;
+}

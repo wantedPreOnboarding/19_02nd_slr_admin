@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   BasicInfo,
   Grid,
@@ -14,8 +14,16 @@ import {
 } from 'Components';
 
 import styles from './App.module.css';
+import { debounce } from 'utils';
 
 const App = () => {
+  const debounceErrorMessageNonedebounce = useCallback(
+    debounce(() => {
+      document.querySelector('.categoriesErrorMessage').style.display = 'none';
+    }, 4000),
+    []
+  );
+
   const submitHandler = e => {
     e.preventDefault();
     const temp = {};
@@ -49,8 +57,16 @@ const App = () => {
       else temp[prefix][contents] = jsonValue;
     }
 
-    console.log(temp);
+    if (!temp?.basicInfo?.categories || Object.keys(temp?.basicInfo?.categories).length === 0) {
+      e.target.querySelector('.categoriesErrorMessage').style.display = 'flex';
+      e.target.querySelector('.categoriesErrorMessage + div input').focus();
 
+      debounceErrorMessageNonedebounce();
+
+      return;
+    }
+
+    console.log(temp);
     alert('결과가 저장되었습니다. 콘솔을 확인해주세요!');
   };
 
