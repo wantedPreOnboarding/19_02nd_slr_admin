@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useReducer } from 'react';
 import {
   BasicInfo,
   Grid,
@@ -13,20 +13,29 @@ import {
   Nav,
 } from 'Components';
 
+import {
+  intialErrors,
+  ErrorContext,
+  errorReducer,
+  categoriesActionGenerator,
+  productIntroActionGenerator,
+} from 'context/error';
 import styles from './App.module.css';
 import { debounce } from 'utils';
 
 const App = () => {
-  const debounceErrorMessageNonedebounce = useCallback(
+  const [errors, errorsDispatch] = useReducer(errorReducer, intialErrors);
+
+  const offErrorMessage = useCallback(
     debounce(() => {
-      document.querySelector('.categoriesErrorMessage').style.display = 'none';
+      errorsDispatch(categoriesActionGenerator(false));
     }, 4000),
     []
   );
 
   const submitHandler = e => {
     e.preventDefault();
-    const temp = {};
+    const requestBody = {};
     const data = new FormData(e.target);
 
     const initObject = (obj, keys, index) => {
@@ -43,7 +52,7 @@ const App = () => {
       if (value.length === 0 && !value) continue;
       const [prefix, contents, rest] = key.split('-');
 
-      initObject(temp, [prefix, contents, rest], 0);
+      initObject(requestBody, [prefix, contents, rest], 0);
 
       let jsonValue;
 
@@ -53,69 +62,71 @@ const App = () => {
         jsonValue = value;
       }
 
-      if (rest) temp[prefix][contents][rest] = jsonValue;
-      else temp[prefix][contents] = jsonValue;
+      if (rest) requestBody[prefix][contents][rest] = jsonValue;
+      else requestBody[prefix][contents] = jsonValue;
     }
 
-    if (!temp?.basicInfo?.categories || Object.keys(temp?.basicInfo?.categories).length === 0) {
-      e.target.querySelector('.categoriesErrorMessage').style.display = 'flex';
-      e.target.querySelector('.categoriesErrorMessage + div input').focus();
-
-      debounceErrorMessageNonedebounce();
-
+    if (
+      !requestBody?.basicInfo?.categories ||
+      Object.keys(requestBody?.basicInfo?.categories).length === 0
+    ) {
+      errorsDispatch(categoriesActionGenerator(true));
+      offErrorMessage();
       return;
     }
 
-    console.log(temp);
+    console.log(requestBody);
     alert('결과가 저장되었습니다. 콘솔을 확인해주세요!');
   };
 
   return (
-    <Grid container>
-      <Grid className={styles.menu} item>
-        <Nav />
+    <ErrorContext.Provider value={errors}>
+      <Grid container>
+        <Grid className={styles.menu} item>
+          <Nav />
+        </Grid>
+        <Grid className={styles.gridContents} item size={10}>
+          <main className={styles.main}>
+            <form
+              onSubmit={e => {
+                submitHandler(e);
+              }}
+            >
+              <ProductResistor />
+              <Grid container center space={20}>
+                <Grid item>
+                  <ExposePeriod />
+                </Grid>
+                <Grid item>
+                  <BasicInfo />
+                </Grid>
+                <Grid item>
+                  <ProOptMain />
+                </Grid>
+                <Grid item>
+                  <ProductIntroImg />
+                </Grid>
+                <Grid item>
+                  <BuyerRecommendImg />
+                </Grid>
+                <Grid item>
+                  <ProductIntroNotice />
+                </Grid>
+                <Grid item>
+                  <ProductDelivery />
+                </Grid>
+                <Grid item>
+                  <MileageEtc menuTitle="mileage" />
+                </Grid>
+                <Grid item>
+                  <MileageEtc menuTitle="etc" />
+                </Grid>
+              </Grid>
+            </form>
+          </main>
+        </Grid>
       </Grid>
-      <Grid className={styles.gridContents} item size={10}>
-        <main className={styles.main}>
-          <form
-            onSubmit={e => {
-              submitHandler(e);
-            }}
-          >
-            <ProductResistor />
-            <Grid container center space={20}>
-              <Grid item>
-                <ExposePeriod />
-              </Grid>
-              <Grid item>
-                <BasicInfo />
-              </Grid>
-              <Grid item>
-                <ProOptMain />
-              </Grid>
-              <Grid item>
-                <ProductIntroImg />
-              </Grid>
-              <Grid item>
-                <BuyerRecommendImg />
-              </Grid>
-              <Grid item>
-                <ProductIntroNotice />
-              </Grid>
-              <Grid item>
-                <ProductDelivery />
-              </Grid>
-              <Grid item>
-                <MileageEtc menuTitle="mileage" />
-              </Grid>
-              <Grid item>
-                <MileageEtc menuTitle="etc" />
-              </Grid>
-            </Grid>
-          </form>
-        </main>
-      </Grid>
-    </Grid>
+    </ErrorContext.Provider>
   );
 };
 
