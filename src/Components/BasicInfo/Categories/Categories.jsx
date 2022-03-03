@@ -47,7 +47,7 @@ const Categories = () => {
   return (
     <Grid className={styles.categoriesWrapper} container space={5}>
       <MessageBox className={classNames(styles.messageBox, 'categoriesErrorMessage')}>
-        <span>한개 이상의 카테고리를 선택해 주세요.</span>
+        <span>한 개 이상의 카테고리를 선택해 주세요.</span>
       </MessageBox>
       <Grid size={7} item>
         <Card>
