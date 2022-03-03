@@ -2,15 +2,20 @@ import React, { useCallback, useReducer } from 'react';
 import { categoriesActionGenerator, errorReducer, intialErrors } from 'context/error';
 import { debounce } from 'utils';
 import { ErrorContext } from 'context/error';
+import { productOptionActionGenerator } from 'context/error';
 
 const SubmitForm = ({ children }) => {
   const [errors, errorsDispatch] = useReducer(errorReducer, intialErrors);
 
-  const isValidSubmit = requestBody => {
+  const isValidCategories = requestBody => {
     return !requestBody?.basicInfo?.categories ||
       Object.keys(requestBody?.basicInfo?.categories).length === 0
       ? false
       : true;
+  };
+
+  const isValidProductOption = requestBody => {
+    return requestBody?.proOpt;
   };
 
   const initBody = (requestBody, keys, index) => {
@@ -50,6 +55,7 @@ const SubmitForm = ({ children }) => {
   const offErrorMessage = useCallback(
     debounce(() => {
       errorsDispatch(categoriesActionGenerator(false));
+      errorsDispatch(productOptionActionGenerator(false));
     }, 4000),
     []
   );
@@ -61,8 +67,14 @@ const SubmitForm = ({ children }) => {
 
     setBodyForRequest(requestBody, inputData);
 
-    if (!isValidSubmit(requestBody)) {
+    if (!isValidCategories(requestBody)) {
       errorsDispatch(categoriesActionGenerator(true));
+      offErrorMessage();
+      return;
+    }
+
+    if (!isValidProductOption(requestBody)) {
+      errorsDispatch(productOptionActionGenerator(true));
       offErrorMessage();
       return;
     }
