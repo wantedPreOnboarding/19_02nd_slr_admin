@@ -1,9 +1,9 @@
-import { CATEGORIES, PRODUCT_INTRO_NOTICE } from './error.type';
+import { CATEGORIES, PRODUCT_OPTION } from './error.type';
 import { createContext } from 'react';
 
 const intialErrors = {
   categories: false,
-  productIntroNotice: false,
+  productOption: false,
 };
 
 const ErrorContext = createContext(null);
@@ -12,22 +12,22 @@ function errorReducer(state, action) {
   switch (action.type) {
     case CATEGORIES.ON:
       return {
-        productIntroNotice: false,
+        productOption: false,
         categories: true,
       };
     case CATEGORIES.OFF:
       return {
-        productIntroNotice: false,
+        productOption: false,
         categories: false,
       };
-    case PRODUCT_INTRO_NOTICE.ON:
+    case PRODUCT_OPTION.ON:
       return {
-        productIntroNotice: true,
+        productOption: true,
         categories: false,
       };
-    case PRODUCT_INTRO_NOTICE.OFF:
+    case PRODUCT_OPTION.OFF:
       return {
-        productIntroNotice: false,
+        productOption: false,
         categories: false,
       };
     default:
@@ -41,9 +41,9 @@ const categoriesActionGenerator = state => {
   };
 };
 
-const productIntroActionGenerator = state => {
+const productOptionActionGenerator = state => {
   return {
-    type: state ? PRODUCT_INTRO_NOTICE.ON : PRODUCT_INTRO_NOTICE.OFF,
+    type: state ? PRODUCT_OPTION.ON : PRODUCT_OPTION.OFF,
   };
 };
 
@@ -52,5 +52,5 @@ export {
   ErrorContext,
   errorReducer,
   categoriesActionGenerator,
-  productIntroActionGenerator,
+  productOptionActionGenerator,
 };
