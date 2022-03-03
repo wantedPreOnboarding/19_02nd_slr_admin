@@ -13,7 +13,7 @@ const ProOptMain = () => {
 
   useEffect(() => {
     if (error) optionRef.current.focus();
-  },[error]);
+  }, [error]);
 
   const addOptionSet = () => {
     setOptionNum(optionNum + 1);
@@ -24,8 +24,9 @@ const ProOptMain = () => {
     setOptionNum(optionNum - 1);
     setOptionSet(optionSet.filter(i => i !== id));
   };
+
   return (
-    <Table className={styles.table} >
+    <Table className={styles.table}>
       {error && (
         <MessageBox className={classNames(styles.messageBox, 'categoriesErrorMessage')}>
           <span>프로덕트 옵션은 필수값입니다.</span>
@@ -35,7 +36,7 @@ const ProOptMain = () => {
         <span>
           상품옵션<span>*</span>
         </span>
-        <button  ref={optionRef} type="button" className={styles.addBtn} onClick={addOptionSet}>
+        <button ref={optionRef} type="button" className={styles.addBtn} onClick={addOptionSet}>
           <i className="fas fa-plus "></i> 옵션 세트 추가
         </button>
       </TableHeader>

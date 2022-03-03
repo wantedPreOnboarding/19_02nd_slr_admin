@@ -80,16 +80,15 @@ const SubmitForm = ({ children }) => {
     }
 
     request(requestBody);
+
     alert('결과가 저장되었습니다. 콘솔을 확인해주세요!');
   };
+
   return (
-    <form
-      onSubmit={e => {
-        submitHandler(e);
-      }}
-    >
+    <form onSubmit={submitHandler}>
       <ErrorContext.Provider value={errors}>{children}</ErrorContext.Provider>
     </form>
   );
 };
+
 export default SubmitForm;
