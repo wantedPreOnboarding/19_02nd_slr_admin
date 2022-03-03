@@ -18,7 +18,7 @@ import {
   ErrorContext,
   errorReducer,
   categoriesActionGenerator,
-  productIntroActionGenerator,
+  productOptionActionGenerator,
 } from 'context/error';
 import styles from './App.module.css';
 import { debounce } from 'utils';
@@ -29,6 +29,7 @@ const App = () => {
   const offErrorMessage = useCallback(
     debounce(() => {
       errorsDispatch(categoriesActionGenerator(false));
+      errorsDispatch(productOptionActionGenerator(false));
     }, 4000),
     []
   );
@@ -75,8 +76,13 @@ const App = () => {
       return;
     }
 
-    console.log(requestBody);
+    if (!requestBody?.proOpt) {
+      errorsDispatch(productOptionActionGenerator(true));
+      offErrorMessage();
+      return;
+    }
     alert('결과가 저장되었습니다. 콘솔을 확인해주세요!');
+    console.log(requestBody);
   };
 
   return (
