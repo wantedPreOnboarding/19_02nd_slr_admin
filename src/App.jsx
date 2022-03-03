@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import {
   BasicInfo,
   Grid,
@@ -11,65 +11,12 @@ import {
   ProductResistor,
   MileageEtc,
   Nav,
+  SubmitForm,
 } from 'Components';
 
 import styles from './App.module.css';
-import { debounce } from 'utils';
 
 const App = () => {
-  const debounceErrorMessageNonedebounce = useCallback(
-    debounce(() => {
-      document.querySelector('.categoriesErrorMessage').style.display = 'none';
-    }, 4000),
-    []
-  );
-
-  const submitHandler = e => {
-    e.preventDefault();
-    const temp = {};
-    const data = new FormData(e.target);
-
-    const initObject = (obj, keys, index) => {
-      const currentKey = keys[index];
-
-      if (currentKey && !obj[currentKey]) {
-        obj[currentKey] = {};
-      }
-
-      return currentKey && initObject(obj[currentKey], keys, ++index);
-    };
-
-    for (var [key, value] of data.entries()) {
-      if (value.length === 0 && !value) continue;
-      const [prefix, contents, rest] = key.split('-');
-
-      initObject(temp, [prefix, contents, rest], 0);
-
-      let jsonValue;
-
-      try {
-        jsonValue = JSON.parse(value);
-      } catch (e) {
-        jsonValue = value;
-      }
-
-      if (rest) temp[prefix][contents][rest] = jsonValue;
-      else temp[prefix][contents] = jsonValue;
-    }
-
-    if (!temp?.basicInfo?.categories || Object.keys(temp?.basicInfo?.categories).length === 0) {
-      e.target.querySelector('.categoriesErrorMessage').style.display = 'flex';
-      e.target.querySelector('.categoriesErrorMessage + div input').focus();
-
-      debounceErrorMessageNonedebounce();
-
-      return;
-    }
-
-    console.log(temp);
-    alert('결과가 저장되었습니다. 콘솔을 확인해주세요!');
-  };
-
   return (
     <Grid container>
       <Grid className={styles.menu} item>
@@ -77,11 +24,7 @@ const App = () => {
       </Grid>
       <Grid className={styles.gridContents} item size={10}>
         <main className={styles.main}>
-          <form
-            onSubmit={e => {
-              submitHandler(e);
-            }}
-          >
+          <SubmitForm>
             <ProductResistor />
             <Grid container center space={20}>
               <Grid item>
@@ -112,7 +55,7 @@ const App = () => {
                 <MileageEtc menuTitle="etc" />
               </Grid>
             </Grid>
-          </form>
+          </SubmitForm>
         </main>
       </Grid>
     </Grid>

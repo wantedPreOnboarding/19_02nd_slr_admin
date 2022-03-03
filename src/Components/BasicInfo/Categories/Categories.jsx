@@ -1,4 +1,5 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useContext, useEffect, useRef } from 'react';
+import { ErrorContext } from 'context/error';
 import { CheckBox, Grid, MessageBox } from 'Components';
 import Card from '../Card/Card';
 import Button from '../Button/Button';
@@ -7,7 +8,9 @@ import { categories as originCategories } from 'data/basicInfo';
 import styles from './Categories.module.scss';
 
 const Categories = () => {
+  const checkBoxesRef = useRef(null);
   const [categories, setCheckedCategories] = useState([...originCategories]);
+  const { categories: error } = useContext(ErrorContext);
 
   const toggleCheckState = category => {
     const newState = [...categories];
@@ -44,17 +47,23 @@ const Categories = () => {
     );
   };
 
+  useEffect(() => {
+    error && checkBoxesRef.current.querySelector('input')?.focus();
+  }, [error]);
+
   return (
     <Grid className={styles.categoriesWrapper} container space={5}>
-      <MessageBox className={classNames(styles.messageBox, 'categoriesErrorMessage')}>
-        <span>한개 이상의 카테고리를 선택해 주세요.</span>
-      </MessageBox>
+      {error && (
+        <MessageBox className={classNames(styles.messageBox, 'categoriesErrorMessage')}>
+          <span>한 개 이상의 카테고리를 선택해 주세요.</span>
+        </MessageBox>
+      )}
       <Grid size={7} item>
         <Card>
-          <ul className={styles.categories}>
-            {categories.map(category => {
-              return <MemoCheckBox key={category.id} category={category} />;
-            })}
+          <ul className={styles.categories} ref={checkBoxesRef}>
+            {categories.map(category => (
+              <MemoCheckBox key={category.id} category={category} />
+            ))}
           </ul>
         </Card>
       </Grid>

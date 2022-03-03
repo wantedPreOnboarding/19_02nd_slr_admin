@@ -1,13 +1,12 @@
 @value desktop, sirDPurple,sirLPurple, sirLGray,sirGray,sirRed from "styles/theme.css";
 .template {
   height: 100%;
-  top: 0;
-  left: 0;
   width: 100%;
 }
 
 .menubar {
-  height: 100%;
+  position: sticky;
+  top: 0;
   background: white;
   border-right: 2px solid sirGray;
 }
