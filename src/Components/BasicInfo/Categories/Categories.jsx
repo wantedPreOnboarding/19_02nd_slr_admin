@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useContext } from 'react';
+import React, { useCallback, useState, useContext, useEffect, useRef } from 'react';
 import { ErrorContext } from 'context/error';
 import { CheckBox, Grid, MessageBox } from 'Components';
 import Card from '../Card/Card';
@@ -8,6 +8,7 @@ import { categories as originCategories } from 'data/basicInfo';
 import styles from './Categories.module.scss';
 
 const Categories = () => {
+  const checkBoxesRef = useRef(null);
   const [categories, setCheckedCategories] = useState([...originCategories]);
   const { categories: error } = useContext(ErrorContext);
 
@@ -46,6 +47,10 @@ const Categories = () => {
     );
   };
 
+  useEffect(() => {
+    error && checkBoxesRef.current.querySelector('input')?.focus();
+  }, [error]);
+
   return (
     <Grid className={styles.categoriesWrapper} container space={5}>
       {error && (
@@ -55,10 +60,10 @@ const Categories = () => {
       )}
       <Grid size={7} item>
         <Card>
-          <ul className={styles.categories}>
-            {categories.map(category => {
-              return <MemoCheckBox key={category.id} category={category} />;
-            })}
+          <ul className={styles.categories} ref={checkBoxesRef}>
+            {categories.map(category => (
+              <MemoCheckBox key={category.id} category={category} />
+            ))}
           </ul>
         </Card>
       </Grid>
