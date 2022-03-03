@@ -6,28 +6,24 @@ import { ErrorContext } from 'context/error';
 const SubmitForm = ({ children }) => {
   const [errors, errorsDispatch] = useReducer(errorReducer, intialErrors);
 
-  const offErrorMessage = useCallback(
-    debounce(() => {
-      errorsDispatch(categoriesActionGenerator(false));
-    }, 4000),
-    []
-  );
+  const isValidSubmit = requestBody => {
+    return !requestBody?.basicInfo?.categories ||
+      Object.keys(requestBody?.basicInfo?.categories).length === 0
+      ? false
+      : true;
+  };
 
-  const submitHandler = e => {
-    e.preventDefault();
-    const requestBody = {};
-    const inputData = new FormData(e.target);
+  const initBody = (requestBody, keys, index) => {
+    const currentKey = keys[index];
 
-    const initBody = (obj, keys, index) => {
-      const currentKey = keys[index];
+    if (currentKey && !requestBody[currentKey]) {
+      requestBody[currentKey] = {};
+    }
 
-      if (currentKey && !obj[currentKey]) {
-        obj[currentKey] = {};
-      }
+    return currentKey && initBody(requestBody[currentKey], keys, ++index);
+  };
 
-      return currentKey && initBody(obj[currentKey], keys, ++index);
-    };
-
+  const setBodyForRequest = (requestBody, inputData) => {
     for (var [key, value] of inputData.entries()) {
       if (value.length === 0 && !value) continue;
       const [prefix, contents, rest] = key.split('-');
@@ -45,17 +41,33 @@ const SubmitForm = ({ children }) => {
       if (rest) requestBody[prefix][contents][rest] = jsonValue;
       else requestBody[prefix][contents] = jsonValue;
     }
+  };
 
-    if (
-      !requestBody?.basicInfo?.categories ||
-      Object.keys(requestBody?.basicInfo?.categories).length === 0
-    ) {
+  const request = requestBody => {
+    console.log(requestBody);
+  };
+
+  const offErrorMessage = useCallback(
+    debounce(() => {
+      errorsDispatch(categoriesActionGenerator(false));
+    }, 4000),
+    []
+  );
+
+  const submitHandler = e => {
+    e.preventDefault();
+    const requestBody = {};
+    const inputData = new FormData(e.target);
+
+    setBodyForRequest(requestBody, inputData);
+
+    if (!isValidSubmit(requestBody)) {
       errorsDispatch(categoriesActionGenerator(true));
       offErrorMessage();
       return;
     }
 
-    console.log(requestBody);
+    request(requestBody);
     alert('결과가 저장되었습니다. 콘솔을 확인해주세요!');
   };
   return (
