@@ -28,7 +28,7 @@ const ProOptMain = () => {
   return (
     <Table className={styles.table}>
       {error && (
-        <MessageBox className={classNames(styles.messageBox, 'categoriesErrorMessage')}>
+        <MessageBox className={classNames(styles.messageBox)}>
           <span>프로덕트 옵션은 필수값입니다.</span>
         </MessageBox>
       )}
