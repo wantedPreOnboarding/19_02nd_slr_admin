@@ -4,6 +4,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 import styles from './FormDatePicker.module.css';
 
 const FormDatePicker = ({ changeHandler, name, dateType }) => {
+  const YYYYMMDD_HHMM = '  yyyy.MM.dd HH:mm';
+  const YYYYMMDD = '  yyyy.MM.dd';
+
   const [isDate, setIsDate] = useState(null);
 
   return (
@@ -12,9 +15,9 @@ const FormDatePicker = ({ changeHandler, name, dateType }) => {
         <DatePicker
           className={dateType === 'time' ? styles.selectDate : styles.selectDateMini}
           selected={isDate}
-          dateFormat={dateType === 'time' ? '  yyyy.MM.dd HH:mm' : '  yyyy.MM.dd'}
-          placeholderText={dateType === 'time' ? '  YYYY.MM.DD YY:MM' : '  YYYY.MM.DD'}
-          showTimeInput
+          dateFormat={dateType === 'time' ? YYYYMMDD_HHMM : YYYYMMDD}
+          placeholderText={dateType === 'time' ? YYYYMMDD_HHMM : YYYYMMDD}
+          showTimeInput={dateType === 'time' ? true : false}
           name={`${name}-date`}
           onChange={date => {
             setIsDate(date);
