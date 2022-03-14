@@ -5,7 +5,7 @@ import { ErrorContext } from 'context/error';
 import { productOptionActionGenerator } from 'context/error';
 
 const SubmitForm = ({ children }) => {
-  const [formRequire, errorsDispatch] = useReducer(formRequireReducer, intialErrors);
+  const [formRequire, formRequireDispatch] = useReducer(formRequireReducer, intialErrors);
 
   const isValidCategories = requestBody => {
     return (
@@ -65,8 +65,8 @@ const SubmitForm = ({ children }) => {
 
   const offRequireMessage = useCallback(
     debounce(() => {
-      errorsDispatch(categoriesActionGenerator(false));
-      errorsDispatch(productOptionActionGenerator(false));
+      formRequireDispatch(categoriesActionGenerator(false));
+      formRequireDispatch(productOptionActionGenerator(false));
     }, 4000),
     []
   );
@@ -78,13 +78,13 @@ const SubmitForm = ({ children }) => {
     const dataObj = toObjFromFormData(formData);
 
     if (!isValidCategories(dataObj)) {
-      errorsDispatch(categoriesActionGenerator(true));
+      formRequireDispatch(categoriesActionGenerator(true));
       offRequireMessage();
       return;
     }
 
     if (!isValidProductOption(dataObj)) {
-      errorsDispatch(productOptionActionGenerator(true));
+      formRequireDispatch(productOptionActionGenerator(true));
       offRequireMessage();
       return;
     }
