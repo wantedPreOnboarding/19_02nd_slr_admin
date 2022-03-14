@@ -64,12 +64,15 @@ const SearchFilter = () => {
       <label htmlFor="searchFilter" className={style.searchBtn}>
         검색
       </label>
-      <input
-        className={commonStyles.a11yHidden}
-        name="basicInfo-filter"
-        value={JSON.stringify(clickedFilterTags)}
-        readOnly
-      />
+      {clickedFilterTags.map(({ id, tag }) => (
+        <input
+          key={id}
+          className={commonStyles.a11yHidden}
+          name="basicInfo-filter"
+          value={tag}
+          readOnly
+        />
+      ))}
       {isOpenSearch && (
         <Card className={style.searchWindow} ref={searchWindowRef}>
           {sortTagsFromSearch().map(tag => (
