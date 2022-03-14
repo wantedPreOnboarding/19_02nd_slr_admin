@@ -8,7 +8,7 @@ const intialErrors = {
 
 const ErrorContext = createContext(null);
 
-function errorReducer(state, action) {
+function formRequireReducer(state, action) {
   switch (action.type) {
     case CATEGORIES.ON:
       return {
@@ -50,7 +50,7 @@ const productOptionActionGenerator = state => {
 export {
   intialErrors,
   ErrorContext,
-  errorReducer,
+  formRequireReducer,
   categoriesActionGenerator,
   productOptionActionGenerator,
 };

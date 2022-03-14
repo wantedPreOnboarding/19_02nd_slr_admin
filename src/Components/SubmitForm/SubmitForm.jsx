@@ -1,11 +1,11 @@
 import React, { useCallback, useReducer } from 'react';
-import { categoriesActionGenerator, errorReducer, intialErrors } from 'context/error';
+import { categoriesActionGenerator, formRequireReducer, intialErrors } from 'context/error';
 import { debounce } from 'utils';
 import { ErrorContext } from 'context/error';
 import { productOptionActionGenerator } from 'context/error';
 
 const SubmitForm = ({ children }) => {
-  const [errors, errorsDispatch] = useReducer(errorReducer, intialErrors);
+  const [formRequire, errorsDispatch] = useReducer(formRequireReducer, intialErrors);
 
   const isValidCategories = requestBody => {
     return !requestBody?.basicInfo?.categories ||
@@ -86,7 +86,7 @@ const SubmitForm = ({ children }) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <ErrorContext.Provider value={errors}>{children}</ErrorContext.Provider>
+      <ErrorContext.Provider value={formRequire}>{children}</ErrorContext.Provider>
     </form>
   );
 };
