@@ -68,7 +68,7 @@ const SearchFilter = () => {
         <input
           key={id}
           className={commonStyles.a11yHidden}
-          name="basicInfo-filter"
+          name="basicInfo-filters"
           value={tag}
           readOnly
         />
