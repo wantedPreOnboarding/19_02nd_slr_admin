@@ -30,7 +30,8 @@ const Categories = () => {
         id={category.category}
         checked={category.checked}
         onChange={memoToggleCheckState}
-        name={`basicInfo-categories-${category.category}`}
+        value={category.category}
+        name={`basicInfo-categories`}
       >
         {withCurlyBraces(category.category)}
       </CheckBox>

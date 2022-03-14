@@ -4,7 +4,7 @@ import { ReactComponent as Checked } from './assets/checked.svg';
 import styles from './CheckBox.module.css';
 import commonStyles from 'styles/index.module.scss';
 
-const CheckBox = ({ id, checked, onChange, children, name }) => {
+const CheckBox = ({ id, checked, onChange, children, name, value }) => {
   return (
     <li>
       <input
@@ -13,6 +13,7 @@ const CheckBox = ({ id, checked, onChange, children, name }) => {
         id={id}
         name={name}
         checked={checked}
+        value={value}
         onChange={() => {
           onChange?.();
         }}
