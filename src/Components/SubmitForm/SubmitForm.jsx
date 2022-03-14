@@ -8,48 +8,59 @@ const SubmitForm = ({ children }) => {
   const [formRequire, errorsDispatch] = useReducer(formRequireReducer, intialErrors);
 
   const isValidCategories = requestBody => {
-    return !requestBody?.basicInfo?.categories ||
-      Object.keys(requestBody?.basicInfo?.categories).length === 0
-      ? false
-      : true;
+    return (
+      requestBody?.basicInfo?.categories &&
+      Object.keys(requestBody?.basicInfo?.categories).length !== 0
+    );
   };
 
   const isValidProductOption = requestBody => {
     return requestBody?.proOpt;
   };
 
-  const initBody = (requestBody, keys, index) => {
+  const initObj = (obj, keys, index) => {
     const currentKey = keys[index];
 
-    if (currentKey && !requestBody[currentKey]) {
-      requestBody[currentKey] = {};
+    if (currentKey && !obj[currentKey]) {
+      obj[currentKey] = {};
     }
 
-    return currentKey && initBody(requestBody[currentKey], keys, ++index);
+    return currentKey && initObj(obj[currentKey], keys, ++index);
   };
 
-  const setBodyForRequest = (requestBody, inputData) => {
-    for (var [key, value] of inputData.entries()) {
+  const toObjFromFormData = formData => {
+    const obj = {};
+
+    for (var [key, value] of formData.entries()) {
       if (value.length === 0 && !value) continue;
       const [prefix, contents, rest] = key.split('-');
 
-      initBody(requestBody, [prefix, contents, rest], 0);
+      initObj(obj, [prefix, contents, rest], 0);
 
-      let jsonValue;
-
-      try {
-        jsonValue = JSON.parse(value);
-      } catch (e) {
-        jsonValue = value;
+      if (rest) {
+        insertData(obj[prefix][contents], rest, value);
+      } else {
+        insertData(obj[prefix], contents, value);
       }
+    }
 
-      if (rest) requestBody[prefix][contents][rest] = jsonValue;
-      else requestBody[prefix][contents] = jsonValue;
+    return obj;
+
+    function insertData(obj, key, value) {
+      if (Array.isArray(obj[key])) {
+        obj[key] = [...obj[key], value];
+      } else if (typeof obj[key] === 'string') {
+        obj[key] = [obj[key], value];
+      } else {
+        obj[key] = value;
+      }
     }
   };
 
-  const request = requestBody => {
-    console.log(requestBody);
+  const request = formData => {
+    console.log(toObjFromFormData(formData));
+
+    // fetch(url, { mothod: 'POST', body: formData })
   };
 
   const offRequireMessage = useCallback(
@@ -62,24 +73,23 @@ const SubmitForm = ({ children }) => {
 
   const submitHandler = e => {
     e.preventDefault();
-    const requestBody = {};
-    const inputData = new FormData(e.target);
+    const formData = new FormData(e.target);
 
-    setBodyForRequest(requestBody, inputData);
+    const dataObj = toObjFromFormData(formData);
 
-    if (!isValidCategories(requestBody)) {
+    if (!isValidCategories(dataObj)) {
       errorsDispatch(categoriesActionGenerator(true));
       offRequireMessage();
       return;
     }
 
-    if (!isValidProductOption(requestBody)) {
+    if (!isValidProductOption(dataObj)) {
       errorsDispatch(productOptionActionGenerator(true));
       offRequireMessage();
       return;
     }
 
-    request(requestBody);
+    request(formData);
 
     alert('결과가 저장되었습니다. 콘솔을 확인해주세요!');
   };
