@@ -52,7 +52,7 @@ const SubmitForm = ({ children }) => {
     console.log(requestBody);
   };
 
-  const offErrorMessage = useCallback(
+  const offRequireMessage = useCallback(
     debounce(() => {
       errorsDispatch(categoriesActionGenerator(false));
       errorsDispatch(productOptionActionGenerator(false));
@@ -69,13 +69,13 @@ const SubmitForm = ({ children }) => {
 
     if (!isValidCategories(requestBody)) {
       errorsDispatch(categoriesActionGenerator(true));
-      offErrorMessage();
+      offRequireMessage();
       return;
     }
 
     if (!isValidProductOption(requestBody)) {
       errorsDispatch(productOptionActionGenerator(true));
-      offErrorMessage();
+      offRequireMessage();
       return;
     }
 
